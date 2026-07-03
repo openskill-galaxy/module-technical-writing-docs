@@ -1,0 +1,14 @@
+import { readFile, stat } from "node:fs/promises";import { join } from "node:path";
+const D=join(process.cwd(),"public/data");const o=m=>console.log("  ✅ "+m);const f=m=>{console.error("  ❌ "+m);e.push(m);};const e=[];const u=a=>new Set(a.map(x=>x.id)).size===a.length;
+async function L(n){try{const r=await readFile(join(D,n+".json"),"utf8");const d=JSON.parse(r);o(n+"("+Math.round((await stat(join(D,n+".json"))).size/1024)+"KB)");return d;}catch(ex){f(n+":"+ex.message);return null;}}
+console.log("\n=== Validate Docs ===\n");
+const courses=await L("courses"),lessons=await L("lessons"),kps=await L("knowledge-points"),questions=await L("questions");
+const exams=await L("exams"),cases=await L("cases"),routes=await L("routes"),glossary=await L("glossary"),faqs=await L("faqs"),tags=await L("tags"),si=await L("search-index");
+for(const[n,a]of[["courses",courses],["lessons",lessons],["knowledge-points",kps],["questions",questions],["exams",exams],["cases",cases],["routes",routes],["glossary",glossary],["faqs",faqs],["tags",tags]]){if(a)if(u(a))o(n+":"+a.length+"unique");else f(n+":dupes");}
+if(courses&&lessons){const cs=new Set(courses.map(c=>c.id));const ls=new Set(lessons.map(l=>l.courseId));[...ls].filter(x=>!cs.has(x)).length===0?o("lessons->courseIds OK"):f("orphan");}
+if(questions){let mf=0;const R=["id","type","difficulty","chapter","knowledge_points","stem","options","answer","explanation","wrong_reason","tags","estimated_time","source_type"];for(const q of questions){for(const r of R)if(q[r]===undefined){mf++;break;}}mf===0?o("all"+questions.length+"OK"):f(mf+"missing");questions.filter(q=>q.source_type!=="curated-generated").length===0?o("all curated"):f("not curated");}
+if(exams&&questions){const qd=new Set(questions.map(q=>q.id));let t=0,b=0;for(const ex of exams)if(ex.questionIds)for(const qi of ex.questionIds){t++;if(!qd.has(qi))b++;}b===0?o("all"+t+"examrefs OK"):f(b+"/"+t+"bad");}
+if(cases&&questions){const qd=new Set(questions.map(q=>q.id));let t=0,b=0;for(const c of cases)if(c.relatedQuestionIds)for(const qi of c.relatedQuestionIds){t++;if(!qd.has(qi))b++;}b===0?o("all"+t+"caserefs OK"):f(b+"/"+t+"bad");}
+if(si){o("search-index:"+si.length);si.some(x=>x.type==="lesson")&&si.some(x=>x.type==="question")&&si.some(x=>x.type==="glossary")&&si.some(x=>x.type==="faq")?o("all types"):f("missing");}else f("missing");
+for(const[n,d,m]of[["courses",courses,14],["lessons",lessons,180],["knowledge-points",kps,800],["questions",questions,3500],["exams",exams,100],["cases",cases,260],["routes",routes,30],["tags",tags,350],["glossary",glossary,350],["faqs",faqs,200]]){if(d&&d.length>=m)o(n+":"+d.length+">="+m);else if(d)f(n+":"+d.length+"<"+m);else f(n+":fail");}
+console.log("\n"+ "=".repeat(50));e.length===0?(console.log("All passed!\n"),process.exit(0)):(console.log(e.length+"errors\n"),process.exit(1));

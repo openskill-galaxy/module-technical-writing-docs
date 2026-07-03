@@ -1,0 +1,41 @@
+{
+  "id": "mod-technical-writing-docs",
+  "slug": "module-technical-writing-docs",
+  "title": "技术写作与文档工程",
+  "subtitle": "面向开发者和技术写作者",
+  "description": "面向开发者产品经理开源维护者和团队协作者的Markdown README教程API文档设计文档需求文档故障复盘知识库文档站与技术表达训练。",
+  "version": "2.0.0",
+  "license": "MIT",
+  "authors": [
+    "OpenSkill Community"
+  ],
+  "tags": [
+    "技术写作",
+    "Markdown",
+    "README",
+    "API文档",
+    "设计文档",
+    "文档站",
+    "知识库",
+    "技术表达"
+  ],
+  "estimatedHours": 130,
+  "difficulty": "beginner",
+  "updatedAt": "2026-07-03T00:00:00.000Z",
+  "coverEmoji": "📝",
+  "repoUrl": "https://github.com/openskill-galaxy/module-technical-writing-docs",
+  "portalUrl": "https://openskill-galaxy.github.io/",
+  "status": "stable",
+  "stats": {
+    "courses": 14,
+    "lessons": 182,
+    "knowledgePoints": 735,
+    "questions": 3500,
+    "cases": 260,
+    "exams": 100,
+    "routes": 35,
+    "glossary": 360,
+    "faqs": 210,
+    "tags": 110
+  }
+}

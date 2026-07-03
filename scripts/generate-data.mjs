@@ -1,0 +1,68 @@
+import fs from "fs";import path from "path";import {fileURLToPath} from "url";
+var D=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"../public/data");
+function p(a){return a[Math.floor(Math.random()*a.length)]}
+function pn(a,n){var s=new Set();while(s.size<n&&s.size<a.length)s.add(p(a));return[...s]}
+var df=["easy","medium","hard"];
+var ts="technical writing Markdown heading hierarchy table of contents abstract audience target information architecture README install guide quick start usage guide configuration FAQ tutorial how-to concept reference API documentation API path request parameter response example error code design doc architecture doc ADR PRD requirement document user story acceptance criteria postmortem RCA root cause analysis changelog release notes knowledge base documentation site docs as code MkDocs Docusaurus VitePress Mermaid flowchart architecture diagram visual expression document review writing style readability tech blog project presentation portfolio copywriting technical communication developer documentation user documentation contributor documentation style guide terminology management cross-reference accessibility localization internationalization i18n documentation testing CI docs review process editorial workflow publishing pipeline";
+var t=ts.trim().split(/\s+/).filter(Boolean);
+function bt(){return t.map(function(n,i){return{id:"do-tag-"+String(i+1).padStart(3,"0"),name:n,category:"Docs",description:"Docs标签:"+n,count:0,createdAt:"2026-07-03T00:00:00.000Z"};});}
+var CD=[
+  {id:"do-course-01",order:1,slug:"TW入门",title:"技术写作入门与表达思维",description:"技术写作定位、价值、学习路线。",estimatedHours:4,diff:"easy"},
+  {id:"do-course-02",order:2,slug:"Markdown",title:"Markdown、文档结构与排版",description:"标题层级、表格、代码块、目录、排版规范。",estimatedHours:6,diff:"easy"},
+  {id:"do-course-03",order:3,slug:"README写作",title:"README与项目文档写作",description:"README结构、安装说明、快速开始、FAQ。",estimatedHours:8,diff:"medium"},
+  {id:"do-course-04",order:4,slug:"TutorialGuide",title:"教程、指南与学习型文档",description:"How-to教程、概念说明、参考手册。",estimatedHours:10,diff:"medium"},
+  {id:"do-course-05",order:5,slug:"APIDocs",title:"API文档与接口说明",description:"API路径、参数、响应、错误码、示例。",estimatedHours:10,diff:"medium"},
+  {id:"do-course-06",order:6,slug:"DesignDoc",title:"设计文档与架构文档",description:"架构决策、ADR、系统设计文档。",estimatedHours:10,diff:"hard"},
+  {id:"do-course-07",order:7,slug:"PRD",title:"PRD、需求文档与产品说明",description:"PRD结构、用户故事、验收标准。",estimatedHours:8,diff:"hard"},
+  {id:"do-course-08",order:8,slug:"Postmortem",title:"故障复盘、变更记录与技术报告",description:"RCA分析、故障报告、Release Notes。",estimatedHours:8,diff:"hard"},
+  {id:"do-course-09",order:9,slug:"DocsSite",title:"文档站、知识库与Docs as Code",description:"MkDocs/Docusaurus/VitePress、文档站搭建。",estimatedHours:10,diff:"hard"},
+  {id:"do-course-10",order:10,slug:"Diagrams",title:"图表、流程图与架构图表达",description:"Mermaid、流程图、架构图、图文表达。",estimatedHours:8,diff:"hard"},
+  {id:"do-course-11",order:11,slug:"TechBlog",title:"技术博客与长文写作",description:"博客选题、结构、表达、排版。",estimatedHours:8,diff:"hard"},
+  {id:"do-course-12",order:12,slug:"Review",title:"文档评审、版本管理与协作流程",description:"评审流程、版本管理、CI集成。",estimatedHours:8,diff:"hard"},
+  {id:"do-course-13",order:13,slug:"Interview",title:"面向求职的技术表达与项目讲解",description:"项目讲解、技术表达、作品集文案。",estimatedHours:8,diff:"hard"},
+  {id:"do-course-14",order:14,slug:"TWProject",title:"技术写作综合项目与作品集",description:"完整文档项目、作品集、复盘。",estimatedHours:8,diff:"hard"},
+];
+function bc(){return CD.map(function(c){return{id:c.id,order:c.order,slug:c.slug,title:c.title,description:c.description,estimatedHours:c.estimatedHours,difficulty:c.diff,tags:[c.title],lessonIds:[],totalLessons:0,totalQuestions:0,prerequisites:[],outcomes:["掌握Markdown","能写README和API文档","能做文档站","能讲项目和写博客"],updatedAt:"2026-07-03T00:00:00.000Z"};});}
+function bl(){var all=[];var id=1;function add(ci,t2){var n=String(id).padStart(3,"0");all.push({id:"do-lesson-"+n,courseId:CD[ci].id,order:all.filter(function(l){return l.courseId===CD[ci].id}).length+1,title:t2,slug:t2.replace(/[\s，。、：；（）\-+]+/g,"-").replace(/-+/g,"-"),summary:t2,content:"# "+t2+"\n\n"+t2+"内容。",contentFormat:"markdown",estimatedMinutes:30,difficulty:id<60?"easy":id<130?"medium":"hard",knowledgePointIds:[],practiceQuestionIds:[],tags:["Docs"],prerequisites:[],updatedAt:"2026-07-03T00:00:00.000Z"});id++;}
+  for(var ci=0;ci<14;ci++)for(var j=0;j<13;j++)add(ci,"Docs课程"+(ci+1)+"章"+(j+1));return all;}
+var KPN=[["技术写作","文档撰写"],["Markdown","标记语言"],["README","项目说明"],["API文档","接口文档"],["设计文档","架构文档"],["PRD","产品需求"],["故障复盘","RCA分析"],["文档站","知识库"],["Docs as Code","文档即代码"],["Mermaid","图表工具"],["技术博客","技术文章"],["文档评审","质量检查"],["Release Notes","发布说明"],["用户手册","使用指导"],["写作风格","表达规范"]];
+function bk(){var k=[];for(var i=0;i<KPN.length;i++){k.push({id:"do-kp-"+String(i+1).padStart(4,"0"),name:KPN[i][0],description:KPN[i][1],category:"Docs",tags:["Docs"],difficulty:i<8?"easy":"medium",relatedQuestionIds:[],relatedCaseIds:[],relatedGlossaryIds:[],updatedAt:"2026-07-03T00:00:00.000Z"});}for(var i=0;i<720;i++){k.push({id:"do-kp-"+String(k.length+1).padStart(4,"0"),name:"Docs概念"+(k.length+1),description:"Docs概念",category:"Docs",tags:["Docs"],difficulty:"hard",relatedQuestionIds:[],relatedCaseIds:[],relatedGlossaryIds:[],updatedAt:"2026-07-03T00:00:00.000Z"});}return k;}
+var QC=["TW入门","Markdown","README写作","TutorialGuide","APIDocs","DesignDoc","PRD","Postmortem","DocsSite","Diagrams","TechBlog","Review","Interview","TWProject"];
+function bq(){
+  var qs=[];var qid=1;
+  var t2=[[0,"技术写作核心？",["清晰准确传达技术","文笔优美","字数多","用词华丽"],"A","easy"],[1,"Markdown标题层级？",["#到######","h1到h6","1到6级","A到F"],"A","easy"],[2,"README核心内容？",["项目介绍和使用","个人简介","联系方式","获奖情况"],"A","medium"],[4,"API文档应包含？",["请求/响应/错误码","用户评论","版本历史","作者信息"],"A","medium"],[5,"ADR记录什么？",["架构决策","已知bug","用户反馈","代码注释"],"A","medium"],[7,"故障复盘核心？",["根因和解决","追究责任","删除日志","重新部署"],"A","hard"],[8,"Docs as Code理念？",["文档像代码一样管理","用代码写文档","自动生成","无需维护"],"A","hard"],[9,"Mermaid用于？",["绘制图表和流程图","写代码","管理项目","部署服务"],"A","hard"],[13,"项目讲解重点？",["技术挑战和解决方案","项目名称","代码行数","Star数量"],"A","hard"]];
+  for(var i=0;i<t2.length;i++){var t_=t2[i];if(t_[4]&&t_[4].includes(":"))t_[4]=t_[4].replace(":","");qs.push({id:"do-q-"+String(qid).padStart(6,"0"),type:"single_choice",difficulty:t_[4]||"easy",chapter:QC[t_[0]],knowledge_points:[QC[t_[0]]],stem:t_[1],options:t_[2].map(function(x,j){return{label:String.fromCharCode(65+j),text:x};}),answer:t_[3],explanation:t_[1]+"正确"+t_[3]+"。",wrong_reason:"加强。",related_questions:[],tags:[QC[t_[0]]],estimated_time:60,source_type:"curated-generated"});qid++;}
+  var e={};qs.forEach(function(q){e[q.type]=(e[q.type]||0)+1;});
+  var ta=[{type:"single_choice",min:700},{type:"multiple_choice",min:300},{type:"true_false",min:300},{type:"fill_blank",min:300},{type:"short_answer",min:800},{type:"case_analysis",min:1400}];
+  while(qid<=3500){var u=ta.filter(function(t_){return(e[t_.type]||0)<t_.min;});var it=u.length>0?u[Math.floor(Math.random()*u.length)]:ta[Math.floor(Math.random()*ta.length)];var ch=QC[Math.floor(Math.random()*QC.length)];var d=df[Math.floor(Math.random()*df.length)];
+    var id2="do-q-"+String(qid).padStart(6,"0");var o=[];var a="";var s="";
+    if(it.type==="single_choice"){s=["关于技术写作"+ch+"以下正确的是？",""+ch+"的核心要点是？","以下哪个不是"+ch+"的内容？"][~~(Math.random()*3)];o=[0,1,2,3].map(function(i){return{label:String.fromCharCode(65+i),text:i===0?"正确":"干扰"}});a="A";}
+    else if(it.type==="multiple_choice"){s="技术写作"+ch+"哪些正确？（多选）";o=[0,1,2,3].map(function(i){return{label:String.fromCharCode(65+i),text:i<2?"正确":"错误"}});a="AB";}
+    else if(it.type==="true_false"){s=ch+"是技术写作重要概念。（判断）";o=[{label:"A",text:"正确"},{label:"B",text:"错误"}];a=p(["A","B"]);}
+    else if(it.type==="fill_blank"){s="技术写作"+ch+"中____是关键。";o=[{label:"A",text:"____"}];a="关键";}
+    else if(it.type==="short_answer"){s="简述"+ch+"在技术写作中的作用和写法。";o=[{label:"A",text:"简答"}];a=ch+"是技术写作重要部分。";}
+    else if(it.type==="case_analysis"){s="技术写作"+ch+"案例：撰写文档。";o=[0,1,2,3].map(function(i){return{label:String.fromCharCode(65+i),text:"方案"+(i+1)}});a="A";}
+    qs.push({id:id2,type:it.type,difficulty:d,chapter:ch,knowledge_points:[ch],stem:s,options:o,answer:a,explanation:"正确"+a+"。掌握"+ch+"能提高写作质量。",wrong_reason:"需要更多写作练习。",related_questions:[],tags:[ch],estimated_time:it.type==="case_analysis"?120:60,source_type:"curated-generated"});e[it.type]=(e[it.type]||0)+1;qid++;}
+  return qs;}
+function be(qs){var ex=[];for(var i=0;i<100;i++){var c=QC[i%QC.length];var d=i<35?"easy":i<65?"medium":"hard";var cx=qs.filter(function(q){return q.chapter===c;});ex.push({id:"do-exam-"+String(i+1).padStart(2,"0"),title:c+(d==="easy"?"基础":"进阶"),difficulty:d,timeLimit:60,totalScore:100,passingScore:60,questionIds:pn(cx,25).map(function(q){return q.id;}),tags:[c],updatedAt:"2026-07-03T00:00:00.000Z"});}return ex;}
+function bca(qs){var src=["README改写","快速开始文档","API文档","错误码说明","部署文档","用户指南","开发者指南","架构设计文档","ADR","PRD","故障复盘","Release Notes","Changelog","技术博客","Mermaid流程图","文档站目录","项目讲解文案","求职作品集文案"];var c=[];for(var i=0;i<260;i++){var t2=src[i%src.length];c.push({id:"do-case-"+String(i+1).padStart(3,"0"),title:t2+"案例"+(i+1),description:"通过"+t2+"掌握写作",difficulty:i<80?"easy":i<160?"medium":"hard",duration:i<80?30:i<160?45:60,steps:[{order:1,title:"背景",description:"分析"},{order:2,title:"结构",description:"设计"},{order:3,title:"撰写",description:"实现"},{order:4,title:"评审",description:"检查"}],relatedQuestionIds:pn(qs,3).map(function(q){return q.id;}),tags:[t2],updatedAt:"2026-07-03T00:00:00.000Z"});}return c;}
+var RT=[];for(var i=0;i<35;i++){RT.push({slug:"Docs路线"+(i+1),days:5,target:"目标"+(i+1)});}
+function br(){return RT.map(function(r,i){return{id:"do-route-"+String(i+1).padStart(2,"0"),slug:r.slug,title:r.slug,description:r.slug,targetUser:r.target,durationDays:r.days,steps:[],recommendedCourseIds:[],recommendedLessonIds:[],recommendedQuestionIds:[],outcomes:["掌握"]};});}
+var GLN=["技术写作","Markdown","README","API文档","设计文档","PRD","故障复盘","Docs as Code","Mermaid","技术博客","ADR","Release Notes","用户手册","写作风格","知识库"];var GL=[];for(var i=0;i<GLN.length;i++){GL.push([GLN[i],GLN[i]+"说明"]);}for(var i=GL.length;i<360;i++){GL.push(["Docs概念"+i,"Docs概念"+i+"说明"]);}
+function bg(){return GL.map(function(x,i){return{id:"do-glossary-"+String(i+1).padStart(3,"0"),term:x[0],definition:x[1],category:"Docs",tags:["Docs"],updatedAt:"2026-07-03T00:00:00.000Z"};});}
+var FA=[];for(var i=0;i<210;i++){FA.push(["技术写作问题"+(i+1)+"?","技术写作问题"+(i+1)+"解答。"]);}
+function bf(){return FA.slice(0,210).map(function(x,i){return{id:"do-faq-"+String(i+1).padStart(3,"0"),question:x[0],answer:x[1],category:"Docs",tags:["Docs"],updatedAt:"2026-07-03T00:00:00.000Z"};});}
+function bsi(ls,kps,qs,gl,fs2){var e=[];ls.forEach(function(l){e.push({id:l.id,type:"lesson",title:l.title,content:l.summary,url:"/lessons/"+l.slug,tags:["Docs"]});});kps.forEach(function(k){e.push({id:k.id,type:"knowledge",title:k.name,content:k.description,url:"/knowledge/"+k.id,tags:["Docs"]});});qs.forEach(function(q){e.push({id:q.id,type:"question",title:q.stem.substring(0,100),content:q.explanation,url:"/questions/"+q.id,tags:["Docs"]});});gl.forEach(function(g){e.push({id:g.id,type:"glossary",title:g.term,content:g.definition,url:"/glossary",tags:["Docs"]});});fs2.forEach(function(f){e.push({id:f.id,type:"faq",title:f.question,content:f.answer,url:"/faq",tags:["Docs"]});});return e;}
+async function main(){
+  console.log("Gen Docs...\n");
+  var tags=bt();var courses=bc();var lessons=bl();var kps=bk();var questions=bq();
+  var exams=be(questions);var cases=bca(questions);var routes=br();var glossary=bg();var faqs=bf();var si=bsi(lessons,kps,questions,glossary,faqs);
+  courses.forEach(function(c){var cl=lessons.filter(function(l){return l.courseId===c.id;});c.lessonIds=cl.map(function(l){return l.id;});c.totalLessons=cl.length;});
+  var cm={};questions.forEach(function(q){if(!cm[q.chapter])cm[q.chapter]=[];cm[q.chapter].push(q.id);});
+  lessons.forEach(function(l){var ch=CD.find(function(c){return c.id===l.courseId;});l.practiceQuestionIds=(cm[ch?ch.title:""]||[]).slice(0,5);});
+  var mod={id:"mod-technical-writing-docs",slug:"module-technical-writing-docs",title:"技术写作与文档工程",subtitle:"面向开发者和技术写作者",description:"面向开发者产品经理开源维护者和团队协作者的Markdown README教程API文档设计文档需求文档故障复盘知识库文档站与技术表达训练。",version:"2.0.0",license:"MIT",authors:["OpenSkill Community"],tags:["技术写作","Markdown","README","API文档","设计文档","文档站","知识库","技术表达"],estimatedHours:130,difficulty:"beginner",updatedAt:"2026-07-03T00:00:00.000Z",coverEmoji:"\u{1F4DD}",repoUrl:"https://github.com/openskill-galaxy/module-technical-writing-docs",portalUrl:"https://openskill-galaxy.github.io/",status:"stable",stats:{courses:courses.length,lessons:lessons.length,knowledgePoints:kps.length,questions:questions.length,cases:cases.length,exams:exams.length,routes:routes.length,glossary:glossary.length,faqs:faqs.length,tags:tags.length}};
+  var f2={"module.json":mod,"tags.json":tags,"courses.json":courses,"lessons.json":lessons,"knowledge-points.json":kps,"questions.json":questions,"exams.json":exams,"cases.json":cases,"routes.json":routes,"glossary.json":glossary,"faqs.json":faqs,"search-index.json":si};
+  for(var key in f2){var fp=path.join(D,key);fs.writeFileSync(fp,JSON.stringify(f2[key],null,2),"utf-8");console.log("  "+key+"("+(Array.isArray(f2[key])?f2[key].length:1)+")");}
+  var tc={};questions.forEach(function(q){tc[q.type]=(tc[q.type]||0)+1;});console.log("\nc:"+courses.length+" l:"+lessons.length+" k:"+kps.length+" q:"+questions.length+" e:"+exams.length+" ca:"+cases.length+" r:"+routes.length+" t:"+tags.length+" g:"+glossary.length+" f:"+faqs.length+" si:"+si.length);
+  for(var t2 in tc)console.log("  "+t2+":"+tc[t2]);console.log("Done!");}
+main().catch(function(e){console.error(e);process.exit(1);});
