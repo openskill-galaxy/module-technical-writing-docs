@@ -13,6 +13,8 @@ export default function Layout({
 }) {
   return (
     <div className="min-h-full flex flex-col">
+      <div className="starfield fixed inset-0 -z-10 opacity-50" />
+      <div className="cosmic-glow" />
       <Header module={data.module} />
       <div className="flex flex-1">
         <Sidebar />

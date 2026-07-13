@@ -16,7 +16,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程1章1\n\nDocs课程1章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-002",
@@ -35,7 +37,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程1章2\n\nDocs课程1章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-003",
@@ -54,7 +58,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程1章3\n\nDocs课程1章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-004",
@@ -73,7 +79,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程1章4\n\nDocs课程1章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-005",
@@ -92,7 +100,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程1章5\n\nDocs课程1章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-006",
@@ -111,7 +121,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程1章6\n\nDocs课程1章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-007",
@@ -130,7 +142,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程1章7\n\nDocs课程1章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-008",
@@ -149,7 +163,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程1章8\n\nDocs课程1章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-009",
@@ -168,7 +184,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程1章9\n\nDocs课程1章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-010",
@@ -187,7 +205,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程1章10\n\nDocs课程1章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-011",
@@ -206,7 +226,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程1章11\n\nDocs课程1章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-012",
@@ -225,7 +247,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程1章12\n\nDocs课程1章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-013",
@@ -244,7 +268,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程1章13\n\nDocs课程1章13内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-014",
@@ -263,7 +289,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程2章1\n\nDocs课程2章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-015",
@@ -282,7 +310,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程2章2\n\nDocs课程2章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-016",
@@ -301,7 +331,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程2章3\n\nDocs课程2章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-017",
@@ -320,7 +352,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程2章4\n\nDocs课程2章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-018",
@@ -339,7 +373,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程2章5\n\nDocs课程2章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-019",
@@ -358,7 +394,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程2章6\n\nDocs课程2章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-020",
@@ -377,7 +415,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程2章7\n\nDocs课程2章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-021",
@@ -396,7 +436,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程2章8\n\nDocs课程2章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-022",
@@ -415,7 +457,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程2章9\n\nDocs课程2章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-023",
@@ -434,7 +478,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程2章10\n\nDocs课程2章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-024",
@@ -453,7 +499,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程2章11\n\nDocs课程2章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-025",
@@ -472,7 +520,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程2章12\n\nDocs课程2章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-026",
@@ -491,7 +541,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程2章13\n\nDocs课程2章13内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-027",
@@ -510,7 +562,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程3章1\n\nDocs课程3章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-028",
@@ -529,7 +583,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程3章2\n\nDocs课程3章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-029",
@@ -548,7 +604,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程3章3\n\nDocs课程3章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-030",
@@ -567,7 +625,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程3章4\n\nDocs课程3章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-031",
@@ -586,7 +646,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程3章5\n\nDocs课程3章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-032",
@@ -605,7 +667,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程3章6\n\nDocs课程3章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-033",
@@ -624,7 +688,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程3章7\n\nDocs课程3章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-034",
@@ -643,7 +709,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程3章8\n\nDocs课程3章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-035",
@@ -662,7 +730,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程3章9\n\nDocs课程3章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-036",
@@ -681,7 +751,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程3章10\n\nDocs课程3章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-037",
@@ -700,7 +772,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程3章11\n\nDocs课程3章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-038",
@@ -719,7 +793,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程3章12\n\nDocs课程3章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-039",
@@ -738,7 +814,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程3章13\n\nDocs课程3章13内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-040",
@@ -757,7 +835,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程4章1\n\nDocs课程4章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-041",
@@ -776,7 +856,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程4章2\n\nDocs课程4章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-042",
@@ -795,7 +877,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程4章3\n\nDocs课程4章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-043",
@@ -814,7 +898,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程4章4\n\nDocs课程4章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-044",
@@ -833,7 +919,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程4章5\n\nDocs课程4章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-045",
@@ -852,7 +940,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程4章6\n\nDocs课程4章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-046",
@@ -871,7 +961,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程4章7\n\nDocs课程4章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-047",
@@ -890,7 +982,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程4章8\n\nDocs课程4章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-048",
@@ -909,7 +1003,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程4章9\n\nDocs课程4章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-049",
@@ -928,7 +1024,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程4章10\n\nDocs课程4章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-050",
@@ -947,7 +1045,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程4章11\n\nDocs课程4章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-051",
@@ -966,7 +1066,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程4章12\n\nDocs课程4章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-052",
@@ -985,7 +1087,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程4章13\n\nDocs课程4章13内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-053",
@@ -1004,7 +1108,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程5章1\n\nDocs课程5章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-054",
@@ -1023,7 +1129,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程5章2\n\nDocs课程5章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-055",
@@ -1042,7 +1150,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程5章3\n\nDocs课程5章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-056",
@@ -1061,7 +1171,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程5章4\n\nDocs课程5章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-057",
@@ -1080,7 +1192,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程5章5\n\nDocs课程5章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-058",
@@ -1099,7 +1213,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程5章6\n\nDocs课程5章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-059",
@@ -1118,7 +1234,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程5章7\n\nDocs课程5章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-060",
@@ -1137,7 +1255,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程5章8\n\nDocs课程5章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-061",
@@ -1156,7 +1276,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程5章9\n\nDocs课程5章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-062",
@@ -1175,7 +1297,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程5章10\n\nDocs课程5章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-063",
@@ -1194,7 +1318,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程5章11\n\nDocs课程5章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-064",
@@ -1213,7 +1339,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程5章12\n\nDocs课程5章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-065",
@@ -1232,7 +1360,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程5章13\n\nDocs课程5章13内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-066",
@@ -1251,7 +1381,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程6章1\n\nDocs课程6章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-067",
@@ -1270,7 +1402,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程6章2\n\nDocs课程6章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-068",
@@ -1289,7 +1423,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程6章3\n\nDocs课程6章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-069",
@@ -1308,7 +1444,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程6章4\n\nDocs课程6章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-070",
@@ -1327,7 +1465,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程6章5\n\nDocs课程6章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-071",
@@ -1346,7 +1486,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程6章6\n\nDocs课程6章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-072",
@@ -1365,7 +1507,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程6章7\n\nDocs课程6章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-073",
@@ -1384,7 +1528,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程6章8\n\nDocs课程6章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-074",
@@ -1403,7 +1549,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程6章9\n\nDocs课程6章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-075",
@@ -1422,7 +1570,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程6章10\n\nDocs课程6章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-076",
@@ -1441,7 +1591,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程6章11\n\nDocs课程6章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-077",
@@ -1460,7 +1612,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程6章12\n\nDocs课程6章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-078",
@@ -1479,7 +1633,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程6章13\n\nDocs课程6章13内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-079",
@@ -1498,7 +1654,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程7章1\n\nDocs课程7章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-080",
@@ -1517,7 +1675,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程7章2\n\nDocs课程7章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-081",
@@ -1536,7 +1696,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程7章3\n\nDocs课程7章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-082",
@@ -1555,7 +1717,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程7章4\n\nDocs课程7章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-083",
@@ -1574,7 +1738,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程7章5\n\nDocs课程7章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-084",
@@ -1593,7 +1759,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程7章6\n\nDocs课程7章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-085",
@@ -1612,7 +1780,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程7章7\n\nDocs课程7章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-086",
@@ -1631,7 +1801,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程7章8\n\nDocs课程7章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-087",
@@ -1650,7 +1822,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程7章9\n\nDocs课程7章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-088",
@@ -1669,7 +1843,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程7章10\n\nDocs课程7章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-089",
@@ -1688,7 +1864,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程7章11\n\nDocs课程7章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-090",
@@ -1707,7 +1885,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程7章12\n\nDocs课程7章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-091",
@@ -1726,7 +1906,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程7章13\n\nDocs课程7章13内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-092",
@@ -1745,7 +1927,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程8章1\n\nDocs课程8章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-093",
@@ -1764,7 +1948,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程8章2\n\nDocs课程8章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-094",
@@ -1783,7 +1969,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程8章3\n\nDocs课程8章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-095",
@@ -1802,7 +1990,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程8章4\n\nDocs课程8章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-096",
@@ -1821,7 +2011,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程8章5\n\nDocs课程8章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-097",
@@ -1840,7 +2032,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程8章6\n\nDocs课程8章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-098",
@@ -1859,7 +2053,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程8章7\n\nDocs课程8章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-099",
@@ -1878,7 +2074,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程8章8\n\nDocs课程8章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-100",
@@ -1897,7 +2095,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程8章9\n\nDocs课程8章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-101",
@@ -1916,7 +2116,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程8章10\n\nDocs课程8章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-102",
@@ -1935,7 +2137,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程8章11\n\nDocs课程8章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-103",
@@ -1954,7 +2158,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程8章12\n\nDocs课程8章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-104",
@@ -1973,7 +2179,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程8章13\n\nDocs课程8章13内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-105",
@@ -1992,7 +2200,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程9章1\n\nDocs课程9章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-106",
@@ -2011,7 +2221,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程9章2\n\nDocs课程9章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-107",
@@ -2030,7 +2242,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程9章3\n\nDocs课程9章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-108",
@@ -2049,7 +2263,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程9章4\n\nDocs课程9章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-109",
@@ -2068,7 +2284,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程9章5\n\nDocs课程9章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-110",
@@ -2087,7 +2305,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程9章6\n\nDocs课程9章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-111",
@@ -2106,7 +2326,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程9章7\n\nDocs课程9章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-112",
@@ -2125,7 +2347,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程9章8\n\nDocs课程9章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-113",
@@ -2144,7 +2368,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程9章9\n\nDocs课程9章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-114",
@@ -2163,7 +2389,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程9章10\n\nDocs课程9章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-115",
@@ -2182,7 +2410,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程9章11\n\nDocs课程9章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-116",
@@ -2201,7 +2431,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程9章12\n\nDocs课程9章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-117",
@@ -2220,7 +2452,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程9章13\n\nDocs课程9章13内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-118",
@@ -2239,7 +2473,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程10章1\n\nDocs课程10章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-119",
@@ -2258,7 +2494,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程10章2\n\nDocs课程10章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-120",
@@ -2277,7 +2515,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程10章3\n\nDocs课程10章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-121",
@@ -2296,7 +2536,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程10章4\n\nDocs课程10章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-122",
@@ -2315,7 +2557,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程10章5\n\nDocs课程10章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-123",
@@ -2334,7 +2578,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程10章6\n\nDocs课程10章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-124",
@@ -2353,7 +2599,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程10章7\n\nDocs课程10章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-125",
@@ -2372,7 +2620,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程10章8\n\nDocs课程10章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-126",
@@ -2391,7 +2641,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程10章9\n\nDocs课程10章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-127",
@@ -2410,7 +2662,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程10章10\n\nDocs课程10章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-128",
@@ -2429,7 +2683,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程10章11\n\nDocs课程10章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-129",
@@ -2448,7 +2704,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程10章12\n\nDocs课程10章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-130",
@@ -2467,7 +2725,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程10章13\n\nDocs课程10章13内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-131",
@@ -2486,7 +2746,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程11章1\n\nDocs课程11章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-132",
@@ -2505,7 +2767,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程11章2\n\nDocs课程11章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-133",
@@ -2524,7 +2788,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程11章3\n\nDocs课程11章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-134",
@@ -2543,7 +2809,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程11章4\n\nDocs课程11章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-135",
@@ -2562,7 +2830,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程11章5\n\nDocs课程11章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-136",
@@ -2581,7 +2851,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程11章6\n\nDocs课程11章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-137",
@@ -2600,7 +2872,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程11章7\n\nDocs课程11章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-138",
@@ -2619,7 +2893,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程11章8\n\nDocs课程11章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-139",
@@ -2638,7 +2914,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程11章9\n\nDocs课程11章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-140",
@@ -2657,7 +2935,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程11章10\n\nDocs课程11章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-141",
@@ -2676,7 +2956,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程11章11\n\nDocs课程11章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-142",
@@ -2695,7 +2977,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程11章12\n\nDocs课程11章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-143",
@@ -2714,7 +2998,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程11章13\n\nDocs课程11章13内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-144",
@@ -2733,7 +3019,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程12章1\n\nDocs课程12章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-145",
@@ -2752,7 +3040,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程12章2\n\nDocs课程12章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-146",
@@ -2771,7 +3061,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程12章3\n\nDocs课程12章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-147",
@@ -2790,7 +3082,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程12章4\n\nDocs课程12章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-148",
@@ -2809,7 +3103,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程12章5\n\nDocs课程12章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-149",
@@ -2828,7 +3124,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程12章6\n\nDocs课程12章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-150",
@@ -2847,7 +3145,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程12章7\n\nDocs课程12章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-151",
@@ -2866,7 +3166,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程12章8\n\nDocs课程12章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-152",
@@ -2885,7 +3187,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程12章9\n\nDocs课程12章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-153",
@@ -2904,7 +3208,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程12章10\n\nDocs课程12章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-154",
@@ -2923,7 +3229,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程12章11\n\nDocs课程12章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-155",
@@ -2942,7 +3250,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程12章12\n\nDocs课程12章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-156",
@@ -2961,7 +3271,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程12章13\n\nDocs课程12章13内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-157",
@@ -2980,7 +3292,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程13章1\n\nDocs课程13章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-158",
@@ -2999,7 +3313,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程13章2\n\nDocs课程13章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-159",
@@ -3018,7 +3334,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程13章3\n\nDocs课程13章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-160",
@@ -3037,7 +3355,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程13章4\n\nDocs课程13章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-161",
@@ -3056,7 +3376,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程13章5\n\nDocs课程13章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-162",
@@ -3075,7 +3397,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程13章6\n\nDocs课程13章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-163",
@@ -3094,7 +3418,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程13章7\n\nDocs课程13章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-164",
@@ -3113,7 +3439,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程13章8\n\nDocs课程13章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-165",
@@ -3132,7 +3460,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程13章9\n\nDocs课程13章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-166",
@@ -3151,7 +3481,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程13章10\n\nDocs课程13章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-167",
@@ -3170,7 +3502,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程13章11\n\nDocs课程13章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-168",
@@ -3189,7 +3523,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程13章12\n\nDocs课程13章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-169",
@@ -3208,7 +3544,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程13章13\n\nDocs课程13章13内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-170",
@@ -3227,7 +3565,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程14章1\n\nDocs课程14章1内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-171",
@@ -3246,7 +3586,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程14章2\n\nDocs课程14章2内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-172",
@@ -3265,7 +3607,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程14章3\n\nDocs课程14章3内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-173",
@@ -3284,7 +3628,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程14章4\n\nDocs课程14章4内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-174",
@@ -3303,7 +3649,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程14章5\n\nDocs课程14章5内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-175",
@@ -3322,7 +3670,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程14章6\n\nDocs课程14章6内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-176",
@@ -3341,7 +3691,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程14章7\n\nDocs课程14章7内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-177",
@@ -3360,7 +3712,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程14章8\n\nDocs课程14章8内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-178",
@@ -3379,7 +3733,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程14章9\n\nDocs课程14章9内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-179",
@@ -3398,7 +3754,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程14章10\n\nDocs课程14章10内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-180",
@@ -3417,7 +3775,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程14章11\n\nDocs课程14章11内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-181",
@@ -3436,7 +3796,9 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程14章12\n\nDocs课程14章12内容。",
+    "knowledgePoints": []
   },
   {
     "id": "do-lesson-182",
@@ -3455,6 +3817,8 @@
       "Docs"
     ],
     "prerequisites": [],
-    "updatedAt": "2026-07-03T00:00:00.000Z"
+    "updatedAt": "2026-07-03T00:00:00.000Z",
+    "contentMarkdown": "# Docs课程14章13\n\nDocs课程14章13内容。",
+    "knowledgePoints": []
   }
 ]

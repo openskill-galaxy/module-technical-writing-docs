@@ -6,6 +6,47 @@ import { renderMarkdown } from "../utils/markdown";
 import DifficultyBadge from "./DifficultyBadge";
 import { useProgressStore } from "../store/useProgressStore";
 
+function triggerConfetti() {
+  const container = document.createElement("div");
+  container.style.position = "fixed";
+  container.style.inset = "0";
+  container.style.pointerEvents = "none";
+  container.style.zIndex = "9999";
+  document.body.appendChild(container);
+
+  const colors = ["#3b82f6", "#10b981", "#fbbf24", "#ef4444", "#8b5cf6", "#ec4899"];
+
+  for (let i = 0; i < 40; i++) {
+    const el = document.createElement("div");
+    el.style.position = "absolute";
+    el.style.width = `${Math.random() * 6 + 6}px`;
+    el.style.height = `${Math.random() * 6 + 6}px`;
+    el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    el.style.borderRadius = "50%";
+    el.style.left = "50%";
+    el.style.top = "40%";
+    
+    const angle = Math.random() * Math.PI * 2;
+    const velocity = Math.random() * 120 + 80;
+    const dx = Math.cos(angle) * velocity;
+    const dy = Math.sin(angle) * velocity - 60; // upward bias
+
+    el.animate([
+      { transform: "translate(-50%, -50%) scale(1)", opacity: 1 },
+      { transform: `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(0.5)`, opacity: 0 }
+    ], {
+      duration: 800 + Math.random() * 400,
+      easing: "ease-out"
+    });
+
+    container.appendChild(el);
+  }
+
+  setTimeout(() => {
+    container.remove();
+  }, 1300);
+}
+
 interface Props {
   questions: Question[];
   // 是否立即判分（练习模式即时判分；考试模式不在此处判分）
@@ -25,6 +66,7 @@ export default function QuestionPlayer({
   const [answers, setAnswers] = useState<Record<string, string[]>>({});
   // 已判分题目集合（instant 模式下记录已答）
   const [judged, setJudged] = useState<Record<string, boolean>>({});
+  const [shake, setShake] = useState(false);
   const recordAnswer = useProgressStore((s) => s.recordAnswer);
 
   const q = questions[current];
@@ -59,6 +101,13 @@ export default function QuestionPlayer({
     const correct = isAnswerCorrect(q, userAnswer);
     recordAnswer(q.id, userAnswer, correct);
     setJudged((p) => ({ ...p, [q.id]: true }));
+    
+    if (correct) {
+      triggerConfetti();
+    } else {
+      setShake(true);
+      setTimeout(() => setShake(false), 300);
+    }
   }
 
   const isJudged = !!judged[q.id];
@@ -90,7 +139,7 @@ export default function QuestionPlayer({
         <span className="text-xs text-white/50">已答 {answeredCount}/{total}</span>
       </div>
 
-      <div className="card p-5">
+      <div className={`card p-5 transition-all duration-300 ${shake ? "animate-shake border-rose-500/30 shadow-lg shadow-rose-500/5" : ""}`}>
         <p className="text-sm text-white whitespace-pre-wrap">{q.stem}</p>
 
         <div className="mt-4 space-y-2">
