@@ -19,7 +19,7 @@ export default function Layout({
       <div className="flex flex-1">
         <Sidebar />
         <main className="flex-1 min-w-0">
-          <div className="container-page py-8">{children}</div>
+          <div className="container-page py-8 animate-fade-in">{children}</div>
         </main>
       </div>
       <Footer module={data.module} />
