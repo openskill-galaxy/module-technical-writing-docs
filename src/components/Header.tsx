@@ -33,6 +33,13 @@ export default function Header({ module }: { module: ModuleMeta }) {
           </span>
         </Link>
         
+        <a
+          href={module.portalUrl || "https://openskill-galaxy.github.io/"}
+          className="hidden md:inline-flex items-center gap-1 rounded-xl border border-white/10 bg-white/[0.02] px-3 py-1.5 text-xs font-semibold text-white/60 hover:bg-white/5 hover:text-white transition duration-200"
+        >
+          ← 返回总站
+        </a>
+        
         <div className="ml-auto flex items-center gap-3 w-full max-w-sm justify-end">
           <div className="w-full max-w-xs">
             <SearchBox />
