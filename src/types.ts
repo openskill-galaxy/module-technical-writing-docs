@@ -77,9 +77,13 @@ export interface Question {
   stem: string;
   options: QuestionOption[];
   answer: string[]; // option keys, or short answer text
-  analysis: string; // markdown
-  knowledgePoints: string[];
-  estimatedMinutes: number;
+  analysis?: string; // fallback
+  explanation: string; // aligned with Zod
+  knowledgePoints?: string[]; // fallback
+  knowledge_points: string[]; // aligned with Zod
+  estimatedMinutes?: number; // fallback
+  estimated_time: number; // aligned with Zod
+  chapter: string;
 }
 
 // =============== 模拟考试 ===============

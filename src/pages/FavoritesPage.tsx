@@ -31,7 +31,7 @@ export default function FavoritesPage({ data }: { data: ModuleData }) {
             if (k) { title = k.title; summary = k.summary; url = `/knowledge/${k.slug}`; }
           } else if (f.type === "question") {
             const q = data.questions.find((x) => x.id === f.id);
-            if (q) { title = q.stem.slice(0, 60); summary = q.analysis.slice(0, 80); url = `/questions/${q.slug}`; }
+            if (q) { title = q.stem.slice(0, 60); summary = (q.explanation || q.analysis || "").slice(0, 80); url = `/questions/${q.slug}`; }
           } else if (f.type === "case") {
             const c = data.cases.find((x) => x.id === f.id);
             if (c) { title = c.title; summary = c.summary; url = `/cases/${c.slug}`; }

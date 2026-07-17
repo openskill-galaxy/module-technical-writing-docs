@@ -60,7 +60,7 @@ export function buildSearchEntries(src: SearchSource): IndexEntry[] {
     type: "question",
     id: q.id,
     title: q.stem.length > 60 ? q.stem.slice(0, 60) + "…" : q.stem,
-    summary: q.analysis.slice(0, 120),
+    summary: (q.explanation || q.analysis || "").slice(0, 120),
     url: `/questions/${q.slug}`,
     tags: q.tags,
   }));

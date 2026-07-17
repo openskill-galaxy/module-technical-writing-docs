@@ -133,7 +133,7 @@ export default function QuestionPlayer({
           </span>
           <DifficultyBadge difficulty={q.difficulty} />
           <span className="text-xs text-white/50">
-            {current + 1} / {total} · 约 {q.estimatedMinutes} 分钟
+            {current + 1} / {total} · 约 {q.estimated_time} 分钟
           </span>
         </div>
         <span className="text-xs text-white/50">已答 {answeredCount}/{total}</span>
@@ -221,10 +221,10 @@ export default function QuestionPlayer({
             <p className="mt-1 text-xs text-white/50">
               正确答案：{q.type === "short" ? q.answer.join(" | ") : q.answer.join(", ")}
             </p>
-            <div className="mt-3">{renderMarkdown(q.analysis)}</div>
-            {q.knowledgePoints.length > 0 && (
+            <div className="mt-3">{renderMarkdown(q.explanation)}</div>
+            {q.knowledge_points && q.knowledge_points.length > 0 && (
               <div className="mt-3 flex flex-wrap gap-2">
-                {q.knowledgePoints.map((id) => (
+                {q.knowledge_points.map((id) => (
                   <span key={id} className="tag">KP:{id}</span>
                 ))}
               </div>
