@@ -1,562 +1,81 @@
 [
   {
-    "id": "do-route-01",
-    "slug": "Docs路线1",
-    "title": "Docs路线1",
-    "description": "Docs路线1",
-    "targetUser": "目标1",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线1"
+    "id": "mod-technical-writing-docs-route-1",
+    "slug": "professional-path",
+    "title": "技术写作与文档工程 专业级成长路线",
+    "summary": "带您由浅入深、由原理到实战系统通关 技术写作与文档工程 核心要点。",
+    "steps": [
+      {
+        "order": 1,
+        "title": "技术写作与文档工程 环境依赖搭建与运行机制",
+        "description": "学习课时: 了解平台运行依赖、环境参数配置以及本地运行引导流程。",
+        "courseId": "mod-technical-writing-docs-c-1",
+        "lessonId": "mod-technical-writing-docs-l-1"
+      },
+      {
+        "order": 2,
+        "title": "技术写作与文档工程 配置文件覆盖与属性解析",
+        "description": "学习课时: 学习多环境配置管理，利用环境变量覆盖规则进行定制开发。",
+        "courseId": "mod-technical-writing-docs-c-1",
+        "lessonId": "mod-technical-writing-docs-l-2"
+      },
+      {
+        "order": 3,
+        "title": "技术写作与文档工程 API 接口规范与数据通信",
+        "description": "学习课时: 掌握高性能交互接口设计，实现模块间高效、轻量的数据传输。",
+        "courseId": "mod-technical-writing-docs-c-2",
+        "lessonId": "mod-technical-writing-docs-l-3"
+      },
+      {
+        "order": 4,
+        "title": "技术写作与文档工程 核心控制器与数据校验机制",
+        "description": "学习课时: 掌握核心控制器的异常处理、拦截器配置与入参格式合法性检查。",
+        "courseId": "mod-technical-writing-docs-c-2",
+        "lessonId": "mod-technical-writing-docs-l-4"
+      },
+      {
+        "order": 5,
+        "title": "技术写作与文档工程 缓存优化与垃圾回收调优",
+        "description": "学习课时: 定位运行时的内存与缓存瓶颈，学习垃圾回收算法调优实践。",
+        "courseId": "mod-technical-writing-docs-c-3",
+        "lessonId": "mod-technical-writing-docs-l-5"
+      },
+      {
+        "order": 6,
+        "title": "技术写作与文档工程 可观测性日志与分布式链路监控",
+        "description": "学习课时: 配置全局日志收集管道，分析高负载服务下的运行指标波动。",
+        "courseId": "mod-technical-writing-docs-c-3",
+        "lessonId": "mod-technical-writing-docs-l-6"
+      }
+    ]
   },
   {
-    "id": "do-route-02",
-    "slug": "Docs路线2",
-    "title": "Docs路线2",
-    "description": "Docs路线2",
-    "targetUser": "目标2",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线2"
-  },
-  {
-    "id": "do-route-03",
-    "slug": "Docs路线3",
-    "title": "Docs路线3",
-    "description": "Docs路线3",
-    "targetUser": "目标3",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线3"
-  },
-  {
-    "id": "do-route-04",
-    "slug": "Docs路线4",
-    "title": "Docs路线4",
-    "description": "Docs路线4",
-    "targetUser": "目标4",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线4"
-  },
-  {
-    "id": "do-route-05",
-    "slug": "Docs路线5",
-    "title": "Docs路线5",
-    "description": "Docs路线5",
-    "targetUser": "目标5",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线5"
-  },
-  {
-    "id": "do-route-06",
-    "slug": "Docs路线6",
-    "title": "Docs路线6",
-    "description": "Docs路线6",
-    "targetUser": "目标6",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线6"
-  },
-  {
-    "id": "do-route-07",
-    "slug": "Docs路线7",
-    "title": "Docs路线7",
-    "description": "Docs路线7",
-    "targetUser": "目标7",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线7"
-  },
-  {
-    "id": "do-route-08",
-    "slug": "Docs路线8",
-    "title": "Docs路线8",
-    "description": "Docs路线8",
-    "targetUser": "目标8",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线8"
-  },
-  {
-    "id": "do-route-09",
-    "slug": "Docs路线9",
-    "title": "Docs路线9",
-    "description": "Docs路线9",
-    "targetUser": "目标9",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线9"
-  },
-  {
-    "id": "do-route-10",
-    "slug": "Docs路线10",
-    "title": "Docs路线10",
-    "description": "Docs路线10",
-    "targetUser": "目标10",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线10"
-  },
-  {
-    "id": "do-route-11",
-    "slug": "Docs路线11",
-    "title": "Docs路线11",
-    "description": "Docs路线11",
-    "targetUser": "目标11",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线11"
-  },
-  {
-    "id": "do-route-12",
-    "slug": "Docs路线12",
-    "title": "Docs路线12",
-    "description": "Docs路线12",
-    "targetUser": "目标12",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线12"
-  },
-  {
-    "id": "do-route-13",
-    "slug": "Docs路线13",
-    "title": "Docs路线13",
-    "description": "Docs路线13",
-    "targetUser": "目标13",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线13"
-  },
-  {
-    "id": "do-route-14",
-    "slug": "Docs路线14",
-    "title": "Docs路线14",
-    "description": "Docs路线14",
-    "targetUser": "目标14",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线14"
-  },
-  {
-    "id": "do-route-15",
-    "slug": "Docs路线15",
-    "title": "Docs路线15",
-    "description": "Docs路线15",
-    "targetUser": "目标15",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线15"
-  },
-  {
-    "id": "do-route-16",
-    "slug": "Docs路线16",
-    "title": "Docs路线16",
-    "description": "Docs路线16",
-    "targetUser": "目标16",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线16"
-  },
-  {
-    "id": "do-route-17",
-    "slug": "Docs路线17",
-    "title": "Docs路线17",
-    "description": "Docs路线17",
-    "targetUser": "目标17",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线17"
-  },
-  {
-    "id": "do-route-18",
-    "slug": "Docs路线18",
-    "title": "Docs路线18",
-    "description": "Docs路线18",
-    "targetUser": "目标18",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线18"
-  },
-  {
-    "id": "do-route-19",
-    "slug": "Docs路线19",
-    "title": "Docs路线19",
-    "description": "Docs路线19",
-    "targetUser": "目标19",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线19"
-  },
-  {
-    "id": "do-route-20",
-    "slug": "Docs路线20",
-    "title": "Docs路线20",
-    "description": "Docs路线20",
-    "targetUser": "目标20",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线20"
-  },
-  {
-    "id": "do-route-21",
-    "slug": "Docs路线21",
-    "title": "Docs路线21",
-    "description": "Docs路线21",
-    "targetUser": "目标21",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线21"
-  },
-  {
-    "id": "do-route-22",
-    "slug": "Docs路线22",
-    "title": "Docs路线22",
-    "description": "Docs路线22",
-    "targetUser": "目标22",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线22"
-  },
-  {
-    "id": "do-route-23",
-    "slug": "Docs路线23",
-    "title": "Docs路线23",
-    "description": "Docs路线23",
-    "targetUser": "目标23",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线23"
-  },
-  {
-    "id": "do-route-24",
-    "slug": "Docs路线24",
-    "title": "Docs路线24",
-    "description": "Docs路线24",
-    "targetUser": "目标24",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线24"
-  },
-  {
-    "id": "do-route-25",
-    "slug": "Docs路线25",
-    "title": "Docs路线25",
-    "description": "Docs路线25",
-    "targetUser": "目标25",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线25"
-  },
-  {
-    "id": "do-route-26",
-    "slug": "Docs路线26",
-    "title": "Docs路线26",
-    "description": "Docs路线26",
-    "targetUser": "目标26",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线26"
-  },
-  {
-    "id": "do-route-27",
-    "slug": "Docs路线27",
-    "title": "Docs路线27",
-    "description": "Docs路线27",
-    "targetUser": "目标27",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线27"
-  },
-  {
-    "id": "do-route-28",
-    "slug": "Docs路线28",
-    "title": "Docs路线28",
-    "description": "Docs路线28",
-    "targetUser": "目标28",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线28"
-  },
-  {
-    "id": "do-route-29",
-    "slug": "Docs路线29",
-    "title": "Docs路线29",
-    "description": "Docs路线29",
-    "targetUser": "目标29",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线29"
-  },
-  {
-    "id": "do-route-30",
-    "slug": "Docs路线30",
-    "title": "Docs路线30",
-    "description": "Docs路线30",
-    "targetUser": "目标30",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线30"
-  },
-  {
-    "id": "do-route-31",
-    "slug": "Docs路线31",
-    "title": "Docs路线31",
-    "description": "Docs路线31",
-    "targetUser": "目标31",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线31"
-  },
-  {
-    "id": "do-route-32",
-    "slug": "Docs路线32",
-    "title": "Docs路线32",
-    "description": "Docs路线32",
-    "targetUser": "目标32",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线32"
-  },
-  {
-    "id": "do-route-33",
-    "slug": "Docs路线33",
-    "title": "Docs路线33",
-    "description": "Docs路线33",
-    "targetUser": "目标33",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线33"
-  },
-  {
-    "id": "do-route-34",
-    "slug": "Docs路线34",
-    "title": "Docs路线34",
-    "description": "Docs路线34",
-    "targetUser": "目标34",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线34"
-  },
-  {
-    "id": "do-route-35",
-    "slug": "Docs路线35",
-    "title": "Docs路线35",
-    "description": "Docs路线35",
-    "targetUser": "目标35",
-    "durationDays": 5,
-    "steps": [],
-    "recommendedCourseIds": [],
-    "recommendedLessonIds": [],
-    "recommendedQuestionIds": [],
-    "outcomes": [
-      "掌握"
-    ],
-    "summary": "Docs路线35"
+    "id": "mod-technical-writing-docs-route-2",
+    "slug": "quick-start-path",
+    "title": "技术写作与文档工程 快速通关极速路线",
+    "summary": "专为快速开发或面试突击设计的速成学习路径。",
+    "steps": [
+      {
+        "order": 1,
+        "title": "技术写作与文档工程 环境依赖搭建与运行机制",
+        "description": "学习课时: 了解平台运行依赖、环境参数配置以及本地运行引导流程。",
+        "courseId": "mod-technical-writing-docs-c-1",
+        "lessonId": "mod-technical-writing-docs-l-1"
+      },
+      {
+        "order": 3,
+        "title": "技术写作与文档工程 API 接口规范与数据通信",
+        "description": "学习课时: 掌握高性能交互接口设计，实现模块间高效、轻量的数据传输。",
+        "courseId": "mod-technical-writing-docs-c-2",
+        "lessonId": "mod-technical-writing-docs-l-3"
+      },
+      {
+        "order": 5,
+        "title": "技术写作与文档工程 缓存优化与垃圾回收调优",
+        "description": "学习课时: 定位运行时的内存与缓存瓶颈，学习垃圾回收算法调优实践。",
+        "courseId": "mod-technical-writing-docs-c-3",
+        "lessonId": "mod-technical-writing-docs-l-5"
+      }
+    ]
   }
 ]
