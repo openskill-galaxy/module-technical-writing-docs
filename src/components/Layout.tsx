@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
+import CosmicBackground from "./CosmicBackground";
 import type { ModuleData } from "../data/loaders";
 
 export default function Layout({
@@ -15,6 +16,7 @@ export default function Layout({
     <div className="min-h-full flex flex-col">
       <div className="starfield fixed inset-0 -z-10 opacity-50" />
       <div className="cosmic-glow" />
+      <CosmicBackground />
       <Header module={data.module} />
       <div className="flex flex-1">
         <Sidebar />
