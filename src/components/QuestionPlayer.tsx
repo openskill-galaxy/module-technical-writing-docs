@@ -47,6 +47,37 @@ function triggerConfetti() {
   }, 1300);
 }
 
+function playSynthSound(type: "correct" | "incorrect") {
+  if (localStorage.getItem("openskill-sound") === "muted") return;
+  try {
+    const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+    const ctx = new AudioContextClass();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    const now = ctx.currentTime;
+    if (type === "correct") {
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(523.25, now);
+      osc.frequency.exponentialRampToValueAtTime(880.00, now + 0.12);
+      gain.gain.setValueAtTime(0.08, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+      osc.start(now);
+      osc.stop(now + 0.3);
+    } else {
+      osc.type = "triangle";
+      osc.frequency.setValueAtTime(150.00, now);
+      osc.frequency.linearRampToValueAtTime(90.00, now + 0.2);
+      gain.gain.setValueAtTime(0.12, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+      osc.start(now);
+      osc.stop(now + 0.25);
+    }
+  } catch (e) {}
+}
+
 interface Props {
   questions: Question[];
   // 是否立即判分（练习模式即时判分；考试模式不在此处判分）
@@ -68,6 +99,15 @@ export default function QuestionPlayer({
   const [judged, setJudged] = useState<Record<string, boolean>>({});
   const [shake, setShake] = useState(false);
   const recordAnswer = useProgressStore((s) => s.recordAnswer);
+  const [muted, setMuted] = useState(() => {
+    return localStorage.getItem("openskill-sound") === "muted";
+  });
+
+  const toggleSound = () => {
+    const nextMuted = !muted;
+    setMuted(nextMuted);
+    localStorage.setItem("openskill-sound", nextMuted ? "muted" : "unmuted");
+  };
 
   const q = questions[current];
   const total = questions.length;
@@ -106,8 +146,10 @@ export default function QuestionPlayer({
     
     if (correct) {
       triggerConfetti();
+      playSynthSound("correct");
     } else {
       setShake(true);
+      playSynthSound("incorrect");
       setTimeout(() => setShake(false), 300);
     }
   }
@@ -196,7 +238,17 @@ export default function QuestionPlayer({
             {current + 1} / {total} · 约 {q.estimated_time} 分钟
           </span>
         </div>
-        <span className="text-xs text-white/50">已答 {answeredCount}/{total}</span>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={toggleSound}
+            className="flex h-6 w-6 items-center justify-center rounded-lg border border-white/10 bg-white/[0.02] text-xs text-white/60 hover:bg-white/5 hover:text-white transition duration-200"
+            title={muted ? "开启答题音效" : "关闭答题音效"}
+            type="button"
+          >
+            {muted ? "🔇" : "🔊"}
+          </button>
+          <span className="text-xs text-white/50">已答 {answeredCount}/{total}</span>
+        </div>
       </div>
 
       <div className={`card p-5 transition-all duration-300 ${shake ? "animate-shake border-rose-500/30 shadow-lg shadow-rose-500/5" : ""}`}>
@@ -291,6 +343,50 @@ export default function QuestionPlayer({
             )}
           </div>
         )}
+      </div>
+
+      {/* Question Navigation Grid */}
+      <div className="card p-4">
+        <h4 className="text-[10px] font-bold text-white/30 mb-3 tracking-widest uppercase">🧩 答题卡导航 (Ctrl+左/右 快捷翻页)</h4>
+        <div className="flex flex-wrap gap-2">
+          {questions.map((item, idx) => {
+            const isCurrent = idx === current;
+            const itemAns = answers[item.id] || [];
+            const isAnswered = itemAns.length > 0;
+            const itemJudged = !!judged[item.id];
+            
+            let btnClass = "flex h-9 w-9 items-center justify-center rounded-xl border text-xs font-bold transition-all duration-200 ";
+            
+            if (itemJudged && instant) {
+              const correct = isAnswerCorrect(item, itemAns);
+              if (correct) {
+                btnClass += "bg-emerald-500/10 text-emerald-300 border-emerald-500/20 hover:bg-emerald-500/20";
+              } else {
+                btnClass += "bg-rose-500/10 text-rose-300 border-rose-500/20 hover:bg-rose-500/20";
+              }
+            } else if (isAnswered) {
+              btnClass += "bg-brand-500/10 text-brand-200 border-brand-500/30 hover:bg-brand-500/20";
+            } else {
+              btnClass += "border-white/10 bg-white/[0.01] text-white/50 hover:bg-white/5 hover:text-white";
+            }
+            
+            if (isCurrent) {
+              btnClass += " ring-2 ring-brand-500 ring-offset-2 ring-offset-[#05060b]";
+            }
+            
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setCurrent(idx)}
+                className={btnClass}
+                title={`第 ${idx + 1} 题`}
+              >
+                {idx + 1}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <div className="flex items-center justify-between">
