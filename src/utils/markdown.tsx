@@ -1,6 +1,7 @@
 // 极简 markdown 渲染器：支持标题、段落、列表、代码、引用、行内代码、加粗、链接
 // 不引入外部库，避免 XSS 通过白名单转义处理
 import React from "react";
+import CodePlayground from "../components/CodePlayground";
 
 function escapeHtml(s: string): string {
   return s
@@ -36,6 +37,8 @@ export function renderMarkdown(md: string): React.ReactNode {
 
     // 代码块 ```
     if (line.trim().startsWith("```")) {
+      const langMatch = line.trim().match(/^```([a-zA-Z0-9+#-]+)/);
+      const lang = langMatch ? langMatch[1] : "";
       const buf: string[] = [];
       i++;
       while (i < lines.length && !lines[i].trim().startsWith("```")) {
@@ -43,10 +46,14 @@ export function renderMarkdown(md: string): React.ReactNode {
         i++;
       }
       i++; // skip closing ```
+      const rawCode = buf.join("\n");
       push(
-        <pre>
-          <code dangerouslySetInnerHTML={{ __html: escapeHtml(buf.join("\n")) }} />
-        </pre>
+        <>
+          <pre>
+            <code dangerouslySetInnerHTML={{ __html: escapeHtml(rawCode) }} />
+          </pre>
+          <CodePlayground initialCode={rawCode} language={lang} />
+        </>
       );
       continue;
     }

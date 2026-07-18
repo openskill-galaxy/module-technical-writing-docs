@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
 import CoursesPage from "./pages/CoursesPage";
@@ -23,10 +23,35 @@ import RoutesPage from "./pages/RoutesPage";
 import { loadAll, type ModuleData } from "./data/loaders";
 import { useProgressStore } from "./store/useProgressStore";
 
+function DeepLinkRedirector() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const handleDeepLink = (e: Event) => {
+      const page = (e as CustomEvent).detail;
+      if (page) navigate(page, { replace: true });
+    };
+    window.addEventListener("deeplink", handleDeepLink);
+    return () => window.removeEventListener("deeplink", handleDeepLink);
+  }, [navigate]);
+  return null;
+}
+
 export default function App() {
   const [data, setData] = useState<ModuleData | null>(null);
   const [error, setError] = useState<string | null>(null);
   const hydrate = useProgressStore((s) => s.hydrate);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const targetPage = params.get("page");
+    if (targetPage) {
+      window.history.replaceState({}, "", window.location.pathname + window.location.hash);
+      setTimeout(() => {
+        const event = new CustomEvent("deeplink", { detail: targetPage });
+        window.dispatchEvent(event);
+      }, 150);
+    }
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -61,6 +86,7 @@ export default function App() {
 
   return (
     <BrowserRouter basename={basename}>
+      <DeepLinkRedirector />
       <Layout data={data}>
         <Routes>
           <Route path="/" element={<HomePage data={data} />} />

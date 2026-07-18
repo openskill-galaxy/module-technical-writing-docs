@@ -7,9 +7,49 @@
     <meta name="description" content="OpenSkill Galaxy Module — reusable static learning module." />
     <title>OpenSkill Galaxy Module</title>
     <script>
+      function showUpdateToast() {
+        const toast = document.createElement('div');
+        toast.className = 'update-toast';
+        toast.innerHTML = `
+          <div style="background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 12px; max-width: 320px;">
+            <span style="font-size: 16px;">🌌</span>
+            <div style="flex: 1;">
+              <h4 style="margin: 0; color: #fff; font-size: 13px; font-weight: 600; font-family: Inter, system-ui, sans-serif;">本模块内容已升级</h4>
+              <p style="margin: 4px 0 0 0; color: rgba(255,255,255,0.6); font-size: 11px; line-height: 1.4; font-family: Inter, system-ui, sans-serif;">新讲义与评测题目已更新，立即刷新体验最新版本。</p>
+            </div>
+            <button onclick="window.location.reload()" style="background: linear-gradient(to right, #4f46e5, #3b82f6); color: #fff; border: 0; padding: 6px 12px; border-radius: 8px; font-size: 10px; font-weight: 600; cursor: pointer; white-space: nowrap; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2); font-family: Inter, system-ui, sans-serif;">重载</button>
+          </div>
+        `;
+        toast.style.position = 'fixed';
+        toast.style.bottom = '24px';
+        toast.style.right = '24px';
+        toast.style.zIndex = '99999';
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(10px)';
+        toast.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+        document.body.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '1';
+          toast.style.transform = 'translateY(0)';
+        }, 100);
+      }
+
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js').catch(err => {
+          navigator.serviceWorker.register('./sw.js').then(reg => {
+            reg.onupdatefound = () => {
+              const installingWorker = reg.installing;
+              if (installingWorker) {
+                installingWorker.onstatechange = () => {
+                  if (installingWorker.state === 'installed') {
+                    if (navigator.serviceWorker.controller) {
+                      showUpdateToast();
+                    }
+                  }
+                };
+              }
+            };
+          }).catch(err => {
             console.warn('Service worker registration failed:', err);
           });
         });
