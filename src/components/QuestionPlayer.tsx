@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import type { Question } from "../types";
 import { isAnswerCorrect, typeLabel, difficultyLabel } from "../utils/scoring";
@@ -84,6 +84,8 @@ export default function QuestionPlayer({
   function toggleSingle(key: string) {
     setAns([key]);
   }
+  const isJudged = !!judged[q?.id];
+
   function toggleMultiple(key: string) {
     if (userAnswer.includes(key)) {
       setAns(userAnswer.filter((k) => k !== key));
@@ -110,7 +112,65 @@ export default function QuestionPlayer({
     }
   }
 
-  const isJudged = !!judged[q.id];
+  useEffect(() => {
+    if (!q) return;
+
+    function handleKeyDown(e: KeyboardEvent) {
+      if (document.activeElement?.tagName === "INPUT" || document.activeElement?.tagName === "TEXTAREA") {
+        return;
+      }
+
+      const key = e.key.toUpperCase();
+
+      if ((q.type === "single" || q.type === "multiple") && !(isJudged && instant)) {
+        const optionKeys = q.options ? Object.keys(q.options) : [];
+        let matchedKey = "";
+        
+        if (optionKeys.includes(key)) {
+          matchedKey = key;
+        } else if (["1", "2", "3", "4", "5", "6"].includes(key)) {
+          const idx = parseInt(key, 10) - 1;
+          if (idx < optionKeys.length) {
+            matchedKey = optionKeys[idx];
+          }
+        }
+
+        if (matchedKey) {
+          if (q.type === "single") {
+            toggleSingle(matchedKey);
+          } else {
+            toggleMultiple(matchedKey);
+          }
+        }
+      } else if (q.type === "judge" && !(isJudged && instant)) {
+        if (key === "A" || key === "1" || key === "T") {
+          setAns(["T"]);
+        } else if (key === "B" || key === "2" || key === "F") {
+          setAns(["F"]);
+        }
+      }
+
+      if (e.key === "Enter") {
+        e.preventDefault();
+        if (instant && !isJudged) {
+          commitInstant();
+        } else if (canNext) {
+          setCurrent((c) => c + 1);
+        }
+      }
+
+      if (e.key === "ArrowRight" && canNext) {
+        setCurrent((c) => c + 1);
+      }
+      if (e.key === "ArrowLeft" && canPrev) {
+        setCurrent((c) => c - 1);
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [q, isJudged, instant, userAnswer, canNext, canPrev]);
+
   const correctNow = useMemo(
     () => (isJudged ? isAnswerCorrect(q, userAnswer) : false),
     [isJudged, q, userAnswer]

@@ -1,0 +1,16 @@
+{
+  "short_name": "OpenSkill Module",
+  "name": "OpenSkill Galaxy — 学习自测模块",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "background_color": "#05060b",
+  "theme_color": "#3b82f6",
+  "display": "standalone",
+  "orientation": "portrait"
+}

@@ -112,6 +112,24 @@ export default function CodePlayground({
     }, 50);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Tab") {
+      e.preventDefault();
+      const start = e.currentTarget.selectionStart;
+      const end = e.currentTarget.selectionEnd;
+      const newValue = code.substring(0, start) + "  " + code.substring(end);
+      setCode(newValue);
+      
+      // Reset selection positions
+      const target = e.currentTarget;
+      setTimeout(() => {
+        if (target) {
+          target.selectionStart = target.selectionEnd = start + 2;
+        }
+      }, 0);
+    }
+  };
+
   if (!isExecutable) return null;
 
   return (
@@ -145,6 +163,7 @@ export default function CodePlayground({
         <textarea
           value={code}
           onChange={(e) => setCode(e.target.value)}
+          onKeyDown={handleKeyDown}
           className="flex-1 p-4 bg-slate-950/40 text-xs text-brand-100 font-mono focus:outline-none resize-none leading-relaxed"
           style={{ fontFamily: 'SFMono-Regular, Consolas, Monaco, monospace' }}
         />
