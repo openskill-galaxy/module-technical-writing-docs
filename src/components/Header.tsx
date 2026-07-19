@@ -101,6 +101,7 @@ function BackupModal({ onClose }: { onClose: () => void }) {
 }
 
 import AppwriteModal from "./AppwriteModal";
+import ExportDataModal from "./ExportDataModal";
 
 export default function Header({ module }: { module: ModuleMeta }) {
   const [theme, setTheme] = useState(() => {
@@ -108,6 +109,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
   });
   const [showBackup, setShowBackup] = useState(false);
   const [showAppwrite, setShowAppwrite] = useState(false);
+  const [showExport, setShowExport] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -155,6 +157,14 @@ export default function Header({ module }: { module: ModuleMeta }) {
             ⚡ <span className="hidden sm:inline text-[10px] font-semibold">云同步</span>
           </button>
           <button
+            onClick={() => setShowExport(true)}
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-sm text-white/70 hover:bg-white/5 hover:text-white transition duration-200"
+            title="多格式学习档案与数据导出"
+            type="button"
+          >
+            📥
+          </button>
+          <button
             onClick={() => setShowBackup(true)}
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-sm text-white/70 hover:bg-white/5 hover:text-white transition duration-200"
             title="本地 JSON 进度备份"
@@ -174,6 +184,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
       </div>
       {showBackup && <BackupModal onClose={() => setShowBackup(false)} />}
       {showAppwrite && <AppwriteModal onClose={() => setShowAppwrite(false)} />}
+      {showExport && <ExportDataModal onClose={() => setShowExport(false)} />}
     </header>
   );
 }

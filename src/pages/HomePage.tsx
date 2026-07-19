@@ -7,6 +7,7 @@ import DifficultyBadge from "../components/DifficultyBadge";
 import KnowledgeGraph from "../components/KnowledgeGraph";
 import CertificateModal from "../components/CertificateModal";
 import StudyAnalytics from "../components/StudyAnalytics";
+import WeakPointDiagnostics from "../components/WeakPointDiagnostics";
 
 export default function HomePage({ data }: { data: ModuleData }) {
   const progress = useProgressStore((s) => s.progress);
@@ -55,6 +56,9 @@ export default function HomePage({ data }: { data: ModuleData }) {
 
       {/* Knowledge Node Topology Visualizer */}
       <KnowledgeGraph data={data} />
+
+      {/* Intelligent Weak Point Diagnostics Engine */}
+      <WeakPointDiagnostics data={data} />
 
       <section>
         <h2 className="text-lg font-semibold text-white mb-3">快速入口</h2>
