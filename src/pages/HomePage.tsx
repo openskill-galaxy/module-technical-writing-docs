@@ -6,6 +6,7 @@ import ProgressBar from "../components/ProgressBar";
 import DifficultyBadge from "../components/DifficultyBadge";
 import KnowledgeGraph from "../components/KnowledgeGraph";
 import CertificateModal from "../components/CertificateModal";
+import StudyAnalytics from "../components/StudyAnalytics";
 
 export default function HomePage({ data }: { data: ModuleData }) {
   const progress = useProgressStore((s) => s.progress);
@@ -38,9 +39,10 @@ export default function HomePage({ data }: { data: ModuleData }) {
           </button>
         </div>
         <ProgressBar value={overall.percent} />
-        <p className="mt-1 text-xs text-white/50">
+        <p className="mt-1 text-xs text-white/50 mb-4">
           已完成 {overall.completed}/{overall.total} 讲义 · 预计总时长 {data.module.estimatedHours}h
         </p>
+        <StudyAnalytics />
       </section>
 
       {showCert && (

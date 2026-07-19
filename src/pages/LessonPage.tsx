@@ -5,6 +5,7 @@ import { renderMarkdown } from "../utils/markdown";
 import { useProgressStore } from "../store/useProgressStore";
 import LessonTOC from "../components/LessonTOC";
 import PersonalNotes from "../components/PersonalNotes";
+import SpeechReader from "../components/SpeechReader";
 
 export default function LessonPage({ data }: { data: ModuleData }) {
   const { slug } = useParams<{ slug: string }>();
@@ -77,7 +78,8 @@ export default function LessonPage({ data }: { data: ModuleData }) {
       <header className="space-y-3">
         <div className="flex items-center justify-between gap-3">
           <h1 className="text-2xl font-bold text-white">{lesson.title}</h1>
-          <div className="flex gap-2 print:hidden">
+          <div className="flex items-center gap-2 print:hidden">
+            <SpeechReader text={lesson.contentMarkdown} />
             <button
               type="button"
               className="btn-ghost text-xs"
