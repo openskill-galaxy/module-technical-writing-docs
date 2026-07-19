@@ -3,6 +3,8 @@ import type { ModuleData } from "../data/loaders";
 import { renderMarkdown } from "../utils/markdown";
 import { useProgressStore } from "../store/useProgressStore";
 
+import LessonTOC from "../components/LessonTOC";
+
 export default function LessonPage({ data }: { data: ModuleData }) {
   const { slug } = useParams<{ slug: string }>();
   const progress = useProgressStore((s) => s.progress);
@@ -80,9 +82,13 @@ export default function LessonPage({ data }: { data: ModuleData }) {
         </div>
       </header>
 
-      <section className="card p-6">
-        {renderMarkdown(lesson.contentMarkdown)}
-      </section>
+      {/* Main Content & TOC Sidebar Layout */}
+      <div className="flex flex-col lg:flex-row gap-8 items-start">
+        <section className="card p-6 flex-1 min-w-0 w-full">
+          {renderMarkdown(lesson.contentMarkdown)}
+        </section>
+        <LessonTOC content={lesson.contentMarkdown} />
+      </div>
 
       {kps.length > 0 && (
         <section>

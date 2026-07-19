@@ -62,10 +62,12 @@ export function renderMarkdown(md: string): React.ReactNode {
     const h = /^(#{1,3})\s+(.*)$/.exec(line);
     if (h) {
       const level = h[1].length;
+      const cleanText = h[2].replace(/[*_`]/g, "").trim();
+      const headingId = `heading-${i}-${cleanText.toLowerCase().replace(/[^\w\u4e00-\u9fa5]+/g, "-")}`;
       const content = inline(h[2]);
-      if (level === 1) push(<h2 dangerouslySetInnerHTML={{ __html: content }} />);
-      else if (level === 2) push(<h2 dangerouslySetInnerHTML={{ __html: content }} />);
-      else push(<h3 dangerouslySetInnerHTML={{ __html: content }} />);
+      if (level === 1) push(<h2 id={headingId} dangerouslySetInnerHTML={{ __html: content }} />);
+      else if (level === 2) push(<h2 id={headingId} dangerouslySetInnerHTML={{ __html: content }} />);
+      else push(<h3 id={headingId} dangerouslySetInnerHTML={{ __html: content }} />);
       i++;
       continue;
     }
