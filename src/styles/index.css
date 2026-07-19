@@ -291,3 +291,29 @@ body {
 .stagger-4 { animation-delay: 0.12s; }
 .stagger-5 { animation-delay: 0.15s; }
 .stagger-6 { animation-delay: 0.18s; }
+
+/* Print & PDF Export Stylesheet */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  header, footer, canvas, .starfield, .cosmic-glow, button, aside {
+    display: none !important;
+  }
+  .card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #000000 !important;
+  }
+  .text-white, .text-white\/80, .text-white\/70, .text-white\/60, .text-white\/50 {
+    color: #000000 !important;
+  }
+  pre, code {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+    white-space: pre-wrap !important;
+  }
+}

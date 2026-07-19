@@ -24,6 +24,36 @@ function inline(s: string): string {
   return out;
 }
 
+function CodeBlockWithCopy({ code, language }: { code: string; language?: string }) {
+  const [copied, setCopied] = React.useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="relative group my-3 rounded-xl overflow-hidden border border-white/[0.08]">
+      <div className="flex items-center justify-between bg-slate-950/80 px-4 py-1.5 border-b border-white/[0.06] text-xs">
+        <span className="text-[10px] font-mono font-semibold text-white/40 uppercase">
+          {language || "code"}
+        </span>
+        <button
+          onClick={handleCopy}
+          type="button"
+          className="text-[10px] text-white/50 hover:text-white transition flex items-center gap-1 bg-white/5 px-2 py-0.5 rounded border border-white/10"
+        >
+          {copied ? "✓ 已复制" : "📋 复制"}
+        </button>
+      </div>
+      <pre className="!my-0 !rounded-none">
+        <code dangerouslySetInnerHTML={{ __html: escapeHtml(code) }} />
+      </pre>
+    </div>
+  );
+}
+
 export function renderMarkdown(md: string): React.ReactNode {
   if (!md) return null;
   const lines = md.replace(/\r\n/g, "\n").split("\n");
@@ -49,9 +79,7 @@ export function renderMarkdown(md: string): React.ReactNode {
       const rawCode = buf.join("\n");
       push(
         <>
-          <pre>
-            <code dangerouslySetInnerHTML={{ __html: escapeHtml(rawCode) }} />
-          </pre>
+          <CodeBlockWithCopy code={rawCode} language={lang} />
           <CodePlayground initialCode={rawCode} language={lang} />
         </>
       );
