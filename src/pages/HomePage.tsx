@@ -1,16 +1,18 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import type { ModuleData } from "../data/loaders";
 import { useProgressStore, lessonsOverall } from "../store/useProgressStore";
 import ProgressBar from "../components/ProgressBar";
 import DifficultyBadge from "../components/DifficultyBadge";
-
 import KnowledgeGraph from "../components/KnowledgeGraph";
+import CertificateModal from "../components/CertificateModal";
 
 export default function HomePage({ data }: { data: ModuleData }) {
   const progress = useProgressStore((s) => s.progress);
   const overall = lessonsOverall(data.lessons, progress);
   const wrongCount = Object.keys(useProgressStore.getState().wrongs).length;
   const favCount = useProgressStore((s) => s.favorites).length;
+  const [showCert, setShowCert] = useState(false);
 
   return (
     <div className="space-y-10">
@@ -22,17 +24,32 @@ export default function HomePage({ data }: { data: ModuleData }) {
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <Link className="btn-primary" to="/courses">开始学习</Link>
           <Link className="btn-ghost" to="/questions">题库练习</Link>
-          <Link className="btn-ghost" to="/exams">模拟考试</Link>
+          <button onClick={() => setShowCert(true)} className="btn-ghost text-amber-300 border-amber-500/30" type="button">
+            🎓 查看通关结业证书
+          </button>
         </div>
       </section>
 
       <section>
-        <h2 className="text-lg font-semibold text-white mb-3">学习进度</h2>
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-lg font-semibold text-white">学习进度</h2>
+          <button onClick={() => setShowCert(true)} className="text-xs text-amber-400 hover:underline">
+            🎓 生成官方认证证书
+          </button>
+        </div>
         <ProgressBar value={overall.percent} />
         <p className="mt-1 text-xs text-white/50">
           已完成 {overall.completed}/{overall.total} 讲义 · 预计总时长 {data.module.estimatedHours}h
         </p>
       </section>
+
+      {showCert && (
+        <CertificateModal
+          moduleTitle={data.module.title}
+          score={overall.percent === 100 ? 100 : Math.max(60, Math.round(overall.percent))}
+          onClose={() => setShowCert(false)}
+        />
+      )}
 
       {/* Knowledge Node Topology Visualizer */}
       <KnowledgeGraph data={data} />

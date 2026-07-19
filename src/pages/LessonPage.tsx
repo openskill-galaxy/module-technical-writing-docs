@@ -4,6 +4,7 @@ import type { ModuleData } from "../data/loaders";
 import { renderMarkdown } from "../utils/markdown";
 import { useProgressStore } from "../store/useProgressStore";
 import LessonTOC from "../components/LessonTOC";
+import PersonalNotes from "../components/PersonalNotes";
 
 export default function LessonPage({ data }: { data: ModuleData }) {
   const { slug } = useParams<{ slug: string }>();
@@ -120,6 +121,9 @@ export default function LessonPage({ data }: { data: ModuleData }) {
       <div className="flex flex-col lg:flex-row gap-8 items-start">
         <section className="card p-6 flex-1 min-w-0 w-full print:shadow-none print:border-0 print:p-0">
           {renderMarkdown(lesson.contentMarkdown)}
+          <div className="mt-8 print:hidden">
+            <PersonalNotes targetType="lesson" targetId={lesson.id} />
+          </div>
         </section>
         <div className="print:hidden">
           <LessonTOC content={lesson.contentMarkdown} />

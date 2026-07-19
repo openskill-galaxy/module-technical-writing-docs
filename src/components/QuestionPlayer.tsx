@@ -4,6 +4,7 @@ import type { Question } from "../types";
 import { isAnswerCorrect, typeLabel, difficultyLabel } from "../utils/scoring";
 import { renderMarkdown } from "../utils/markdown";
 import DifficultyBadge from "./DifficultyBadge";
+import PersonalNotes from "./PersonalNotes";
 import { useProgressStore } from "../store/useProgressStore";
 
 function triggerConfetti() {
@@ -343,6 +344,8 @@ export default function QuestionPlayer({
             )}
           </div>
         )}
+
+        <PersonalNotes targetType="question" targetId={q.id} />
       </div>
 
       {/* Question Navigation Grid */}

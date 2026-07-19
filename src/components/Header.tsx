@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBox from "./SearchBox";
+import PomodoroTimer from "./PomodoroTimer";
 import type { ModuleMeta } from "../types";
 
 function BackupModal({ onClose }: { onClose: () => void }) {
@@ -144,6 +145,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
           <div className="w-full max-w-xs">
             <SearchBox />
           </div>
+          <PomodoroTimer />
           <button
             onClick={() => setShowAppwrite(true)}
             className="flex h-9 px-2 shrink-0 items-center gap-1 rounded-xl border border-white/10 bg-white/[0.02] text-xs text-white/70 hover:bg-white/5 hover:text-white transition duration-200"
