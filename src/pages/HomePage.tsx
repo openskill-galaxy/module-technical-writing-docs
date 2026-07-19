@@ -4,6 +4,8 @@ import { useProgressStore, lessonsOverall } from "../store/useProgressStore";
 import ProgressBar from "../components/ProgressBar";
 import DifficultyBadge from "../components/DifficultyBadge";
 
+import KnowledgeGraph from "../components/KnowledgeGraph";
+
 export default function HomePage({ data }: { data: ModuleData }) {
   const progress = useProgressStore((s) => s.progress);
   const overall = lessonsOverall(data.lessons, progress);
@@ -31,6 +33,9 @@ export default function HomePage({ data }: { data: ModuleData }) {
           已完成 {overall.completed}/{overall.total} 讲义 · 预计总时长 {data.module.estimatedHours}h
         </p>
       </section>
+
+      {/* Knowledge Node Topology Visualizer */}
+      <KnowledgeGraph data={data} />
 
       <section>
         <h2 className="text-lg font-semibold text-white mb-3">快速入口</h2>
