@@ -99,11 +99,14 @@ function BackupModal({ onClose }: { onClose: () => void }) {
   );
 }
 
+import AppwriteModal from "./AppwriteModal";
+
 export default function Header({ module }: { module: ModuleMeta }) {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("theme") || "dark";
   });
   const [showBackup, setShowBackup] = useState(false);
+  const [showAppwrite, setShowAppwrite] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -142,9 +145,17 @@ export default function Header({ module }: { module: ModuleMeta }) {
             <SearchBox />
           </div>
           <button
+            onClick={() => setShowAppwrite(true)}
+            className="flex h-9 px-2 shrink-0 items-center gap-1 rounded-xl border border-white/10 bg-white/[0.02] text-xs text-white/70 hover:bg-white/5 hover:text-white transition duration-200"
+            title="Appwrite 云端数据同步与认证"
+            type="button"
+          >
+            ⚡ <span className="hidden sm:inline text-[10px] font-semibold">云同步</span>
+          </button>
+          <button
             onClick={() => setShowBackup(true)}
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-sm text-white/70 hover:bg-white/5 hover:text-white transition duration-200"
-            title="备份与恢复学习记录"
+            title="本地 JSON 进度备份"
             type="button"
           >
             📦
@@ -160,6 +171,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
         </div>
       </div>
       {showBackup && <BackupModal onClose={() => setShowBackup(false)} />}
+      {showAppwrite && <AppwriteModal onClose={() => setShowAppwrite(false)} />}
     </header>
   );
 }
