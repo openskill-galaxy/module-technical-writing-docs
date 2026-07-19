@@ -201,10 +201,10 @@ export default function QuestionPlayer({
         }
       }
 
-      if (e.key === "ArrowRight" && canNext) {
+      if ((e.ctrlKey || e.altKey) && e.key === "ArrowRight" && canNext) {
         setCurrent((c) => c + 1);
       }
-      if (e.key === "ArrowLeft" && canPrev) {
+      if ((e.ctrlKey || e.altKey) && e.key === "ArrowLeft" && canPrev) {
         setCurrent((c) => c - 1);
       }
     }

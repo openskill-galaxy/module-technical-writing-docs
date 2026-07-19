@@ -55,6 +55,63 @@ export default function ExamPlayer({ exam, questions }: Props) {
     navigate(`/exams/${exam.slug}/result`, { state: { record: rec } });
   }
 
+  useEffect(() => {
+    if (!q) return;
+
+    function handleKeyDown(e: KeyboardEvent) {
+      if (document.activeElement?.tagName === "INPUT" || document.activeElement?.tagName === "TEXTAREA") {
+        return;
+      }
+
+      const key = e.key.toUpperCase();
+
+      if (q.type === "single" || q.type === "multiple") {
+        const optionKeys = q.options ? Object.keys(q.options) : [];
+        let matchedKey = "";
+        
+        if (optionKeys.includes(key)) {
+          matchedKey = key;
+        } else if (["1", "2", "3", "4", "5", "6"].includes(key)) {
+          const idx = parseInt(key, 10) - 1;
+          if (idx < optionKeys.length) {
+            matchedKey = optionKeys[idx];
+          }
+        }
+
+        if (matchedKey) {
+          if (q.type === "single") {
+            toggleSingle(matchedKey);
+          } else {
+            toggleMultiple(matchedKey);
+          }
+        }
+      } else if (q.type === "judge") {
+        if (key === "A" || key === "1" || key === "T") {
+          setAns(["T"]);
+        } else if (key === "B" || key === "2" || key === "F") {
+          setAns(["F"]);
+        }
+      }
+
+      if (e.key === "Enter") {
+        e.preventDefault();
+        if (current < total - 1) {
+          setCurrent((c) => c + 1);
+        }
+      }
+
+      if ((e.ctrlKey || e.altKey) && e.key === "ArrowRight" && current < total - 1) {
+        setCurrent((c) => c + 1);
+      }
+      if ((e.ctrlKey || e.altKey) && e.key === "ArrowLeft" && current > 0) {
+        setCurrent((c) => c - 1);
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [q, current, total, userAnswer]);
+
   const isTimeUp = remaining <= 0;
 
   if (total === 0) {
@@ -72,7 +129,7 @@ export default function ExamPlayer({ exam, questions }: Props) {
         <div>
           <h1 className="text-lg font-semibold text-white">{exam.title}</h1>
           <p className="text-xs text-white/50">
-            共 {total} 题 · 限时 {exam.timeLimitMinutes} 分钟 · 及格 {exam.passingScore} 分
+            共 {total} 题 · 限时 {exam.timeLimitMinutes} 分钟 · 及格 {exam.passingScore} 分 (Ctrl+左/右 快捷翻页)
           </p>
         </div>
         <div className={`rounded-lg px-4 py-2 text-lg font-mono ${
