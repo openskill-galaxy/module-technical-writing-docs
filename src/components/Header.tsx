@@ -102,6 +102,7 @@ function BackupModal({ onClose }: { onClose: () => void }) {
 
 import AppwriteModal from "./AppwriteModal";
 import ExportDataModal from "./ExportDataModal";
+import AchievementsModal from "./AchievementsModal";
 
 export default function Header({ module }: { module: ModuleMeta }) {
   const [theme, setTheme] = useState(() => {
@@ -110,6 +111,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
   const [showBackup, setShowBackup] = useState(false);
   const [showAppwrite, setShowAppwrite] = useState(false);
   const [showExport, setShowExport] = useState(false);
+  const [showAchievements, setShowAchievements] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -173,6 +175,14 @@ export default function Header({ module }: { module: ModuleMeta }) {
             📦
           </button>
           <button
+            onClick={() => setShowAchievements(true)}
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-sm text-white/70 hover:bg-white/5 hover:text-white transition duration-200"
+            title="游戏化成就勋章墙"
+            type="button"
+          >
+            🏆
+          </button>
+          <button
             onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-sm text-white/70 hover:bg-white/5 hover:text-white transition duration-200"
             title={theme === 'dark' ? '切换至亮色模式' : '切换至暗色模式'}
@@ -185,6 +195,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
       {showBackup && <BackupModal onClose={() => setShowBackup(false)} />}
       {showAppwrite && <AppwriteModal onClose={() => setShowAppwrite(false)} />}
       {showExport && <ExportDataModal onClose={() => setShowExport(false)} />}
+      {showAchievements && <AchievementsModal onClose={() => setShowAchievements(false)} />}
     </header>
   );
 }
