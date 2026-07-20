@@ -90,8 +90,26 @@ export default function WrongQuestionsPage({ data }: { data: ModuleData }) {
                   <span className="text-xs text-white/40">{wrong.lastAt.slice(0, 10)}</span>
                 </div>
                 <p className="mt-2 text-sm text-white line-clamp-3 leading-relaxed">{question!.stem}</p>
-                <div className="mt-3 flex items-center justify-between">
-                  <Link className="btn-primary text-xs" to={`/practice/${question!.slug}`}>重做巩固</Link>
+                <div className="mt-3 flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <Link className="btn-primary text-xs" to={`/practice/${question!.slug}`}>重做巩固</Link>
+                    {(() => {
+                      const kps = question!.knowledge_points || question!.knowledgePoints || [];
+                      const targetKp = kps[0] || question!.chapter || "";
+                      const relatedLesson = data.lessons.find(
+                        (l) => l.title.includes(targetKp) || l.summary.includes(targetKp)
+                      );
+                      if (!relatedLesson) return null;
+                      return (
+                        <Link
+                          to={`/lessons/${relatedLesson.id}`}
+                          className="btn-ghost text-xs text-brand-300 hover:text-white border-brand-500/30"
+                        >
+                          📖 查阅源头讲义
+                        </Link>
+                      );
+                    })()}
+                  </div>
                   <button type="button" className="btn-ghost text-xs" onClick={() => clearWrong(wrong.questionId)}>
                     移除
                   </button>
