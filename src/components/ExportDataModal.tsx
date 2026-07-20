@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useProgressStore } from "../store/useProgressStore";
 
 interface Props {
@@ -8,6 +9,14 @@ export default function ExportDataModal({ onClose }: Props) {
   const progress = useProgressStore((s) => s.progress);
   const wrongs = useProgressStore((s) => s.wrongs);
   const favorites = useProgressStore((s) => s.favorites);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
 
   function downloadFile(filename: string, content: string, mime: string) {
     const blob = new Blob([content], { type: mime });
@@ -63,8 +72,14 @@ export default function ExportDataModal({ onClose }: Props) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md animate-fade-in">
-      <div className="card max-w-md w-full p-6 space-y-6 border border-brand-500/30 bg-slate-950 shadow-2xl relative">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md animate-fade-in"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="card max-w-md w-full p-6 space-y-6 border border-brand-500/30 bg-slate-950 shadow-2xl relative"
+      >
         <button
           onClick={onClose}
           type="button"
@@ -121,7 +136,7 @@ export default function ExportDataModal({ onClose }: Props) {
 
         <div className="pt-2 text-right">
           <button onClick={onClose} type="button" className="btn-ghost text-xs">
-            关闭
+            关闭 (Esc)
           </button>
         </div>
       </div>
