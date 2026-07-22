@@ -12,10 +12,10 @@ export default function WeakPointDiagnostics({ data }: Props) {
 
   if (wrongList.length === 0) {
     return (
-      <div className="card p-5 border border-emerald-500/20 bg-emerald-950/20 text-center space-y-2">
+      <div className="card p-5 border border-emerald-500/20 bg-emerald-50 dark:bg-emerald-950/20 text-center space-y-2">
         <div className="text-3xl">🎉</div>
-        <h3 className="text-sm font-bold text-emerald-300">知识库完美无错题</h3>
-        <p className="text-xs text-white/50">当前模块尚未产生错题记录，保持高水准答题姿势！</p>
+        <h3 className="text-sm font-bold text-emerald-700 dark:text-emerald-300">知识库完美无错题</h3>
+        <p className="text-xs text-slate-600 dark:text-white/50">当前模块尚未产生错题记录，保持高水准答题姿势！</p>
       </div>
     );
   }
@@ -37,16 +37,16 @@ export default function WeakPointDiagnostics({ data }: Props) {
     .slice(0, 3);
 
   return (
-    <div className="card p-5 space-y-4 border border-rose-500/20 bg-slate-950/60 shadow-xl">
-      <div className="flex items-center justify-between border-b border-white/5 pb-3">
+    <div className="card p-5 space-y-4 border border-rose-500/20 shadow-xl">
+      <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/5 pb-3">
         <div className="flex items-center gap-2">
           <span className="text-xl">🎯</span>
           <div>
-            <h3 className="text-sm font-bold text-white tracking-wide">智能薄弱知识点诊断与攻坚</h3>
-            <p className="text-[11px] text-white/50">根据已有 {wrongList.length} 道错题，自动定位需强化的薄弱环节</p>
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white tracking-wide">智能薄弱知识点诊断与攻坚</h3>
+            <p className="text-[11px] text-slate-500 dark:text-white/50">根据已有 {wrongList.length} 道错题，自动定位需强化的薄弱环节</p>
           </div>
         </div>
-        <Link to="/wrong" className="text-xs text-rose-300 hover:underline">
+        <Link to="/wrong" className="text-xs text-rose-600 dark:text-rose-300 hover:underline">
           查看全部错题 ({wrongList.length}) →
         </Link>
       </div>
@@ -59,21 +59,21 @@ export default function WeakPointDiagnostics({ data }: Props) {
           ) || data.lessons[0];
 
           return (
-            <div key={kp} className="flex items-center justify-between gap-4 p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+            <div key={kp} className="flex items-center justify-between gap-4 p-2.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5">
               <div className="space-y-1 flex-1">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-semibold text-rose-300 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">
+                  <span className="text-xs font-semibold text-rose-600 dark:text-rose-300 bg-rose-500/10 px-2 py-0.5 rounded border border-rose-500/20">
                     薄弱项: {kp}
                   </span>
-                  <span className="text-[11px] text-white/40">关联错题 {count} 道</span>
+                  <span className="text-[11px] text-slate-500 dark:text-white/40">关联错题 {count} 道</span>
                 </div>
-                <p className="text-[11px] text-white/50 truncate">推荐复习: {relatedLesson.title}</p>
+                <p className="text-[11px] text-slate-600 dark:text-white/50 truncate">推荐复习: {relatedLesson.title}</p>
               </div>
 
               {relatedLesson && (
                 <Link
                   to={`/lessons/${relatedLesson.id}`}
-                  className="btn-ghost text-xs text-brand-300 hover:text-white border-brand-500/30 whitespace-nowrap"
+                  className="btn-ghost text-xs text-brand-600 dark:text-brand-300 hover:text-brand-700 dark:hover:text-white border-brand-500/30 whitespace-nowrap"
                 >
                   📖 定向攻坚
                 </Link>

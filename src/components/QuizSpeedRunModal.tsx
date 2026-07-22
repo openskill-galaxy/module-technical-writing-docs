@@ -72,8 +72,9 @@ export default function QuizSpeedRunModal({ questions, onClose }: Props) {
         setCurrentIndex((i) => i + 1);
       } else {
         setFinished(true);
+        playSound("timer");
       }
-    }, 400);
+    }, 600);
   }
 
   function handleRestart() {
@@ -89,32 +90,32 @@ export default function QuizSpeedRunModal({ questions, onClose }: Props) {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="card max-w-xl w-full p-6 space-y-6 border border-cyan-500/30 bg-slate-950 shadow-2xl relative"
+        className="card max-w-xl w-full p-6 space-y-6 border border-cyan-500/30 bg-white dark:bg-slate-950 shadow-2xl relative"
       >
         <button
           onClick={onClose}
           type="button"
-          className="absolute top-4 right-4 text-white/50 hover:text-white text-lg font-mono"
+          className="absolute top-4 right-4 text-slate-400 hover:text-slate-900 dark:text-white/50 dark:hover:text-white text-lg font-mono"
         >
           ✕
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+        <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-4">
           <div className="flex items-center gap-3">
             <span className="text-3xl">⚡</span>
             <div>
-              <h2 className="text-lg font-bold text-white tracking-wide">60 秒极速刷题挑战赛</h2>
-              <p className="text-xs text-white/50">在限时倒计时内快速切题，挑战最高 Score & Streak 纪录！</p>
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white tracking-wide">60 秒极速刷题挑战赛</h2>
+              <p className="text-xs text-slate-500 dark:text-white/50">在限时倒计时内快速切题，挑战最高 Score & Streak 纪录！</p>
             </div>
           </div>
           <div className="flex items-center gap-2 font-mono">
-            <span className="text-xs text-white/50">倒计时:</span>
-            <span className={`text-lg font-extrabold ${timeLeft <= 10 ? "text-rose-400 animate-ping" : "text-cyan-300"}`}>
+            <span className="text-xs text-slate-500 dark:text-white/50">倒计时:</span>
+            <span className={`text-lg font-extrabold ${timeLeft <= 10 ? "text-rose-600 dark:text-rose-400 animate-ping" : "text-cyan-600 dark:text-cyan-300"}`}>
               {timeLeft}s
             </span>
           </div>
@@ -123,24 +124,24 @@ export default function QuizSpeedRunModal({ questions, onClose }: Props) {
         {!finished ? (
           <div className="space-y-5">
             {/* Stats Dashboard */}
-            <div className="flex items-center justify-between bg-white/[0.03] p-3 rounded-xl border border-white/5 text-xs font-mono">
+            <div className="flex items-center justify-between bg-slate-50 dark:bg-white/[0.03] p-3 rounded-xl border border-slate-200 dark:border-white/5 text-xs font-mono text-slate-700 dark:text-slate-200">
               <div>
-                得分: <strong className="text-emerald-400 text-sm">{score}</strong> pts
+                得分: <strong className="text-emerald-600 dark:text-emerald-400 text-sm">{score}</strong> pts
               </div>
               <div>
-                当前连胜: <strong className="text-amber-300 text-sm">🔥 {streak}</strong>
+                当前连胜: <strong className="text-amber-600 dark:text-amber-300 text-sm">🔥 {streak}</strong>
               </div>
               <div>
-                最大连击: <strong className="text-cyan-300 text-sm">⚡ {maxStreak}</strong>
+                最大连击: <strong className="text-cyan-600 dark:text-cyan-300 text-sm">⚡ {maxStreak}</strong>
               </div>
             </div>
 
             {/* Question Stem */}
             <div className="space-y-2">
-              <span className="text-[11px] font-mono text-white/40">
+              <span className="text-[11px] font-mono text-slate-500 dark:text-white/40">
                 第 {currentIndex + 1} / {shuffledQuestions.length} 题
               </span>
-              <h3 className="text-sm font-semibold text-white leading-relaxed">
+              <h3 className="text-sm font-semibold text-slate-900 dark:text-white leading-relaxed">
                 {currentQ?.stem}
               </h3>
             </div>
@@ -154,13 +155,13 @@ export default function QuizSpeedRunModal({ questions, onClose }: Props) {
                 ).map((opt: any) => {
                   const key = typeof opt === "object" ? opt.key : opt;
                   const text = typeof opt === "object" ? opt.text : opt;
-                  let btnStyle = "bg-white/[0.04] border-white/10 hover:bg-white/10 text-white";
+                  let btnStyle = "bg-slate-50 dark:bg-white/[0.04] border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-white/10 text-slate-900 dark:text-white";
 
                   if (selectedOpt === key) {
                     if (currentQ.answer.includes(key)) {
-                      btnStyle = "bg-emerald-500/20 border-emerald-500/50 text-emerald-300 font-bold";
+                      btnStyle = "bg-emerald-500/20 border-emerald-500/50 text-emerald-700 dark:text-emerald-300 font-bold";
                     } else {
-                      btnStyle = "bg-rose-500/20 border-rose-500/50 text-rose-300 font-bold";
+                      btnStyle = "bg-rose-500/20 border-rose-500/50 text-rose-700 dark:text-rose-300 font-bold";
                     }
                   }
 
@@ -172,7 +173,7 @@ export default function QuizSpeedRunModal({ questions, onClose }: Props) {
                       type="button"
                       className={`w-full p-3 rounded-xl border text-xs text-left transition flex items-center gap-3 ${btnStyle}`}
                     >
-                      <span className="h-6 w-6 rounded-lg bg-white/10 flex items-center justify-center font-mono text-[11px]">
+                      <span className="h-6 w-6 rounded-lg bg-slate-200 dark:bg-white/10 flex items-center justify-center font-mono text-[11px] text-slate-700 dark:text-white/80">
                         {key}
                       </span>
                       <span className="flex-1">{text}</span>
@@ -186,22 +187,22 @@ export default function QuizSpeedRunModal({ questions, onClose }: Props) {
           <div className="text-center py-6 space-y-5">
             <div className="text-5xl">🏆</div>
             <div className="space-y-1">
-              <h3 className="text-xl font-bold text-white">挑战结算完成！</h3>
-              <p className="text-xs text-white/50">你的极限挑战成绩如下</p>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white">挑战结算完成！</h3>
+              <p className="text-xs text-slate-500 dark:text-white/50">你的极限挑战成绩如下</p>
             </div>
 
-            <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/10 font-mono">
+            <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 font-mono">
               <div className="space-y-1">
-                <p className="text-[10px] text-white/40">最终得分</p>
-                <p className="text-lg font-bold text-emerald-400">{score}</p>
+                <p className="text-[10px] text-slate-500 dark:text-white/40">最终得分</p>
+                <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">{score}</p>
               </div>
               <div className="space-y-1">
-                <p className="text-[10px] text-white/40">答对题数</p>
-                <p className="text-lg font-bold text-cyan-300">{score / 10}</p>
+                <p className="text-[10px] text-slate-500 dark:text-white/40">答对题数</p>
+                <p className="text-lg font-bold text-cyan-600 dark:text-cyan-300">{score / 10}</p>
               </div>
               <div className="space-y-1">
-                <p className="text-[10px] text-white/40">最高连击</p>
-                <p className="text-lg font-bold text-amber-300">🔥 {maxStreak}</p>
+                <p className="text-[10px] text-slate-500 dark:text-white/40">最高连击</p>
+                <p className="text-lg font-bold text-amber-600 dark:text-amber-300">🔥 {maxStreak}</p>
               </div>
             </div>
 

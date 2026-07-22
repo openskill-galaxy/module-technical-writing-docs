@@ -56,24 +56,24 @@ export default function PomodoroTimer() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-10 z-50 w-64 card p-4 bg-slate-900/95 border-brand-500/30 backdrop-blur-xl shadow-2xl space-y-3 animate-fade-in">
-          <div className="flex items-center justify-between border-b border-white/10 pb-2">
-            <h4 className="text-xs font-bold text-white flex items-center gap-1.5">
+        <div className="absolute right-0 top-10 z-50 w-64 card p-4 bg-white/95 dark:bg-slate-950/95 border-slate-200 dark:border-white/10 backdrop-blur-xl shadow-2xl space-y-3 animate-fade-in">
+          <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-2">
+            <h4 className="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
               <span>⏱️</span> 专注番茄钟
             </h4>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-white/40 hover:text-white text-xs"
+              className="text-slate-400 hover:text-slate-900 dark:text-white/40 dark:hover:text-white text-xs"
             >
               ✕
             </button>
           </div>
 
           <div className="text-center py-2">
-            <span className="text-3xl font-extrabold font-mono text-white tracking-widest block">
+            <span className="text-3xl font-extrabold font-mono text-slate-900 dark:text-white tracking-widest block">
               {formattedTime}
             </span>
-            <span className="text-[10px] text-white/50 mt-1 block">
+            <span className="text-[10px] text-slate-500 dark:text-white/50 mt-1 block">
               {isRunning ? "🔥 保持专注学习中..." : "准备开始 25 分钟高效专注"}
             </span>
           </div>
@@ -93,12 +93,12 @@ export default function PomodoroTimer() {
             </button>
           </div>
 
-          <div className="flex justify-center gap-1.5 pt-1 border-t border-white/5">
-            <button onClick={() => resetTimer(15)} className="text-[10px] text-white/40 hover:text-brand-300">15m</button>
-            <span className="text-[10px] text-white/20">•</span>
-            <button onClick={() => resetTimer(25)} className="text-[10px] text-white/40 hover:text-brand-300">25m</button>
-            <span className="text-[10px] text-white/20">•</span>
-            <button onClick={() => resetTimer(45)} className="text-[10px] text-white/40 hover:text-brand-300">45m</button>
+          <div className="flex justify-center gap-1.5 pt-1 border-t border-slate-200 dark:border-white/5">
+            <button onClick={() => resetTimer(15)} className="text-[10px] text-slate-500 dark:text-white/40 hover:text-brand-600 dark:hover:text-brand-300">15m</button>
+            <span className="text-[10px] text-slate-300 dark:text-white/20">•</span>
+            <button onClick={() => resetTimer(25)} className="text-[10px] text-slate-500 dark:text-white/40 hover:text-brand-600 dark:hover:text-brand-300">25m</button>
+            <span className="text-[10px] text-slate-300 dark:text-white/20">•</span>
+            <button onClick={() => resetTimer(45)} className="text-[10px] text-slate-500 dark:text-white/40 hover:text-brand-600 dark:hover:text-brand-300">45m</button>
           </div>
         </div>
       )}

@@ -139,31 +139,31 @@ export default function SearchBox() {
           onFocus={handleFocus}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="搜索课程、知识点、题目…"
-          className="w-full rounded-xl border border-white/10 bg-white/[0.02] pl-10 pr-16 py-2 text-sm text-white placeholder-white/30 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 transition duration-200"
+          className="w-full rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.02] pl-10 pr-16 py-2 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-white/30 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 transition duration-200"
           aria-label="搜索"
         />
-        <span className="absolute left-3.5 text-white/30 text-xs">🔍</span>
-        <span className="hidden sm:inline absolute right-3 text-[9px] font-bold text-white/20 border border-white/10 rounded px-1.5 py-0.5 pointer-events-none select-none bg-white/[0.01]">
+        <span className="absolute left-3.5 text-slate-400 dark:text-white/30 text-xs">🔍</span>
+        <span className="hidden sm:inline absolute right-3 text-[9px] font-bold text-slate-400 dark:text-white/20 border border-slate-200 dark:border-white/10 rounded px-1.5 py-0.5 pointer-events-none select-none bg-slate-100 dark:bg-white/[0.01]">
           Ctrl+K
         </span>
       </div>
       {open && results.length > 0 && (
-        <ul className="absolute right-0 z-40 mt-2 w-[320px] sm:w-[400px] rounded-2xl border border-white/[0.08] bg-slate-950/95 backdrop-blur-xl shadow-2xl overflow-hidden p-1.5 space-y-0.5">
+        <ul className="absolute right-0 z-40 mt-2 w-[320px] sm:w-[400px] rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl shadow-2xl overflow-hidden p-1.5 space-y-0.5">
           {results.map((r, idx) => (
             <li key={`${r.type}-${r.id}`}>
               <button
                 type="button"
                 onClick={() => go(r)}
                 className={`flex w-full items-start gap-3 rounded-xl px-3.5 py-2.5 text-left active:scale-[0.99] transition-all duration-150 ${
-                  selectedIndex === idx ? "bg-brand-500/20 border border-brand-500/30" : "hover:bg-white/[0.04]"
+                  selectedIndex === idx ? "bg-brand-500/20 border border-brand-500/30" : "hover:bg-slate-100 dark:hover:bg-white/[0.04]"
                 }`}
               >
                 <span className={`mt-0.5 shrink-0 rounded-md border px-1.5 py-0.5 text-[10px] font-semibold ${typeColor[r.type] || "bg-brand-500/10 text-brand-300"}`}>
                   {typeLabel[r.type]}
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-sm text-white font-medium truncate">{r.title}</span>
-                  <span className="block text-xs text-white/40 truncate mt-0.5">
+                  <span className="block text-sm text-slate-900 dark:text-white font-medium truncate">{r.title}</span>
+                  <span className="block text-xs text-slate-500 dark:text-white/40 truncate mt-0.5">
                     {r.summary}
                   </span>
                 </span>
@@ -173,7 +173,7 @@ export default function SearchBox() {
         </ul>
       )}
       {open && results.length === 0 && (
-        <div className="absolute right-0 z-40 mt-2 w-[320px] rounded-2xl border border-white/[0.08] bg-slate-950/95 p-4 text-xs text-white/40 shadow-2xl">
+        <div className="absolute right-0 z-40 mt-2 w-[320px] rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white/95 dark:bg-slate-950/95 p-4 text-xs text-slate-500 dark:text-white/40 shadow-2xl">
           未找到匹配结果
         </div>
       )}

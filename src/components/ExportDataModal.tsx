@@ -74,25 +74,25 @@ export default function ExportDataModal({ onClose }: Props) {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="card max-w-md w-full p-6 space-y-6 border border-brand-500/30 bg-slate-950 shadow-2xl relative"
+        className="card max-w-md w-full p-6 space-y-6 border border-brand-500/30 bg-white dark:bg-slate-950 shadow-2xl relative"
       >
         <button
           onClick={onClose}
           type="button"
-          className="absolute top-4 right-4 text-white/50 hover:text-white text-lg font-mono"
+          className="absolute top-4 right-4 text-slate-400 hover:text-slate-900 dark:text-white/50 dark:hover:text-white text-lg font-mono"
         >
           ✕
         </button>
 
-        <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+        <div className="flex items-center gap-3 border-b border-slate-200 dark:border-white/10 pb-4">
           <span className="text-2xl">📥</span>
           <div>
-            <h2 className="text-lg font-bold text-white">多格式学习档案与数据导出</h2>
-            <p className="text-xs text-white/50">支持导出为 Markdown 讲义报告、CSV 分析表或 JSON 存盘</p>
+            <h2 className="text-lg font-bold text-slate-900 dark:text-white">多格式学习档案与数据导出</h2>
+            <p className="text-xs text-slate-500 dark:text-white/50">支持导出为 Markdown 讲义报告、CSV 分析表或 JSON 存盘</p>
           </div>
         </div>
 
@@ -100,37 +100,37 @@ export default function ExportDataModal({ onClose }: Props) {
           <button
             onClick={handleExportMarkdown}
             type="button"
-            className="w-full card p-3.5 flex items-center justify-between hover:border-brand-500/50 hover:bg-white/[0.04] transition group text-left"
+            className="w-full card p-3.5 flex items-center justify-between hover:border-brand-500/50 bg-slate-50 dark:bg-white/[0.02] hover:bg-slate-100 dark:hover:bg-white/[0.04] transition group text-left"
           >
             <div className="space-y-0.5">
-              <span className="text-sm font-semibold text-white group-hover:text-brand-300">📝 Markdown 学习报告 (.md)</span>
-              <p className="text-[11px] text-white/50">汇总学习统计、收藏清单与错题解析文本</p>
+              <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-300">📝 Markdown 学习报告 (.md)</span>
+              <p className="text-[11px] text-slate-500 dark:text-white/50">汇总学习统计、收藏清单与错题解析文本</p>
             </div>
-            <span className="text-xs text-brand-400 font-mono">导出 →</span>
+            <span className="text-xs text-brand-600 dark:text-brand-400 font-mono">导出 →</span>
           </button>
 
           <button
             onClick={handleExportCSV}
             type="button"
-            className="w-full card p-3.5 flex items-center justify-between hover:border-emerald-500/50 hover:bg-white/[0.04] transition group text-left"
+            className="w-full card p-3.5 flex items-center justify-between hover:border-emerald-500/50 bg-slate-50 dark:bg-white/[0.02] hover:bg-slate-100 dark:hover:bg-white/[0.04] transition group text-left"
           >
             <div className="space-y-0.5">
-              <span className="text-sm font-semibold text-white group-hover:text-emerald-300">📊 CSV 数据分析表 (.csv)</span>
-              <p className="text-[11px] text-white/50">提供可导入 Excel / Python 分析的答题原始表格</p>
+              <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300">📊 CSV 数据分析表 (.csv)</span>
+              <p className="text-[11px] text-slate-500 dark:text-white/50">提供可导入 Excel / Python 分析的答题原始表格</p>
             </div>
-            <span className="text-xs text-emerald-400 font-mono">导出 →</span>
+            <span className="text-xs text-emerald-600 dark:text-emerald-400 font-mono">导出 →</span>
           </button>
 
           <button
             onClick={handleExportJSON}
             type="button"
-            className="w-full card p-3.5 flex items-center justify-between hover:border-amber-500/50 hover:bg-white/[0.04] transition group text-left"
+            className="w-full card p-3.5 flex items-center justify-between hover:border-amber-500/50 bg-slate-50 dark:bg-white/[0.02] hover:bg-slate-100 dark:hover:bg-white/[0.04] transition group text-left"
           >
             <div className="space-y-0.5">
-              <span className="text-sm font-semibold text-white group-hover:text-amber-300">📦 JSON 本地备份快照 (.json)</span>
-              <p className="text-[11px] text-white/50">包含完整的进度加密快照，支持无缝热复原</p>
+              <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-300">📦 JSON 本地备份快照 (.json)</span>
+              <p className="text-[11px] text-slate-500 dark:text-white/50">包含完整的进度加密快照，支持无缝热复原</p>
             </div>
-            <span className="text-xs text-amber-400 font-mono">导出 →</span>
+            <span className="text-xs text-amber-600 dark:text-amber-400 font-mono">导出 →</span>
           </button>
         </div>
 

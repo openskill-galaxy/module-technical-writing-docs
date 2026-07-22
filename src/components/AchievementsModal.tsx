@@ -81,25 +81,25 @@ export default function AchievementsModal({ onClose }: Props) {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="card max-w-lg w-full p-6 space-y-6 border border-amber-500/30 bg-slate-950 shadow-2xl relative"
+        className="card max-w-lg w-full p-6 space-y-6 border border-amber-500/30 bg-white dark:bg-slate-950 shadow-2xl relative"
       >
         <button
           onClick={onClose}
           type="button"
-          className="absolute top-4 right-4 text-white/50 hover:text-white text-lg font-mono"
+          className="absolute top-4 right-4 text-slate-400 hover:text-slate-900 dark:text-white/50 dark:hover:text-white text-lg font-mono"
         >
           ✕
         </button>
 
-        <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+        <div className="flex items-center gap-3 border-b border-slate-200 dark:border-white/10 pb-4">
           <span className="text-3xl">🏆</span>
           <div>
-            <h2 className="text-lg font-bold text-white">游戏化成就勋章墙</h2>
-            <p className="text-xs text-white/50">已解锁 {unlockedCount} / {achievements.length} 枚专属学习徽章</p>
+            <h2 className="text-lg font-bold text-slate-900 dark:text-white">游戏化成就勋章墙</h2>
+            <p className="text-xs text-slate-500 dark:text-white/50">已解锁 {unlockedCount} / {achievements.length} 枚专属学习徽章</p>
           </div>
         </div>
 
@@ -109,16 +109,16 @@ export default function AchievementsModal({ onClose }: Props) {
               key={item.id}
               className={`p-3.5 rounded-xl border transition-all ${
                 item.unlocked
-                  ? "bg-amber-500/10 border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.15)]"
-                  : "bg-white/[0.02] border-white/5 opacity-50 grayscale"
+                  ? "bg-amber-50 dark:bg-amber-500/10 border-amber-300 dark:border-amber-500/30 shadow-sm"
+                  : "bg-slate-50 dark:bg-white/[0.02] border-slate-200 dark:border-white/5 opacity-60 grayscale"
               }`}
             >
               <div className="flex items-center gap-3">
                 <span className="text-2xl">{item.icon}</span>
                 <div className="space-y-0.5 min-w-0">
-                  <h4 className="text-xs font-bold text-white truncate">{item.title}</h4>
-                  <p className="text-[10px] text-white/50 line-clamp-1">{item.desc}</p>
-                  <span className="inline-block text-[9px] font-mono text-amber-300/80 bg-amber-500/10 px-1.5 py-0.5 rounded">
+                  <h4 className="text-xs font-bold text-slate-900 dark:text-white truncate">{item.title}</h4>
+                  <p className="text-[10px] text-slate-500 dark:text-white/50 line-clamp-1">{item.desc}</p>
+                  <span className="inline-block text-[9px] font-mono text-amber-700 dark:text-amber-300 bg-amber-500/10 px-1.5 py-0.5 rounded">
                     {item.progressText}
                   </span>
                 </div>

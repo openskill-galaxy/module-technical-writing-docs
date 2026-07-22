@@ -25,25 +25,25 @@ export default function KeyboardShortcutsModal({ onClose }: Props) {
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="card max-w-md w-full p-6 space-y-6 border border-cyan-500/30 bg-slate-950 shadow-2xl relative"
+        className="card max-w-md w-full p-6 space-y-6 border border-cyan-500/30 bg-white dark:bg-slate-950 shadow-2xl relative"
       >
         <button
           onClick={onClose}
           type="button"
-          className="absolute top-4 right-4 text-white/50 hover:text-white text-lg font-mono"
+          className="absolute top-4 right-4 text-slate-400 hover:text-slate-900 dark:text-white/50 dark:hover:text-white text-lg font-mono"
         >
           ✕
         </button>
 
-        <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+        <div className="flex items-center gap-3 border-b border-slate-200 dark:border-white/10 pb-4">
           <span className="text-2xl">⌨️</span>
           <div>
-            <h2 className="text-lg font-bold text-white">全站键盘快捷键指南</h2>
-            <p className="text-xs text-white/50">支持键盘原生理智加速，打造极致顺滑操控体验</p>
+            <h2 className="text-lg font-bold text-slate-900 dark:text-white">全站键盘快捷键指南</h2>
+            <p className="text-xs text-slate-500 dark:text-white/50">支持键盘原生理智加速，打造极致顺滑操控体验</p>
           </div>
         </div>
 
@@ -51,22 +51,26 @@ export default function KeyboardShortcutsModal({ onClose }: Props) {
           {shortcuts.map((item) => (
             <div
               key={item.key}
-              className="flex items-center justify-between gap-3 p-2.5 rounded-xl bg-white/[0.03] border border-white/5"
+              className="flex items-center justify-between gap-3 p-2.5 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/5"
             >
               <div className="space-y-0.5">
-                <p className="text-xs font-semibold text-white">{item.label}</p>
-                <p className="text-[10px] text-white/40">{item.scope}</p>
+                <p className="text-xs font-semibold text-slate-900 dark:text-white">{item.label}</p>
+                <p className="text-[10px] text-slate-500 dark:text-white/40">{item.scope}</p>
               </div>
-              <kbd className="px-2.5 py-1 text-xs font-mono font-bold text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 rounded-md shrink-0">
+              <kbd className="px-2.5 py-1 text-xs font-mono font-bold text-cyan-700 dark:text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 rounded-md shrink-0">
                 {item.key}
               </kbd>
             </div>
           ))}
         </div>
 
-        <div className="pt-2 text-right">
-          <button onClick={onClose} type="button" className="btn-ghost text-xs">
-            关闭 (Esc)
+        <div className="pt-2 text-center">
+          <button
+            onClick={onClose}
+            className="btn-primary text-xs w-full py-2"
+            type="button"
+          >
+            知道了 (Esc)
           </button>
         </div>
       </div>
