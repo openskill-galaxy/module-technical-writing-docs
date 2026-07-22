@@ -28,7 +28,11 @@ self.addEventListener("fetch", (e) => {
         })
         .catch(() => null);
 
-      return cachedResponse || fetchPromise;
+      return (
+        cachedResponse ||
+        fetchPromise ||
+        new Response("Offline", { status: 503, statusText: "Service Unavailable" })
+      );
     })
   );
 });
