@@ -8,6 +8,7 @@ import KnowledgeGraph from "../components/KnowledgeGraph";
 import CertificateModal from "../components/CertificateModal";
 import StudyAnalytics from "../components/StudyAnalytics";
 import WeakPointDiagnostics from "../components/WeakPointDiagnostics";
+import QuizSpeedRunModal from "../components/QuizSpeedRunModal";
 
 export default function HomePage({ data }: { data: ModuleData }) {
   const progress = useProgressStore((s) => s.progress);
@@ -15,6 +16,7 @@ export default function HomePage({ data }: { data: ModuleData }) {
   const wrongCount = Object.keys(useProgressStore.getState().wrongs).length;
   const favCount = useProgressStore((s) => s.favorites).length;
   const [showCert, setShowCert] = useState(false);
+  const [showSpeedRun, setShowSpeedRun] = useState(false);
 
   return (
     <div className="space-y-10">
@@ -26,6 +28,9 @@ export default function HomePage({ data }: { data: ModuleData }) {
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <Link className="btn-primary" to="/courses">开始学习</Link>
           <Link className="btn-ghost" to="/questions">题库练习</Link>
+          <button onClick={() => setShowSpeedRun(true)} className="btn-ghost text-cyan-300 border-cyan-500/30" type="button">
+            ⚡ 60s 极速刷题赛
+          </button>
           <button onClick={() => setShowCert(true)} className="btn-ghost text-amber-300 border-amber-500/30" type="button">
             🎓 查看通关结业证书
           </button>
@@ -51,6 +56,13 @@ export default function HomePage({ data }: { data: ModuleData }) {
           moduleTitle={data.module.title}
           score={overall.percent === 100 ? 100 : Math.max(60, Math.round(overall.percent))}
           onClose={() => setShowCert(false)}
+        />
+      )}
+
+      {showSpeedRun && (
+        <QuizSpeedRunModal
+          questions={data.questions}
+          onClose={() => setShowSpeedRun(false)}
         />
       )}
 
