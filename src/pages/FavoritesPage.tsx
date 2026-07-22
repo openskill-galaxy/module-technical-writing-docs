@@ -61,8 +61,8 @@ export default function FavoritesPage({ data }: { data: ModuleData }) {
     <div className="space-y-6">
       <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-white">收藏夹</h1>
-          <p className="mt-1 text-sm text-white/60">共 {items.length} 条已收藏内容</p>
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-white">收藏夹</h1>
+          <p className="mt-1 text-sm text-slate-600 dark:text-white/60">共 {items.length} 条已收藏核心资源</p>
         </div>
 
         {/* Search input */}
@@ -72,14 +72,14 @@ export default function FavoritesPage({ data }: { data: ModuleData }) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="搜索收藏夹标题/摘要..."
-            className="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl border border-white/10 bg-white/[0.04] text-white placeholder:text-white/40 focus:outline-none focus:border-brand-500/50"
+            className="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.04] text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/40 focus:outline-none focus:border-brand-500"
           />
-          <span className="absolute left-2.5 top-2 text-white/40 text-xs">🔍</span>
+          <span className="absolute left-2.5 top-2 text-slate-400 dark:text-white/40 text-xs">🔍</span>
         </div>
       </header>
 
       {/* Category Tabs */}
-      <div className="flex gap-2 border-b border-white/10 pb-2 overflow-x-auto text-xs font-semibold">
+      <div className="flex gap-2 border-b border-slate-200 dark:border-white/10 pb-2 overflow-x-auto text-xs font-semibold">
         {[
           { id: "all", label: `全部 (${items.length})` },
           { id: "lesson", label: `📖 讲义 (${items.filter((i) => i.fav.type === "lesson").length})` },
@@ -92,8 +92,8 @@ export default function FavoritesPage({ data }: { data: ModuleData }) {
             type="button"
             className={`px-3 py-1.5 rounded-lg transition whitespace-nowrap ${
               activeTab === tab.id
-                ? "bg-brand-500/20 text-brand-300 border border-brand-500/30"
-                : "text-white/60 hover:text-white hover:bg-white/5"
+                ? "bg-brand-500/10 text-brand-600 dark:text-brand-300 border border-brand-500/30 font-bold"
+                : "text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5"
             }`}
           >
             {tab.label}
@@ -103,10 +103,10 @@ export default function FavoritesPage({ data }: { data: ModuleData }) {
 
       {filteredItems.length === 0 ? (
         <EmptyState
-          emoji="☆"
+          emoji="⭐"
           title="暂无匹配收藏"
-          hint="在讲义、知识点、题目页面点击 ☆ 即可加入收藏库。"
-          action={<Link className="btn-primary" to="/courses">去浏览课程</Link>}
+          hint="在讲义、知识点、题目页面点击 ⭐ 按钮即可一键加入个人收藏库。"
+          action={<Link className="btn-primary font-bold" to="/courses">去浏览课程</Link>}
         />
       ) : (
         <div className="space-y-3">
@@ -115,17 +115,17 @@ export default function FavoritesPage({ data }: { data: ModuleData }) {
               <div className="space-y-1 min-w-0">
                 <div className="flex items-center gap-2">
                   <span className="badge-ghost text-[10px]">{typeLabel[item.fav.type]}</span>
-                  <Link to={item.url} className="font-semibold text-white hover:text-brand-300 truncate">
+                  <Link to={item.url} className="font-bold text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-300 truncate">
                     {item.title}
                   </Link>
                 </div>
-                {item.summary && <p className="text-xs text-white/50 line-clamp-2">{item.summary}</p>}
+                {item.summary && <p className="text-xs text-slate-500 dark:text-white/50 line-clamp-2 leading-relaxed">{item.summary}</p>}
               </div>
 
               <button
                 type="button"
                 onClick={() => toggleFavorite({ type: item.fav.type, id: item.fav.id })}
-                className="btn-ghost text-xs text-amber-300 shrink-0"
+                className="btn-ghost text-xs text-amber-600 dark:text-amber-300 shrink-0 font-medium"
               >
                 ★ 取消收藏
               </button>
