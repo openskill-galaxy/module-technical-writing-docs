@@ -55,23 +55,23 @@ export default function StudyAnalytics() {
   };
 
   return (
-    <div className="card p-5 space-y-4 border border-white/10 shadow-2xl">
-      <div className="flex items-center justify-between border-b border-white/5 pb-3">
+    <div className="card p-5 space-y-4 border border-slate-200 dark:border-white/10 shadow-2xl">
+      <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/5 pb-3">
         <div className="flex items-center gap-2">
           <span className="text-xl">🔥</span>
           <div>
-            <h3 className="text-sm font-bold text-white tracking-wide">学习打卡热力图 & 连续专注</h3>
-            <p className="text-[11px] text-white/50">已连续学习 <strong className="text-amber-300 font-extrabold">{streak} 天</strong> · 累计打卡 {totalActiveDays} 天</p>
+            <h3 className="text-sm font-bold text-slate-900 dark:text-white tracking-wide">学习打卡热力图 & 连续专注</h3>
+            <p className="text-[11px] text-slate-500 dark:text-white/50">已连续学习 <strong className="text-amber-600 dark:text-amber-300 font-extrabold">{streak} 天</strong> · 累计打卡 {totalActiveDays} 天</p>
           </div>
         </div>
-        <span className="text-xs font-mono font-bold text-brand-300 bg-brand-500/10 px-2.5 py-1 rounded-full border border-brand-500/20">
+        <span className="text-xs font-mono font-bold text-brand-600 dark:text-brand-300 bg-brand-500/10 px-2.5 py-1 rounded-full border border-brand-500/20">
           Streak: {streak}d 🔥
         </span>
       </div>
 
       {/* 60-Day Contribution Heatmap Grid */}
       <div className="space-y-1.5">
-        <div className="flex justify-between text-[10px] text-white/40 font-mono">
+        <div className="flex justify-between text-[10px] text-slate-500 dark:text-white/40 font-mono">
           <span>60 天前</span>
           <span>今日</span>
         </div>

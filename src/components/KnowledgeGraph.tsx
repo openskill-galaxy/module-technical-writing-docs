@@ -63,11 +63,11 @@ export default function KnowledgeGraph({ data }: Props) {
 
   return (
     <div className="card p-5 relative overflow-hidden shadow-2xl">
-      <div className="flex items-center justify-between border-b border-white/5 pb-3 mb-2">
-        <h3 className="text-sm font-bold text-white tracking-wide flex items-center gap-2">
+      <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/5 pb-3 mb-2">
+        <h3 className="text-sm font-bold text-slate-900 dark:text-white tracking-wide flex items-center gap-2">
           <span>🌌</span> 课程结构知识星图拓扑
         </h3>
-        <span className="text-xs text-white/40">点击星轨节点直达讲义</span>
+        <span className="text-xs text-slate-500 dark:text-white/40">点击星轨节点直达讲义</span>
       </div>
 
       <div className="relative flex justify-center overflow-x-auto">
@@ -112,7 +112,7 @@ export default function KnowledgeGraph({ data }: Props) {
                       x={node.x}
                       y={node.y - 30}
                       textAnchor="middle"
-                      className="fill-current text-white text-xs font-bold tracking-wider"
+                      className="fill-slate-900 dark:fill-white text-xs font-bold tracking-wider"
                     >
                       {node.label}
                     </text>
@@ -130,7 +130,7 @@ export default function KnowledgeGraph({ data }: Props) {
                       x={node.x}
                       y={node.y + 20}
                       textAnchor="middle"
-                      className="fill-current text-white/70 text-[10px] group-hover:fill-cyan-300 transition font-medium"
+                      className="fill-slate-700 dark:fill-white/70 text-[10px] group-hover:fill-cyan-600 dark:group-hover:fill-cyan-300 transition font-medium"
                     >
                       {node.label.length > 10 ? `${node.label.slice(0, 10)}…` : node.label}
                     </text>
@@ -143,13 +143,13 @@ export default function KnowledgeGraph({ data }: Props) {
 
         {/* Hover Tooltip */}
         {hoveredNode && (
-          <div className="absolute top-4 right-4 bg-slate-900/90 border border-white/10 p-3 rounded-xl max-w-xs backdrop-blur-md shadow-2xl animate-fade-in pointer-events-none">
-            <span className="text-[10px] font-semibold text-brand-300 uppercase tracking-widest block mb-1">
+          <div className="absolute top-4 right-4 bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-white/10 p-3 rounded-xl max-w-xs backdrop-blur-md shadow-2xl animate-fade-in pointer-events-none">
+            <span className="text-[10px] font-bold text-brand-600 dark:text-brand-300 uppercase tracking-widest block mb-1">
               {hoveredNode.type === "course" ? "📘 课程模块" : "📄 讲义节点"}
             </span>
-            <h4 className="text-xs font-bold text-white">{hoveredNode.label}</h4>
+            <h4 className="text-xs font-bold text-slate-900 dark:text-white">{hoveredNode.label}</h4>
             {hoveredNode.summary && (
-              <p className="text-[11px] text-white/60 mt-1 leading-relaxed line-clamp-2">{hoveredNode.summary}</p>
+              <p className="text-[11px] text-slate-600 dark:text-white/60 mt-1 leading-relaxed line-clamp-2">{hoveredNode.summary}</p>
             )}
           </div>
         )}

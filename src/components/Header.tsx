@@ -141,21 +141,21 @@ export default function Header({ module }: { module: ModuleMeta }) {
   }, [theme]);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-white/[0.06] bg-slate-950/40 backdrop-blur-md">
+    <header className="sticky top-0 z-30 border-b border-slate-200 dark:border-white/[0.06] bg-white/90 dark:bg-slate-950/40 backdrop-blur-md">
       <div className="container-page flex h-16 items-center gap-4">
         <Link to="/" className="flex items-center gap-3 font-bold transition hover:opacity-90">
           <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 text-white shadow-md shadow-brand-600/20 text-base">
             {module.coverEmoji || "📘"}
           </span>
-          <span className="text-white tracking-wide text-sm font-semibold truncate max-w-[160px] sm:max-w-none">{module.title}</span>
-          <span className="hidden sm:inline rounded-lg border border-white/10 bg-white/5 px-2 py-0.5 text-[10px] font-semibold text-white/50">
+          <span className="text-slate-900 dark:text-white tracking-wide text-sm font-bold truncate max-w-[160px] sm:max-w-none">{module.title}</span>
+          <span className="hidden sm:inline rounded-lg border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 px-2 py-0.5 text-[10px] font-semibold text-slate-500 dark:text-white/50">
             v{module.version}
           </span>
         </Link>
         
         <a
           href={module.portalUrl || "https://openskill-galaxy.github.io/"}
-          className="hidden md:inline-flex items-center gap-1 rounded-xl border border-white/10 bg-white/[0.02] px-3 py-1.5 text-xs font-semibold text-white/60 hover:bg-white/5 hover:text-white transition duration-200"
+          className="hidden md:inline-flex items-center gap-1 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] px-3 py-1.5 text-xs font-semibold text-slate-600 dark:text-white/60 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
         >
           ← 返回总站
         </a>
@@ -167,7 +167,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
           <PomodoroTimer />
           <button
             onClick={() => setShowAppwrite(true)}
-            className="flex h-9 px-2 shrink-0 items-center gap-1 rounded-xl border border-white/10 bg-white/[0.02] text-xs text-white/70 hover:bg-white/5 hover:text-white transition duration-200"
+            className="flex h-9 px-2 shrink-0 items-center gap-1 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] text-xs text-slate-700 dark:text-white/70 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
             title="Appwrite 云端数据同步与认证"
             type="button"
           >
@@ -175,7 +175,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
           </button>
           <button
             onClick={() => setShowExport(true)}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-sm text-white/70 hover:bg-white/5 hover:text-white transition duration-200"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] text-sm text-slate-700 dark:text-white/70 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
             title="多格式学习档案与数据导出"
             type="button"
           >
@@ -183,7 +183,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
           </button>
           <button
             onClick={() => setShowBackup(true)}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-sm text-white/70 hover:bg-white/5 hover:text-white transition duration-200"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] text-sm text-slate-700 dark:text-white/70 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
             title="本地 JSON 进度备份"
             type="button"
           >
@@ -191,7 +191,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
           </button>
           <button
             onClick={() => setShowAchievements(true)}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-sm text-white/70 hover:bg-white/5 hover:text-white transition duration-200"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] text-sm text-slate-700 dark:text-white/70 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
             title="游戏化成就勋章墙"
             type="button"
           >
@@ -199,7 +199,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
           </button>
           <button
             onClick={() => setShowShortcuts(true)}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-xs font-mono text-cyan-300 hover:bg-white/5 transition duration-200"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] text-xs font-mono text-cyan-600 dark:text-cyan-300 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
             title="全站键盘快捷键指南 (Shift+?)"
             type="button"
           >
@@ -207,7 +207,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
           </button>
           <button
             onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-sm text-white/70 hover:bg-white/5 hover:text-white transition duration-200"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] text-sm text-slate-700 dark:text-white/70 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
             title={theme === 'dark' ? '切换至亮色模式' : '切换至暗色模式'}
             type="button"
           >
