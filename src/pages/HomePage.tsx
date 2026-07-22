@@ -18,6 +18,8 @@ export default function HomePage({ data }: { data: ModuleData }) {
   const [showCert, setShowCert] = useState(false);
   const [showSpeedRun, setShowSpeedRun] = useState(false);
 
+  const totalHours = data.module?.estimatedHours || data.courses.reduce((acc, c) => acc + (c.estimatedHours || 2), 0) || 12;
+
   return (
     <div className="space-y-10">
       <section className="text-center py-8">
@@ -46,7 +48,7 @@ export default function HomePage({ data }: { data: ModuleData }) {
         </div>
         <ProgressBar value={overall.percent} />
         <p className="mt-1 text-xs text-slate-500 dark:text-white/50 mb-4">
-          已完成 {overall.completed}/{overall.total} 讲义 · 预计总时长 {data.module.estimatedHours}h
+          已完成 {overall.completed}/{overall.total} 讲义 · 预计总时长 {totalHours} 小时
         </p>
         <StudyAnalytics />
       </section>
