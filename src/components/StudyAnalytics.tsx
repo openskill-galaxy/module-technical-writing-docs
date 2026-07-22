@@ -50,12 +50,12 @@ export default function StudyAnalytics() {
       case 3: return "bg-emerald-500/80";
       case 2: return "bg-emerald-600/50";
       case 1: return "bg-emerald-900/40 border border-emerald-500/20";
-      default: return "bg-white/[0.04] border border-white/[0.04]";
+      default: return "bg-white/[0.04] border border-white/[0.08] light:bg-slate-200/80 light:border-slate-300";
     }
   };
 
   return (
-    <div className="card p-5 space-y-4 border border-white/10 bg-slate-950/60 shadow-2xl">
+    <div className="card p-5 space-y-4 border border-white/10 shadow-2xl">
       <div className="flex items-center justify-between border-b border-white/5 pb-3">
         <div className="flex items-center gap-2">
           <span className="text-xl">🔥</span>

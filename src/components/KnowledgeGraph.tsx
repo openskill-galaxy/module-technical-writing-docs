@@ -62,7 +62,7 @@ export default function KnowledgeGraph({ data }: Props) {
   });
 
   return (
-    <div className="card p-5 relative overflow-hidden bg-slate-950/60 border-brand-500/20 shadow-2xl">
+    <div className="card p-5 relative overflow-hidden shadow-2xl">
       <div className="flex items-center justify-between border-b border-white/5 pb-3 mb-2">
         <h3 className="text-sm font-bold text-white tracking-wide flex items-center gap-2">
           <span>🌌</span> 课程结构知识星图拓扑
@@ -112,7 +112,7 @@ export default function KnowledgeGraph({ data }: Props) {
                       x={node.x}
                       y={node.y - 30}
                       textAnchor="middle"
-                      className="fill-white text-xs font-bold tracking-wider"
+                      className="fill-current text-white text-xs font-bold tracking-wider"
                     >
                       {node.label}
                     </text>
@@ -130,7 +130,7 @@ export default function KnowledgeGraph({ data }: Props) {
                       x={node.x}
                       y={node.y + 20}
                       textAnchor="middle"
-                      className="fill-white/70 text-[10px] group-hover:fill-cyan-200 transition font-medium"
+                      className="fill-current text-white/70 text-[10px] group-hover:fill-cyan-300 transition font-medium"
                     >
                       {node.label.length > 10 ? `${node.label.slice(0, 10)}…` : node.label}
                     </text>
