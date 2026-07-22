@@ -11,6 +11,7 @@ export default function SearchBox() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [open, setOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState<number>(-1);
   const navigate = useNavigate();
   const boxRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -35,10 +36,44 @@ export default function SearchBox() {
         setOpen(false);
         inputRef.current?.blur();
       }
+      if (open && results.length > 0) {
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          setSelectedIndex((prev) => (prev + 1 < results.length ? prev + 1 : 0));
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          setSelectedIndex((prev) => (prev - 1 >= 0 ? prev - 1 : results.length - 1));
+        } else if (e.key === "Enter" && selectedIndex >= 0 && results[selectedIndex]) {
+          e.preventDefault();
+          go(results[selectedIndex]);
+        }
+      }
     }
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, []);
+  }, [open, results, selectedIndex]);
+
+  // Preload loader on focus
+  function handleFocus() {
+    if (!cachedEntries || !cachedFuse) {
+      import("../data/loaders")
+        .then(({ loadAll }) => loadAll())
+        .then((data) => {
+          cachedEntries = buildSearchEntries({
+            courses: data.courses,
+            lessons: data.lessons,
+            knowledgePoints: data.knowledgePoints,
+            questions: data.questions,
+            cases: data.cases,
+            routes: data.routes,
+            faqs: data.faqs,
+            glossary: data.glossary,
+          });
+          cachedFuse = createFuse(cachedEntries);
+        })
+        .catch(() => {});
+    }
+  }
 
   // 延迟加载搜索数据（首次聚焦或输入时）
   useEffect(() => {
@@ -101,6 +136,7 @@ export default function SearchBox() {
           ref={inputRef}
           type="search"
           value={query}
+          onFocus={handleFocus}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="搜索课程、知识点、题目…"
           className="w-full rounded-xl border border-white/10 bg-white/[0.02] pl-10 pr-16 py-2 text-sm text-white placeholder-white/30 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 transition duration-200"
@@ -113,12 +149,14 @@ export default function SearchBox() {
       </div>
       {open && results.length > 0 && (
         <ul className="absolute right-0 z-40 mt-2 w-[320px] sm:w-[400px] rounded-2xl border border-white/[0.08] bg-slate-950/95 backdrop-blur-xl shadow-2xl overflow-hidden p-1.5 space-y-0.5">
-          {results.map((r) => (
+          {results.map((r, idx) => (
             <li key={`${r.type}-${r.id}`}>
               <button
                 type="button"
                 onClick={() => go(r)}
-                className="flex w-full items-start gap-3 rounded-xl px-3.5 py-2.5 text-left hover:bg-white/[0.04] active:scale-[0.99] transition-all duration-150"
+                className={`flex w-full items-start gap-3 rounded-xl px-3.5 py-2.5 text-left active:scale-[0.99] transition-all duration-150 ${
+                  selectedIndex === idx ? "bg-brand-500/20 border border-brand-500/30" : "hover:bg-white/[0.04]"
+                }`}
               >
                 <span className={`mt-0.5 shrink-0 rounded-md border px-1.5 py-0.5 text-[10px] font-semibold ${typeColor[r.type] || "bg-brand-500/10 text-brand-300"}`}>
                   {typeLabel[r.type]}
