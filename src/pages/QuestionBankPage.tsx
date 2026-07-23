@@ -22,8 +22,8 @@ export default function QuestionBankPage({ data }: { data: ModuleData }) {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="text-2xl font-bold text-white">题库练习</h1>
-        <p className="mt-1 text-sm text-white/60">共 {data.questions.length} 道题，选择即练</p>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-white">题库练习</h1>
+        <p className="mt-1 text-sm text-slate-600 dark:text-white/60">共 {data.questions.length} 道精选练习题，选择即练</p>
       </header>
 
       <TagFilter tags={data.tags} selected={selectedTags} onChange={setSelectedTags} />
@@ -34,8 +34,10 @@ export default function QuestionBankPage({ data }: { data: ModuleData }) {
             key={d}
             type="button"
             onClick={() => setDiff(d)}
-            className={`rounded-full px-3 py-1.5 text-sm transition ${
-              diff === d ? "bg-brand-600 text-white" : "border border-white/10 text-white/70 hover:bg-white/5"
+            className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+              diff === d
+                ? "bg-brand-600 text-white shadow-sm"
+                : "border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-white/70 hover:bg-slate-200 dark:hover:bg-white/10"
             }`}
           >
             {d === "all" ? "全部难度" : d === "easy" ? "简单" : d === "medium" ? "中等" : "困难"}
@@ -47,12 +49,12 @@ export default function QuestionBankPage({ data }: { data: ModuleData }) {
         type="search"
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
-        placeholder="过滤题目…"
+        placeholder="在本页快速搜索过滤题目…"
         className="input"
       />
 
       {filtered.length === 0 ? (
-        <p className="text-white/60">没有匹配的题目。</p>
+        <p className="text-slate-600 dark:text-white/60">没有匹配的题目。</p>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((q) => (

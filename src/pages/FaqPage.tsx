@@ -19,8 +19,8 @@ export default function FaqPage({ data }: { data: ModuleData }) {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="text-2xl font-bold text-white">FAQ · 常见问题</h1>
-        <p className="mt-1 text-sm text-white/60">共 {data.faqs.length} 个问题</p>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-white">FAQ · 常见问题解答</h1>
+        <p className="mt-1 text-sm text-slate-600 dark:text-white/60">共 {data.faqs.length} 个疑难解答</p>
       </header>
 
       <div className="flex flex-wrap gap-2">
@@ -29,23 +29,27 @@ export default function FaqPage({ data }: { data: ModuleData }) {
             key={c}
             type="button"
             onClick={() => setCategory(c)}
-            className={`rounded-full px-3 py-1.5 text-sm transition ${
-              category === c ? "bg-brand-600 text-white" : "border border-white/10 text-white/70 hover:bg-white/5"
+            className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+              category === c ? "bg-brand-600 text-white shadow-sm" : "border border-slate-200 dark:border-white/10 text-slate-700 dark:text-white/70 hover:bg-slate-100 dark:hover:bg-white/5"
             }`}
           >
-            {c === "all" ? "全部" : c}
+            {c === "all" ? "全部问题" : c}
           </button>
         ))}
       </div>
 
       <div className="space-y-3">
         {filtered.map((f) => (
-          <details key={f.id} id={f.id} className="card p-4">
-            <summary className="cursor-pointer text-sm font-medium text-white">
-              {f.question}
-              <span className="ml-2 text-xs text-white/40">[{f.category}]</span>
+          <details key={f.id} id={f.id} className="card p-4 group">
+            <summary className="cursor-pointer text-sm font-bold text-slate-900 dark:text-white flex items-center justify-between">
+              <span>{f.question}</span>
+              <span className="text-xs font-mono text-brand-600 dark:text-brand-300 bg-brand-500/10 px-2 py-0.5 rounded border border-brand-500/20">
+                {f.category}
+              </span>
             </summary>
-            <div className="mt-3">{renderMarkdown(f.answer)}</div>
+            <div className="mt-3 pt-3 border-t border-slate-200 dark:border-white/10 text-slate-700 dark:text-white/80 leading-relaxed text-sm">
+              {renderMarkdown(f.answer)}
+            </div>
           </details>
         ))}
       </div>
