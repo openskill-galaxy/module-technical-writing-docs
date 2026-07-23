@@ -5,8 +5,15 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/module-template/",
   plugins: [react as unknown as PluginOption],
+  esbuild: {
+    drop: ["console", "debugger"],
+  },
   build: {
     outDir: "dist",
+    target: "es2020",
+    minify: "esbuild",
+    cssCodeSplit: true,
+    reportCompressedSize: false,
     sourcemap: false,
     rollupOptions: {
       output: {
