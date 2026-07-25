@@ -25,6 +25,9 @@ export default function KeyboardShortcutsModal({ onClose }: Props) {
   return (
     <div
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="全站键盘快捷键指南"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in"
     >
       <div

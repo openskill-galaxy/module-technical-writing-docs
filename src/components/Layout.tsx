@@ -1,4 +1,5 @@
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
+import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
@@ -12,6 +13,12 @@ export default function Layout({
   data: ModuleData;
   children: ReactNode;
 }) {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="min-h-full flex flex-col">
       <div className="starfield fixed inset-0 -z-10 opacity-50" />

@@ -132,7 +132,12 @@ export default function AppwriteModal({ onClose }: Props) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md animate-fade-in p-4">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Appwrite BaaS 云端集成"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md animate-fade-in p-4"
+    >
       <div className="card w-full max-w-md p-6 relative border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 shadow-2xl flex flex-col gap-4">
         <button
           onClick={onClose}
