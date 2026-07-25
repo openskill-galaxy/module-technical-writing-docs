@@ -86,7 +86,7 @@ export default function StudyAnalytics() {
           ))}
         </div>
 
-        <div className="flex items-center justify-end gap-1.5 text-[10px] text-white/40 pt-1">
+        <div className="flex items-center justify-end gap-1.5 text-[10px] text-slate-500 dark:text-white/40 pt-1">
           <span>少</span>
           <div className="h-2.5 w-2.5 rounded-sm bg-white/[0.04]" />
           <div className="h-2.5 w-2.5 rounded-sm bg-emerald-900/40" />

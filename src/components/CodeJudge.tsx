@@ -59,9 +59,9 @@ export default function CodeJudge({ initialCode, testCases }: Props) {
   const allPassed = results ? results.every((r) => r.pass) : false;
 
   return (
-    <div className="card p-5 border border-indigo-500/20 bg-slate-950/60 shadow-2xl space-y-4">
-      <div className="flex items-center justify-between border-b border-white/5 pb-3">
-        <h3 className="text-xs font-bold text-white tracking-wide flex items-center gap-2">
+    <div className="card p-5 border border-slate-200 dark:border-indigo-500/20 bg-white/90 dark:bg-slate-950/60 shadow-2xl space-y-4">
+      <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-3">
+        <h3 className="text-xs font-bold text-slate-900 dark:text-white tracking-wide flex items-center gap-2">
           <span>🧪</span> 编程算法实战 OJ 判题测试引擎
         </h3>
         <button
@@ -77,26 +77,26 @@ export default function CodeJudge({ initialCode, testCases }: Props) {
       {/* Editor & Test cases Grid */}
       <div className="grid gap-4 lg:grid-cols-2">
         <div className="space-y-1">
-          <span className="text-[10px] font-semibold text-white/40 uppercase block">代码编辑器</span>
+          <span className="text-[10px] font-bold text-slate-500 dark:text-white/40 uppercase block">代码编辑器</span>
           <textarea
             value={code}
             onChange={(e) => setCode(e.target.value)}
             rows={8}
-            className="input font-mono !text-xs bg-slate-900/90 text-brand-100 resize-y leading-relaxed"
+            className="input font-mono !text-xs bg-slate-900 text-emerald-300 resize-y leading-relaxed"
             style={{ fontFamily: "SFMono-Regular, Consolas, Monaco, monospace" }}
           />
         </div>
 
         <div className="space-y-1 flex flex-col">
-          <span className="text-[10px] font-semibold text-white/40 uppercase block">单元测试用例 (Unit Tests)</span>
-          <div className="flex-1 rounded-xl border border-white/10 bg-slate-900/60 p-3 space-y-2 overflow-y-auto max-h-[200px]">
+          <span className="text-[10px] font-bold text-slate-500 dark:text-white/40 uppercase block">单元测试用例 (Unit Tests)</span>
+          <div className="flex-1 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-slate-900/60 p-3 space-y-2 overflow-y-auto max-h-[200px]">
             {tests.map((tc, idx) => (
-              <div key={idx} className="text-xs border-b border-white/5 pb-1.5 last:border-0">
-                <span className="text-white/40 font-mono">Test #{idx + 1}: </span>
-                <span className="text-white/70">输入: </span>
-                <code className="text-brand-200">{tc.input}</code>
-                <span className="text-white/40 ml-2">→ 期望: </span>
-                <code className="text-emerald-300">{tc.expected}</code>
+              <div key={idx} className="text-xs border-b border-slate-200 dark:border-white/5 pb-1.5 last:border-0">
+                <span className="text-slate-500 dark:text-white/40 font-mono">Test #{idx + 1}: </span>
+                <span className="text-slate-700 dark:text-white/70">输入: </span>
+                <code className="text-brand-600 dark:text-brand-200 font-bold">{tc.input}</code>
+                <span className="text-slate-500 dark:text-white/40 ml-2">→ 期望: </span>
+                <code className="text-emerald-700 dark:text-emerald-300 font-bold">{tc.expected}</code>
               </div>
             ))}
           </div>
@@ -106,19 +106,21 @@ export default function CodeJudge({ initialCode, testCases }: Props) {
       {/* Judge Results Banner */}
       {results && (
         <div className={`p-4 rounded-xl border transition-all ${
-          allPassed ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-300" : "bg-rose-500/10 border-rose-500/30 text-rose-300"
+          allPassed
+            ? "bg-emerald-50 dark:bg-emerald-500/10 border-emerald-300 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-300"
+            : "bg-rose-50 dark:bg-rose-500/10 border-rose-300 dark:border-rose-500/30 text-rose-800 dark:text-rose-300"
         }`}>
-          <div className="flex items-center gap-2 font-bold text-sm">
+          <div className="flex items-center gap-2 font-extrabold text-sm">
             <span>{allPassed ? "🎉" : "❌"}</span>
             <span>{allPassed ? "全测试用例通过 (All Passed!)" : "测试未全部通过 (Tests Failed)"}</span>
           </div>
 
-          <div className="mt-2 space-y-1.5 text-xs">
+          <div className="mt-2 space-y-1.5 text-xs font-medium">
             {results.map((r, i) => (
               <div key={i} className="flex items-center gap-2">
                 <span>{r.pass ? "✓" : "✗"}</span>
-                <span>用例 #{i + 1}: 实际输出 <code className="font-mono text-white">{r.actual}</code></span>
-                {!r.pass && <span className="text-white/40">(期望: {r.expected})</span>}
+                <span>用例 #{i + 1}: 实际输出 <code className="font-mono text-slate-900 dark:text-white font-bold">{r.actual}</code></span>
+                {!r.pass && <span className="text-slate-500 dark:text-white/40">(期望: {r.expected})</span>}
               </div>
             ))}
           </div>

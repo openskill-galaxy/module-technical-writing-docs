@@ -21,6 +21,16 @@ export function useAudioSynth() {
       if (!AudioCtx) return;
       const ctx = new AudioCtx();
 
+      if (ctx.state === "suspended") {
+        ctx.resume();
+      }
+
+      const closeContext = (delayMs: number) => {
+        setTimeout(() => {
+          ctx.close().catch(() => {});
+        }, delayMs);
+      };
+
       if (type === "correct") {
         const now = ctx.currentTime;
         const osc1 = ctx.createOscillator();
@@ -45,6 +55,7 @@ export function useAudioSynth() {
         osc2.start(now + 0.05);
         osc1.stop(now + 0.35);
         osc2.stop(now + 0.35);
+        closeContext(500);
       } else if (type === "incorrect") {
         const now = ctx.currentTime;
         const osc = ctx.createOscillator();
@@ -62,6 +73,23 @@ export function useAudioSynth() {
 
         osc.start(now);
         osc.stop(now + 0.25);
+        closeContext(400);
+      } else if (type === "timer") {
+        const now = ctx.currentTime;
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+
+        osc.type = "square";
+        osc.frequency.setValueAtTime(880, now); // A5
+        gain.gain.setValueAtTime(0.1, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.15);
+        closeContext(300);
       }
     } catch (e) {
       // AudioContext unavailable

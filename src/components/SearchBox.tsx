@@ -119,14 +119,14 @@ export default function SearchBox() {
   }
 
   const typeColor: Record<SearchResult["type"], string> = {
-    course: "bg-brand-500/10 text-brand-300 border-brand-500/20",
-    lesson: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20",
-    knowledge: "bg-purple-500/10 text-purple-300 border-purple-500/20",
-    question: "bg-amber-500/10 text-amber-300 border-amber-500/20",
-    case: "bg-rose-500/10 text-rose-300 border-rose-500/20",
-    route: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20",
-    faq: "bg-blue-500/10 text-blue-300 border-blue-500/20",
-    glossary: "bg-teal-500/10 text-teal-300 border-teal-500/20",
+    course: "bg-brand-500/10 text-brand-700 dark:text-brand-300 border-brand-500/20",
+    lesson: "bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border-cyan-500/20",
+    knowledge: "bg-purple-500/10 text-purple-700 dark:text-purple-300 border-purple-500/20",
+    question: "bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20",
+    case: "bg-rose-500/10 text-rose-700 dark:text-rose-300 border-rose-500/20",
+    route: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-500/20",
+    faq: "bg-blue-500/10 text-blue-700 dark:text-blue-300 border-blue-500/20",
+    glossary: "bg-teal-500/10 text-teal-700 dark:text-teal-300 border-teal-500/20",
   };
 
   return (
@@ -140,7 +140,9 @@ export default function SearchBox() {
           onChange={(e) => setQuery(e.target.value)}
           placeholder="搜索课程、知识点、题目…"
           className="w-full rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.02] pl-10 pr-16 py-2 text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-white/30 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 transition duration-200"
-          aria-label="搜索"
+          aria-label="全站搜索"
+          aria-autocomplete="list"
+          aria-expanded={open}
         />
         <span className="absolute left-3.5 text-slate-400 dark:text-white/30 text-xs">🔍</span>
         <span className="hidden sm:inline absolute right-3 text-[9px] font-bold text-slate-400 dark:text-white/20 border border-slate-200 dark:border-white/10 rounded px-1.5 py-0.5 pointer-events-none select-none bg-slate-100 dark:bg-white/[0.01]">
@@ -148,9 +150,13 @@ export default function SearchBox() {
         </span>
       </div>
       {open && results.length > 0 && (
-        <ul className="absolute right-0 z-40 mt-2 w-[320px] sm:w-[400px] rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl shadow-2xl overflow-hidden p-1.5 space-y-0.5">
+        <ul
+          role="listbox"
+          aria-label="搜索匹配结果"
+          className="absolute right-0 z-40 mt-2 w-[320px] sm:w-[400px] rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl shadow-2xl overflow-hidden p-1.5 space-y-0.5"
+        >
           {results.map((r, idx) => (
-            <li key={`${r.type}-${r.id}`}>
+            <li key={`${r.type}-${r.id}`} role="option" aria-selected={selectedIndex === idx}>
               <button
                 type="button"
                 onClick={() => go(r)}
@@ -158,7 +164,7 @@ export default function SearchBox() {
                   selectedIndex === idx ? "bg-brand-500/20 border border-brand-500/30" : "hover:bg-slate-100 dark:hover:bg-white/[0.04]"
                 }`}
               >
-                <span className={`mt-0.5 shrink-0 rounded-md border px-1.5 py-0.5 text-[10px] font-semibold ${typeColor[r.type] || "bg-brand-500/10 text-brand-300"}`}>
+                <span className={`mt-0.5 shrink-0 rounded-md border px-1.5 py-0.5 text-[10px] font-bold ${typeColor[r.type] || "bg-brand-500/10 text-brand-700 dark:text-brand-300"}`}>
                   {typeLabel[r.type]}
                 </span>
                 <span className="min-w-0">
