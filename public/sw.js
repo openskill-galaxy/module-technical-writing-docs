@@ -1,4 +1,4 @@
-const CACHE_NAME = "openskill-galaxy-module-v3";
+const CACHE_NAME = "openskill-galaxy-module-v4";
 
 self.addEventListener("install", () => {
   self.skipWaiting();
@@ -22,6 +22,28 @@ self.addEventListener("fetch", (e) => {
   const url = new URL(e.request.url);
   if (url.origin !== self.location.origin) return;
 
+  const offlineResponse = () =>
+    new Response("Offline", { status: 503, statusText: "Service Unavailable" });
+
+  // Network-first for content data (/data/*.json) so updates surface immediately
+  if (url.pathname.includes("/data/") && url.pathname.endsWith(".json")) {
+    e.respondWith(
+      caches.open(CACHE_NAME).then((cache) =>
+        fetch(e.request)
+          .then((networkResponse) => {
+            if (networkResponse && networkResponse.status === 200) {
+              cache.put(e.request, networkResponse.clone());
+            }
+            return networkResponse;
+          })
+          .catch(() =>
+            cache.match(e.request).then((cached) => cached || offlineResponse())
+          )
+      )
+    );
+    return;
+  }
+
   // Stale-While-Revalidate strategy for static resources
   e.respondWith(
     caches.open(CACHE_NAME).then((cache) => {
@@ -37,8 +59,7 @@ self.addEventListener("fetch", (e) => {
 
         return (
           cachedResponse ||
-          fetchPromise ||
-          new Response("Offline", { status: 503, statusText: "Service Unavailable" })
+          fetchPromise.then((networkResponse) => networkResponse || offlineResponse())
         );
       });
     })

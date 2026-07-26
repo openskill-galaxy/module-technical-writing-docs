@@ -3,6 +3,7 @@ import type { ModuleData } from "../data/loaders";
 import DifficultyBadge from "../components/DifficultyBadge";
 import ProgressBar from "../components/ProgressBar";
 import { useProgressStore, courseProgress } from "../store/useProgressStore";
+import { useSEO } from "../hooks/useSEO";
 
 export default function CourseDetailPage({ data }: { data: ModuleData }) {
   const { slug } = useParams<{ slug: string }>();
@@ -10,6 +11,12 @@ export default function CourseDetailPage({ data }: { data: ModuleData }) {
   const setLessonStatus = useProgressStore((s) => s.setLessonStatus);
 
   const course = data.courses.find((c) => c.slug === slug);
+
+  useSEO({
+    title: course ? `${course.title} · ${data.module.title}` : data.module.title,
+    description: course?.summary,
+  });
+
   if (!course) {
     return (
       <div className="space-y-4">

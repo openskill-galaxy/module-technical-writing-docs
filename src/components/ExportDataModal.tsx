@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { useProgressStore } from "../store/useProgressStore";
+import { useModalA11y } from "../hooks/useModalA11y";
 
 interface Props {
   onClose: () => void;
@@ -9,14 +9,7 @@ export default function ExportDataModal({ onClose }: Props) {
   const progress = useProgressStore((s) => s.progress);
   const wrongs = useProgressStore((s) => s.wrongs);
   const favorites = useProgressStore((s) => s.favorites);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [onClose]);
+  const panelRef = useModalA11y(onClose);
 
   function downloadFile(filename: string, content: string, mime: string) {
     const blob = new Blob([content], { type: mime });
@@ -48,8 +41,8 @@ export default function ExportDataModal({ onClose }: Props) {
   function handleExportCSV() {
     const dateStr = new Date().toISOString().slice(0, 10);
     let csv = "Type,ID,Value/Count,Timestamp\n";
-    Object.entries(progress).forEach(([id, status]) => {
-      csv += `Lesson,${id},${status},${new Date().toISOString()}\n`;
+    Object.entries(progress).forEach(([id, rec]) => {
+      csv += `Lesson,${id},${rec.status},${rec.updatedAt}\n`;
     });
     Object.entries(wrongs).forEach(([id, w]) => {
       csv += `WrongQuestion,${id},${w.wrongCount || 1},${new Date().toISOString()}\n`;
@@ -63,7 +56,7 @@ export default function ExportDataModal({ onClose }: Props) {
     const backup: Record<string, string> = {};
     for (let i = 0; i < localStorage.length; i++) {
       const k = localStorage.key(i);
-      if (k && (k.startsWith("openskill-") || k === "theme")) {
+      if (k && (k.startsWith("openskill-") || k.startsWith("osg-mt:") || k.startsWith("openskill_appwrite_") || k === "theme")) {
         backup[k] = localStorage.getItem(k) || "";
       }
     }
@@ -80,6 +73,7 @@ export default function ExportDataModal({ onClose }: Props) {
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in"
     >
       <div
+        ref={panelRef}
         onClick={(e) => e.stopPropagation()}
         className="card max-w-md w-full p-6 space-y-6 border border-brand-500/30 bg-white dark:bg-slate-950 shadow-2xl relative"
       >

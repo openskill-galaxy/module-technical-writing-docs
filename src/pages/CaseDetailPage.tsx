@@ -3,6 +3,7 @@ import type { ModuleData } from "../data/loaders";
 import { renderMarkdown } from "../utils/markdown";
 import DifficultyBadge from "../components/DifficultyBadge";
 import { useProgressStore } from "../store/useProgressStore";
+import { useSEO } from "../hooks/useSEO";
 
 export default function CaseDetailPage({ data }: { data: ModuleData }) {
   const { slug } = useParams<{ slug: string }>();
@@ -10,6 +11,11 @@ export default function CaseDetailPage({ data }: { data: ModuleData }) {
   const isFavorite = useProgressStore((s) => s.isFavorite);
 
   const c = data.cases.find((x) => x.slug === slug);
+
+  useSEO({
+    title: c ? `${c.title} · ${data.module.title}` : data.module.title,
+  });
+
   if (!c) {
     return (
       <div className="space-y-4">

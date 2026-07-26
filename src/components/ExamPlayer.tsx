@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import type { Exam, Question } from "../types";
 import { typeLabel } from "../utils/scoring";
@@ -18,6 +18,11 @@ export default function ExamPlayer({ exam, questions }: Props) {
   const [ submitting, setSubmitting] = useState(false);
   const navigate = useNavigate();
   const addExam = useProgressStore((s) => s.addExam);
+
+  // 每次渲染同步最新答案到 ref，倒计时自动交卷时读取，避免闭包捕获旧答案
+  const answersRef = useRef(answers);
+  answersRef.current = answers;
+  const submittingRef = useRef(false);
 
   // 倒计时
   useEffect(() => {
@@ -48,9 +53,10 @@ export default function ExamPlayer({ exam, questions }: Props) {
   function setJudge(val: "T" | "F") { setAns([val]); }
 
   function submit() {
-    if (submitting) return;
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     setSubmitting(true);
-    const rec = finishExam(exam, questions, answers, startedAt);
+    const rec = finishExam(exam, questions, answersRef.current, startedAt);
     addExam(rec);
     navigate(`/exams/${exam.slug}/result`, { state: { record: rec } });
   }
@@ -64,11 +70,12 @@ export default function ExamPlayer({ exam, questions }: Props) {
       }
 
       const key = e.key.toUpperCase();
+      const hasModifier = e.ctrlKey || e.metaKey || e.altKey;
 
-      if (q.type === "single" || q.type === "multiple") {
-        const optionKeys = q.options ? Object.keys(q.options) : [];
+      if (!hasModifier && (q.type === "single" || q.type === "multiple")) {
+        const optionKeys = (q.options ?? []).map((o) => o.key);
         let matchedKey = "";
-        
+
         if (optionKeys.includes(key)) {
           matchedKey = key;
         } else if (["1", "2", "3", "4", "5", "6"].includes(key)) {
@@ -85,7 +92,7 @@ export default function ExamPlayer({ exam, questions }: Props) {
             toggleMultiple(matchedKey);
           }
         }
-      } else if (q.type === "judge") {
+      } else if (!hasModifier && q.type === "judge") {
         if (key === "A" || key === "1" || key === "T") {
           setAns(["T"]);
         } else if (key === "B" || key === "2" || key === "F") {
@@ -93,7 +100,7 @@ export default function ExamPlayer({ exam, questions }: Props) {
         }
       }
 
-      if (e.key === "Enter") {
+      if (e.key === "Enter" && !hasModifier) {
         e.preventDefault();
         if (current < total - 1) {
           setCurrent((c) => c + 1);

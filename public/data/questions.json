@@ -1,218 +1,774 @@
 [
   {
     "id": "mod-technical-writing-docs-q-1",
-    "slug": "question-course-1-2",
+    "slug": "question-1",
     "type": "single",
-    "stem": "在学习 [技术写作与文档工程] 的过程里，关于“技术写作与文档工程 环境依赖搭建与运行机制”的核心考点，以下表述最为准确的是？",
+    "stem": "在 Markdown 中，要写出一个层级为二级的标题，正确的语法是？",
     "options": [
       {
         "key": "A",
-        "text": "在通常场景下，该机制设计能有效规避高并发阻塞，确保操作的高可用性。"
+        "text": "## 标题文本"
       },
       {
         "key": "B",
-        "text": "该机制主要依赖外部环境变量进行硬编码注入，缺乏高并发条件下的安全锁机制。"
+        "text": "**标题文本**"
       },
       {
         "key": "C",
-        "text": "在运行态无法进行动态横向伸缩，属于轻量单机调试环境特有的只读过渡方案。"
+        "text": "<h2>标题文本（Markdown 不支持任何 HTML）"
       },
       {
         "key": "D",
-        "text": "这是一种完全淘汰的历史过渡方案，在新版本框架下会导致无法通过静态编译器校验。"
+        "text": "==标题文本=="
       }
     ],
     "answer": [
-      "0"
+      "A"
     ],
-    "explanation": "关于“技术写作与文档工程 环境依赖搭建与运行机制”的正确答案为 A。解析：在 技术写作与文档工程 的设计最佳实践中，该机制不仅对运行时进行了优化，更在多核处理器并发下实现了底层的并发保护机制，属于生产环境下推荐的高性能应用模式。",
+    "explanation": "ATX 风格标题用井号个数表示层级，两个井号加空格即二级标题。B 是加粗语法而非标题；C 的说法错误，多数 Markdown 方言其实允许内嵌 HTML，但 <h2> 不是 Markdown 原生标题语法；D 不是标准 Markdown 语法。",
     "tags": [
-      "技术写作与文档工程",
-      "基础考点"
+      "Markdown",
+      "基础语法"
     ],
-    "difficulty": "medium",
-    "chapter": "course-1",
+    "difficulty": "easy",
+    "chapter": "mod-technical-writing-docs-c-1",
     "knowledge_points": [],
-    "estimated_time": 5
+    "estimated_time": 2
   },
   {
     "id": "mod-technical-writing-docs-q-2",
-    "slug": "question-course-1-3",
+    "slug": "question-2",
     "type": "single",
-    "stem": "在学习 [技术写作与文档工程] 的过程里，关于“技术写作与文档工程 配置文件覆盖与属性解析”的核心考点，以下表述最为准确的是？",
+    "stem": "一个开源项目 README 的首要作用是什么？",
     "options": [
       {
         "key": "A",
-        "text": "在通常场景下，该机制设计能有效规避高并发阻塞，确保操作的高可用性。"
+        "text": "在最短时间内让访问者明白项目是什么、能解决什么问题、如何快速上手"
       },
       {
         "key": "B",
-        "text": "该机制主要依赖外部环境变量进行硬编码注入，缺乏高并发条件下的安全锁机制。"
+        "text": "完整罗列所有 API 的参数与返回值，替代 API 参考文档"
       },
       {
         "key": "C",
-        "text": "在运行态无法进行动态横向伸缩，属于轻量单机调试环境特有的只读过渡方案。"
+        "text": "记录团队内部的迭代排期和成员分工"
       },
       {
         "key": "D",
-        "text": "这是一种完全淘汰的历史过渡方案，在新版本框架下会导致无法通过静态编译器校验。"
+        "text": "存放全部历史版本的变更记录，替代 CHANGELOG"
       }
     ],
     "answer": [
-      "0"
+      "A"
     ],
-    "explanation": "关于“技术写作与文档工程 配置文件覆盖与属性解析”的正确答案为 A。解析：在 技术写作与文档工程 的设计最佳实践中，该机制不仅对运行时进行了优化，更在多核处理器并发下实现了底层的并发保护机制，属于生产环境下推荐的高性能应用模式。",
+    "explanation": "README 是项目的门面，核心任务是快速回答“这是什么、为什么值得用、怎么开始”。详细 API 参考应放专门文档（B），排期分工属内部项目管理文档（C），版本历史应放 CHANGELOG（D），都不该塞进 README 主体。",
     "tags": [
-      "技术写作与文档工程",
-      "基础考点"
+      "README",
+      "开源文档"
     ],
-    "difficulty": "medium",
-    "chapter": "course-1",
+    "difficulty": "easy",
+    "chapter": "mod-technical-writing-docs-c-2",
     "knowledge_points": [],
-    "estimated_time": 5
+    "estimated_time": 2
   },
   {
     "id": "mod-technical-writing-docs-q-3",
-    "slug": "question-course-2-4",
+    "slug": "question-3",
     "type": "single",
-    "stem": "在学习 [技术写作与文档工程] 的过程里，关于“技术写作与文档工程 API 接口规范与数据通信”的核心考点，以下表述最为准确的是？",
+    "stem": "Markdown 中插入一段带语法高亮的 Python 代码块，正确写法是？",
     "options": [
       {
         "key": "A",
-        "text": "在通常场景下，该机制设计能有效规避高并发阻塞，确保操作的高可用性。"
+        "text": "使用三个反引号开启围栏代码块，并在开启行后标注语言标识 python"
       },
       {
         "key": "B",
-        "text": "该机制主要依赖外部环境变量进行硬编码注入，缺乏高并发条件下的安全锁机制。"
+        "text": "在每行代码前加一个大于号 >"
       },
       {
         "key": "C",
-        "text": "在运行态无法进行动态横向伸缩，属于轻量单机调试环境特有的只读过渡方案。"
+        "text": "用一对单个反引号把整段多行代码包起来"
       },
       {
         "key": "D",
-        "text": "这是一种完全淘汰的历史过渡方案，在新版本框架下会导致无法通过静态编译器校验。"
+        "text": "在段落前后各加一行三个连字符 ---"
       }
     ],
     "answer": [
-      "0"
+      "A"
     ],
-    "explanation": "关于“技术写作与文档工程 API 接口规范与数据通信”的正确答案为 A。解析：在 技术写作与文档工程 的设计最佳实践中，该机制不仅对运行时进行了优化，更在多核处理器并发下实现了底层的并发保护机制，属于生产环境下推荐的高性能应用模式。",
+    "explanation": "围栏代码块（fenced code block）以 ``` 开启和闭合，开启行后紧跟语言标识（如 ```python）即可启用语法高亮。> 是引用块语法；单反引号是行内代码，不适合多行；--- 是分隔线或 YAML front matter 界定符。",
     "tags": [
-      "技术写作与文档工程",
-      "基础考点"
+      "Markdown",
+      "代码块"
     ],
-    "difficulty": "medium",
-    "chapter": "course-2",
+    "difficulty": "easy",
+    "chapter": "mod-technical-writing-docs-c-3",
     "knowledge_points": [],
-    "estimated_time": 5
+    "estimated_time": 2
   },
   {
     "id": "mod-technical-writing-docs-q-4",
-    "slug": "question-course-2-5",
+    "slug": "question-4",
     "type": "single",
-    "stem": "在学习 [技术写作与文档工程] 的过程里，关于“技术写作与文档工程 核心控制器与数据校验机制”的核心考点，以下表述最为准确的是？",
+    "stem": "技术文档写作中提倡“面向读者写作”，下列做法最符合这一原则的是？",
     "options": [
       {
         "key": "A",
-        "text": "在通常场景下，该机制设计能有效规避高并发阻塞，确保操作的高可用性。"
+        "text": "在动笔前先明确目标读者的角色、已有知识水平和阅读目的，再决定内容深度与术语用法"
       },
       {
         "key": "B",
-        "text": "该机制主要依赖外部环境变量进行硬编码注入，缺乏高并发条件下的安全锁机制。"
+        "text": "尽量使用团队内部缩写，体现文档的专业性"
       },
       {
         "key": "C",
-        "text": "在运行态无法进行动态横向伸缩，属于轻量单机调试环境特有的只读过渡方案。"
+        "text": "按照代码模块的目录结构原样组织文档章节"
       },
       {
         "key": "D",
-        "text": "这是一种完全淘汰的历史过渡方案，在新版本框架下会导致无法通过静态编译器校验。"
+        "text": "把所有细节都写进同一篇文章，读者需要什么自己找"
       }
     ],
     "answer": [
-      "0"
+      "A"
     ],
-    "explanation": "关于“技术写作与文档工程 核心控制器与数据校验机制”的正确答案为 A。解析：在 技术写作与文档工程 的设计最佳实践中，该机制不仅对运行时进行了优化，更在多核处理器并发下实现了底层的并发保护机制，属于生产环境下推荐的高性能应用模式。",
+    "explanation": "读者分析（audience analysis）是技术写作第一步：读者是谁、懂多少、来做什么，决定了文档写什么和怎么写。内部缩写会抬高外部读者的理解门槛；按代码结构组织是“面向实现”而非面向读者任务；大而全的单篇文章会淹没读者真正需要的信息。",
     "tags": [
-      "技术写作与文档工程",
-      "基础考点"
+      "技术表达",
+      "读者分析"
     ],
-    "difficulty": "medium",
-    "chapter": "course-2",
+    "difficulty": "easy",
+    "chapter": "mod-technical-writing-docs-c-1",
     "knowledge_points": [],
-    "estimated_time": 5
+    "estimated_time": 2
   },
   {
     "id": "mod-technical-writing-docs-q-5",
-    "slug": "question-course-3-6",
+    "slug": "question-5",
     "type": "single",
-    "stem": "在学习 [技术写作与文档工程] 的过程里，关于“技术写作与文档工程 缓存优化与垃圾回收调优”的核心考点，以下表述最为准确的是？",
+    "stem": "Diátaxis 文档框架把文档分为四类，其中“手把手带领新手完成一次成功体验”的文档类型是？",
     "options": [
       {
         "key": "A",
-        "text": "在通常场景下，该机制设计能有效规避高并发阻塞，确保操作的高可用性。"
+        "text": "教程（Tutorial）"
       },
       {
         "key": "B",
-        "text": "该机制主要依赖外部环境变量进行硬编码注入，缺乏高并发条件下的安全锁机制。"
+        "text": "操作指南（How-to Guide）"
       },
       {
         "key": "C",
-        "text": "在运行态无法进行动态横向伸缩，属于轻量单机调试环境特有的只读过渡方案。"
+        "text": "参考（Reference）"
       },
       {
         "key": "D",
-        "text": "这是一种完全淘汰的历史过渡方案，在新版本框架下会导致无法通过静态编译器校验。"
+        "text": "解释（Explanation）"
       }
     ],
     "answer": [
-      "0"
+      "A"
     ],
-    "explanation": "关于“技术写作与文档工程 缓存优化与垃圾回收调优”的正确答案为 A。解析：在 技术写作与文档工程 的设计最佳实践中，该机制不仅对运行时进行了优化，更在多核处理器并发下实现了底层的并发保护机制，属于生产环境下推荐的高性能应用模式。",
+    "explanation": "Diátaxis 四象限中，Tutorial 面向学习场景，以老师带学生的方式让新手获得一次可复现的成功体验；How-to 面向已有基础的用户解决具体任务；Reference 提供准确完整的技术事实；Explanation 阐述背景与原理。四者服务的读者状态不同，不应混写。",
     "tags": [
-      "技术写作与文档工程",
-      "基础考点"
+      "Diátaxis",
+      "文档类型"
     ],
-    "difficulty": "medium",
-    "chapter": "course-3",
+    "difficulty": "easy",
+    "chapter": "mod-technical-writing-docs-c-2",
     "knowledge_points": [],
-    "estimated_time": 5
+    "estimated_time": 2
   },
   {
     "id": "mod-technical-writing-docs-q-6",
-    "slug": "question-course-3-7",
+    "slug": "question-6",
     "type": "single",
-    "stem": "在学习 [技术写作与文档工程] 的过程里，关于“技术写作与文档工程 可观测性日志与分布式链路监控”的核心考点，以下表述最为准确的是？",
+    "stem": "关于 CHANGELOG（变更日志）的写法，业界公认较好的实践是？",
     "options": [
       {
         "key": "A",
-        "text": "在通常场景下，该机制设计能有效规避高并发阻塞，确保操作的高可用性。"
+        "text": "面向使用者按版本组织，将变更归类为新增、修复、变更、废弃、移除、安全等类别"
       },
       {
         "key": "B",
-        "text": "该机制主要依赖外部环境变量进行硬编码注入，缺乏高并发条件下的安全锁机制。"
+        "text": "直接把 git log 的全部提交信息导出作为 CHANGELOG"
       },
       {
         "key": "C",
-        "text": "在运行态无法进行动态横向伸缩，属于轻量单机调试环境特有的只读过渡方案。"
+        "text": "只记录新增功能，Bug 修复不必写"
       },
       {
         "key": "D",
-        "text": "这是一种完全淘汰的历史过渡方案，在新版本框架下会导致无法通过静态编译器校验。"
+        "text": "把最旧的版本放在最上面，方便读者了解项目历史"
       }
     ],
     "answer": [
-      "0"
+      "A"
     ],
-    "explanation": "关于“技术写作与文档工程 可观测性日志与分布式链路监控”的正确答案为 A。解析：在 技术写作与文档工程 的设计最佳实践中，该机制不仅对运行时进行了优化，更在多核处理器并发下实现了底层的并发保护机制，属于生产环境下推荐的高性能应用模式。",
+    "explanation": "Keep a Changelog 等约定强调：CHANGELOG 是写给人看的，应按版本倒序组织，并用 Added/Fixed/Changed/Deprecated/Removed/Security 等类别归纳对使用者有意义的变更。原始 git log 噪音大且面向开发者；只记新增会遗漏用户关心的修复；新版本应放最上面。",
     "tags": [
-      "技术写作与文档工程",
-      "基础考点"
+      "CHANGELOG",
+      "版本管理"
+    ],
+    "difficulty": "easy",
+    "chapter": "mod-technical-writing-docs-c-3",
+    "knowledge_points": [],
+    "estimated_time": 2
+  },
+  {
+    "id": "mod-technical-writing-docs-q-7",
+    "slug": "question-7",
+    "type": "single",
+    "stem": "为一个 REST API 编写参考文档时，每个接口条目通常必须包含的核心要素不包括以下哪项？",
+    "options": [
+      {
+        "key": "A",
+        "text": "接口开发者的姓名与工位信息"
+      },
+      {
+        "key": "B",
+        "text": "HTTP 方法与请求路径"
+      },
+      {
+        "key": "C",
+        "text": "请求参数的名称、类型、是否必填及含义"
+      },
+      {
+        "key": "D",
+        "text": "成功与失败响应的示例及状态码说明"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "API 参考文档的核心要素是：方法与路径、认证方式、请求参数说明、请求/响应示例、状态码与错误码。开发者个人信息与接口使用无关，也会随人员流动迅速过时，不属于 API 文档内容。",
+    "tags": [
+      "API文档",
+      "REST"
     ],
     "difficulty": "medium",
-    "chapter": "course-3",
+    "chapter": "mod-technical-writing-docs-c-1",
     "knowledge_points": [],
-    "estimated_time": 5
+    "estimated_time": 3
+  },
+  {
+    "id": "mod-technical-writing-docs-q-8",
+    "slug": "question-8",
+    "type": "single",
+    "stem": "OpenAPI（Swagger）规范在 API 文档工程中的主要价值是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "用机器可读的格式描述 API，从同一份定义生成交互式文档、客户端 SDK 和契约测试"
+      },
+      {
+        "key": "B",
+        "text": "一种把 Word 文档转换为 PDF 的排版工具"
+      },
+      {
+        "key": "C",
+        "text": "只能用于描述 GraphQL 接口的查询语言"
+      },
+      {
+        "key": "D",
+        "text": "一种强制所有 API 必须公开源代码的开源许可证"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "OpenAPI 用 YAML/JSON 以机器可读方式描述 REST API 的路径、参数、模型和响应，一份定义可驱动 Swagger UI/Redoc 文档、代码生成与 Mock、契约校验，实现文档与实现同源。它与排版工具无关；GraphQL 有自己的 SDL 与内省机制；它也不是许可证。",
+    "tags": [
+      "API文档",
+      "OpenAPI"
+    ],
+    "difficulty": "medium",
+    "chapter": "mod-technical-writing-docs-c-2",
+    "knowledge_points": [],
+    "estimated_time": 3
+  },
+  {
+    "id": "mod-technical-writing-docs-q-9",
+    "slug": "question-9",
+    "type": "single",
+    "stem": "“文档即代码”（Docs as Code）工作流的典型特征是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "文档用轻量标记语言编写，纳入版本控制，通过评审和 CI 流水线自动构建发布"
+      },
+      {
+        "key": "B",
+        "text": "文档由专人用富文本编辑器维护在共享网盘中，改动无需评审"
+      },
+      {
+        "key": "C",
+        "text": "所有文档必须写在代码注释里，不允许存在独立的文档文件"
+      },
+      {
+        "key": "D",
+        "text": "文档发布前必须打印成纸质版归档"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "Docs as Code 把文档当作代码同等对待：Markdown/AsciiDoc 等纯文本编写、Git 版本控制、Pull Request 评审、CI 自动构建部署到文档站。它并不要求文档只能存在于注释中，而共享网盘富文本和纸质归档恰恰是它要取代的低效模式。",
+    "tags": [
+      "Docs as Code",
+      "文档工程"
+    ],
+    "difficulty": "medium",
+    "chapter": "mod-technical-writing-docs-c-3",
+    "knowledge_points": [],
+    "estimated_time": 3
+  },
+  {
+    "id": "mod-technical-writing-docs-q-10",
+    "slug": "question-10",
+    "type": "single",
+    "stem": "技术文档风格指南通常建议多用主动语态、面向读者用“你”。下列哪句改写最符合这一风格？",
+    "options": [
+      {
+        "key": "A",
+        "text": "“运行 npm install 安装依赖。”"
+      },
+      {
+        "key": "B",
+        "text": "“依赖将被通过 npm install 命令的执行而被安装。”"
+      },
+      {
+        "key": "C",
+        "text": "“据悉，相关依赖或可考虑由使用者酌情予以安装。”"
+      },
+      {
+        "key": "D",
+        "text": "“本系统之依赖安装事宜，须遵照相关流程办理。”"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "操作步骤应使用祈使句/主动语态，直接告诉读者做什么：“运行 npm install 安装依赖”简洁明确。B 是typical的被动语态堆叠；C 充满模糊限定词，读者不知道到底要不要做；D 是公文腔，不适合技术操作文档。",
+    "tags": [
+      "风格指南",
+      "技术表达"
+    ],
+    "difficulty": "medium",
+    "chapter": "mod-technical-writing-docs-c-1",
+    "knowledge_points": [],
+    "estimated_time": 3
+  },
+  {
+    "id": "mod-technical-writing-docs-q-11",
+    "slug": "question-11",
+    "type": "single",
+    "stem": "编写技术方案设计文档（Design Doc）时，写“备选方案与取舍（Alternatives Considered）”一节的主要目的是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "记录曾认真评估过哪些方案、为何未采纳，让评审者理解决策依据并避免日后重复讨论"
+      },
+      {
+        "key": "B",
+        "text": "凑足篇幅，使文档显得更完整"
+      },
+      {
+        "key": "C",
+        "text": "证明其他团队提出的方案都是错误的"
+      },
+      {
+        "key": "D",
+        "text": "为将来推翻当前方案预留法律依据"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "备选方案一节让读者看到决策空间与权衡过程（性能、成本、复杂度、风险等），使结论可被审视，也让后来者不必重走一遍论证。它不是凑篇幅或攻击他人方案，更与法律依据无关。",
+    "tags": [
+      "设计文档",
+      "方案取舍"
+    ],
+    "difficulty": "medium",
+    "chapter": "mod-technical-writing-docs-c-2",
+    "knowledge_points": [],
+    "estimated_time": 3
+  },
+  {
+    "id": "mod-technical-writing-docs-q-12",
+    "slug": "question-12",
+    "type": "single",
+    "stem": "故障复盘（Postmortem）文档强调“对事不对人（blameless）”，其根本原因是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "只有免于追责，当事人才会如实暴露过程细节，团队才能找到系统性根因并真正改进"
+      },
+      {
+        "key": "B",
+        "text": "故障通常无法确定责任人，只能不了了之"
+      },
+      {
+        "key": "C",
+        "text": "复盘文档仅供管理层存档，不需要真实信息"
+      },
+      {
+        "key": "D",
+        "text": "避免书面记录任何失误，以免影响公司形象"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "Blameless 文化的逻辑是：惩罚个人会导致隐瞒与甩锅，信息失真后无法定位流程、工具、设计层面的系统性根因。复盘的目标是时间线、根因分析与改进项（action items），而不是追责或粉饰。B、C、D 都背离了复盘的目的。",
+    "tags": [
+      "故障复盘",
+      "Postmortem"
+    ],
+    "difficulty": "medium",
+    "chapter": "mod-technical-writing-docs-c-3",
+    "knowledge_points": [],
+    "estimated_time": 3
+  },
+  {
+    "id": "mod-technical-writing-docs-q-13",
+    "slug": "question-13",
+    "type": "single",
+    "stem": "某产品文档站需要同时维护 v1 与 v2 两个大版本的文档，且 v2 仍在快速迭代。下列版本化策略最合理的是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "利用文档站框架的多版本能力为每个大版本建立独立快照与 URL 路径，站内提供版本切换，旧版本页面标注维护状态"
+      },
+      {
+        "key": "B",
+        "text": "只保留最新文档，v1 用户看 v2 文档自行推断差异"
+      },
+      {
+        "key": "C",
+        "text": "在每个页面里用不同颜色的文字混写两个版本的内容"
+      },
+      {
+        "key": "D",
+        "text": "把 v1 文档导出为图片贴在论坛帖子里存档"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "Docusaurus、MkDocs（mike 插件）等都支持按版本生成独立文档树和 URL（如 /docs/1.x/），配合版本切换器和“此版本不再积极维护”横幅，是标准做法。删除旧版会抛弃存量用户；同页混写两版本会造成严重混淆；图片存档不可搜索、不可维护。",
+    "tags": [
+      "文档站",
+      "版本化"
+    ],
+    "difficulty": "hard",
+    "chapter": "mod-technical-writing-docs-c-1",
+    "knowledge_points": [],
+    "estimated_time": 4
+  },
+  {
+    "id": "mod-technical-writing-docs-q-14",
+    "slug": "question-14",
+    "type": "single",
+    "stem": "为防止文档中的示例代码随产品迭代而失效，工程上最有效的手段是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "把示例代码纳入 CI：从可执行的示例源文件抽取或直接运行文档中的代码片段，失败即阻断合并"
+      },
+      {
+        "key": "B",
+        "text": "在文档顶部声明“示例仅供参考，以实际代码为准”"
+      },
+      {
+        "key": "C",
+        "text": "规定每年年底集中人工检查一次全部示例"
+      },
+      {
+        "key": "D",
+        "text": "尽量少写示例代码，从源头减少失效可能"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "explanation": "让示例可被机器验证是根治之道：如 Rust 的 doctest、Python 的 doctest、从真实测试文件用标记抽取片段嵌入文档等，API 变更时 CI 立即报错。免责声明只是把成本转嫁给读者；年度人工检查滞后且易遗漏；示例是文档最有价值的部分，少写是因噎废食。",
+    "tags": [
+      "文档工程",
+      "示例代码",
+      "CI"
+    ],
+    "difficulty": "hard",
+    "chapter": "mod-technical-writing-docs-c-2",
+    "knowledge_points": [],
+    "estimated_time": 4
+  },
+  {
+    "id": "mod-technical-writing-docs-q-15",
+    "slug": "question-15",
+    "type": "multiple",
+    "stem": "一个对外开放贡献的开源项目仓库中，通常建议提供哪些文档类文件？（多选）",
+    "options": [
+      {
+        "key": "A",
+        "text": "README：项目介绍与快速上手"
+      },
+      {
+        "key": "B",
+        "text": "CONTRIBUTING：贡献流程与开发环境说明"
+      },
+      {
+        "key": "C",
+        "text": "LICENSE：明确的开源许可证文本"
+      },
+      {
+        "key": "D",
+        "text": "内部薪酬表：便于贡献者了解团队待遇"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "健康的开源仓库标配 README、CONTRIBUTING、LICENSE（以及常见的 CODE_OF_CONDUCT、CHANGELOG、Issue/PR 模板）。没有 LICENSE 的项目在法律上默认保留所有权利，他人无法安全使用。薪酬表属内部敏感信息，与开源协作无关。",
+    "tags": [
+      "开源文档",
+      "仓库规范"
+    ],
+    "difficulty": "easy",
+    "chapter": "mod-technical-writing-docs-c-3",
+    "knowledge_points": [],
+    "estimated_time": 3
+  },
+  {
+    "id": "mod-technical-writing-docs-q-16",
+    "slug": "question-16",
+    "type": "multiple",
+    "stem": "以下哪些属于降低技术文档阅读负担的有效手段？（多选）",
+    "options": [
+      {
+        "key": "A",
+        "text": "使用有意义的小标题和目录，支持读者跳读定位"
+      },
+      {
+        "key": "B",
+        "text": "把并列的操作步骤写成有序列表而不是长段落"
+      },
+      {
+        "key": "C",
+        "text": "首次出现的缩写给出全称，或链接到术语表"
+      },
+      {
+        "key": "D",
+        "text": "为体现严谨，把所有边界情况都写进正文首段"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "技术文档读者以扫读为主：清晰的标题层级与目录、结构化列表、术语解释都能显著降低认知负担。而把全部边界情况堆在首段会淹没主线信息，边界与例外应放在主流程之后或以提示框、附录呈现。",
+    "tags": [
+      "技术表达",
+      "可读性"
+    ],
+    "difficulty": "medium",
+    "chapter": "mod-technical-writing-docs-c-1",
+    "knowledge_points": [],
+    "estimated_time": 3
+  },
+  {
+    "id": "mod-technical-writing-docs-q-17",
+    "slug": "question-17",
+    "type": "multiple",
+    "stem": "关于静态文档站生成工具的选型，下列说法正确的有？（多选）",
+    "options": [
+      {
+        "key": "A",
+        "text": "Docusaurus 基于 React，内置文档版本化与国际化，适合产品/开源项目文档站"
+      },
+      {
+        "key": "B",
+        "text": "MkDocs 配合 Material 主题以 YAML 配置和 Markdown 为中心，搭建轻量文档站很高效"
+      },
+      {
+        "key": "C",
+        "text": "生成的静态站点可以托管在 GitHub Pages、Netlify 等平台，无需自建后端服务"
+      },
+      {
+        "key": "D",
+        "text": "静态文档站无法提供站内搜索功能，必须换用动态网站"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "A、B 是两类主流文档站方案的准确描述；静态站点天然适合 Pages/Netlify 等静态托管（C）。D 错误：静态站可用构建期生成索引的本地搜索（如 lunr）或托管搜索服务（如 Algolia DocSearch）实现站内搜索。",
+    "tags": [
+      "文档站",
+      "工具选型"
+    ],
+    "difficulty": "medium",
+    "chapter": "mod-technical-writing-docs-c-2",
+    "knowledge_points": [],
+    "estimated_time": 3
+  },
+  {
+    "id": "mod-technical-writing-docs-q-18",
+    "slug": "question-18",
+    "type": "multiple",
+    "stem": "在文档 CI 流水线中，哪些检查环节可以自动化以保障文档质量？（多选）",
+    "options": [
+      {
+        "key": "A",
+        "text": "用 markdownlint 等工具检查 Markdown 格式与风格一致性"
+      },
+      {
+        "key": "B",
+        "text": "用链接检查器扫描站内外链接，发现死链即报警"
+      },
+      {
+        "key": "C",
+        "text": "用 Vale 等 prose linter 依据风格指南检查措辞、术语和禁用词"
+      },
+      {
+        "key": "D",
+        "text": "自动判断文档内容对目标读者是否“有帮助”，完全取代人工评审"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation": "格式 lint、死链检查、基于规则的文风检查（Vale 可把风格指南编码为规则集）都是成熟的自动化手段，可在 PR 阶段拦截问题。但“内容是否真正解决读者问题”涉及语境与判断，自动工具只能辅助，无法完全取代人工评审，D 错误。",
+    "tags": [
+      "文档工程",
+      "CI",
+      "质量保障"
+    ],
+    "difficulty": "hard",
+    "chapter": "mod-technical-writing-docs-c-3",
+    "knowledge_points": [],
+    "estimated_time": 4
+  },
+  {
+    "id": "mod-technical-writing-docs-q-19",
+    "slug": "question-19",
+    "type": "judge",
+    "stem": "在 Markdown 中，行内代码使用一对反引号包裹，例如 `npm install`。",
+    "options": [],
+    "answer": [
+      "T"
+    ],
+    "explanation": "正确。行内代码（inline code）用一对反引号包裹，渲染为等宽字体并阻止其中语法被解析；多行代码则应使用围栏代码块。",
+    "tags": [
+      "Markdown",
+      "基础语法"
+    ],
+    "difficulty": "easy",
+    "chapter": "mod-technical-writing-docs-c-1",
+    "knowledge_points": [],
+    "estimated_time": 1
+  },
+  {
+    "id": "mod-technical-writing-docs-q-20",
+    "slug": "question-20",
+    "type": "judge",
+    "stem": "教程（Tutorial）和操作指南（How-to Guide）面向的读者状态相同，因此两类文档可以随意混写。",
+    "options": [],
+    "answer": [
+      "F"
+    ],
+    "explanation": "错误。按 Diátaxis 框架，教程面向学习中的新手，需要作者掌控全程、保证一次成功；操作指南面向已具备基础、带着具体任务而来的用户，假定读者能自行处理细节。读者状态与写作目标不同，混写会让两类读者都不满意。",
+    "tags": [
+      "Diátaxis",
+      "文档类型"
+    ],
+    "difficulty": "easy",
+    "chapter": "mod-technical-writing-docs-c-2",
+    "knowledge_points": [],
+    "estimated_time": 1
+  },
+  {
+    "id": "mod-technical-writing-docs-q-21",
+    "slug": "question-21",
+    "type": "judge",
+    "stem": "语义化版本（SemVer）规范下，只要发布了不向后兼容的 API 变更，就应当递增主版本号，并在发布说明或迁移指南中说明破坏性变更。",
+    "options": [],
+    "answer": [
+      "T"
+    ],
+    "explanation": "正确。SemVer 规定 MAJOR.MINOR.PATCH 中，不兼容的 API 变更递增主版本号；配套文档实践是提供 Breaking Changes 清单与迁移指南（migration guide），帮助用户评估升级成本并完成迁移。",
+    "tags": [
+      "版本管理",
+      "SemVer"
+    ],
+    "difficulty": "medium",
+    "chapter": "mod-technical-writing-docs-c-3",
+    "knowledge_points": [],
+    "estimated_time": 2
+  },
+  {
+    "id": "mod-technical-writing-docs-q-22",
+    "slug": "question-22",
+    "type": "judge",
+    "stem": "为图片编写替代文本（alt text）只是为了在图片加载失败时占位，与文档的可访问性无关。",
+    "options": [],
+    "answer": [
+      "F"
+    ],
+    "explanation": "错误。alt 文本是可访问性（accessibility）的核心实践之一：屏幕阅读器依赖它向视障读者传达图片信息，同时它也有利于搜索引擎理解内容。加载失败时的占位只是附带作用。信息性图片应写出其传达的内容，而非“图片1”这类无意义文本。",
+    "tags": [
+      "可访问性",
+      "图文规范"
+    ],
+    "difficulty": "medium",
+    "chapter": "mod-technical-writing-docs-c-1",
+    "knowledge_points": [],
+    "estimated_time": 2
+  },
+  {
+    "id": "mod-technical-writing-docs-q-23",
+    "slug": "question-23",
+    "type": "short",
+    "stem": "业界广泛使用的、以机器可读的 YAML 或 JSON 描述 REST API 并可用于生成交互式文档的规范叫什么？（写出规范名称）",
+    "options": [],
+    "answer": [
+      "OpenAPI|OpenAPI 规范|OpenAPI Specification|Swagger|OAS"
+    ],
+    "explanation": "答案是 OpenAPI（OpenAPI Specification，曾用名 Swagger）。它以 YAML/JSON 描述 API 的路径、参数、数据模型与响应，可驱动 Swagger UI、Redoc 等交互式文档以及 SDK 生成、Mock 与契约测试。",
+    "tags": [
+      "API文档",
+      "OpenAPI"
+    ],
+    "difficulty": "medium",
+    "chapter": "mod-technical-writing-docs-c-2",
+    "knowledge_points": [],
+    "estimated_time": 3
+  },
+  {
+    "id": "mod-technical-writing-docs-q-24",
+    "slug": "question-24",
+    "type": "short",
+    "stem": "Diátaxis 框架将文档划分为四种类型：教程、操作指南、解释，还有一种以“准确、完整地陈述技术事实（如 API 参数、配置项）”为目标的类型是什么？（写出中文或英文名称）",
+    "options": [],
+    "answer": [
+      "参考|参考文档|Reference|参考手册|API参考"
+    ],
+    "explanation": "答案是参考（Reference）。参考文档面向工作中查阅的场景，要求结构统一、描述客观准确、覆盖完整，典型形式是 API 参考、配置项清单、命令行手册，通常按字典式结构组织而非叙事式展开。",
+    "tags": [
+      "Diátaxis",
+      "参考文档"
+    ],
+    "difficulty": "hard",
+    "chapter": "mod-technical-writing-docs-c-3",
+    "knowledge_points": [],
+    "estimated_time": 3
   }
 ]

@@ -1,10 +1,10 @@
-import { defineConfig, type PluginOption } from "vite";
+import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// 项目站点 module-template，部署在子路径 /module-template/，base 必须设置
+// 项目站点 module-technical-writing-docs，部署在子路径 /module-technical-writing-docs/，base 必须设置
 export default defineConfig({
-  base: "/module-template/",
-  plugins: [react as unknown as PluginOption],
+  base: "/module-technical-writing-docs/",
+  plugins: [react()],
   esbuild: {
     drop: ["console", "debugger"],
   },
@@ -18,13 +18,16 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes("node_modules")) {
-            if (id.includes("react") || id.includes("react-dom") || id.includes("react-router-dom")) {
-              return "vendor";
-            }
-            if (id.includes("fuse")) {
-              return "fuse";
-            }
+          if (
+            id.includes("node_modules/react") ||
+            id.includes("node_modules/react-dom") ||
+            id.includes("node_modules/react-router") ||
+            id.includes("node_modules/scheduler")
+          ) {
+            return "vendor";
+          }
+          if (id.includes("node_modules/fuse.js")) {
+            return "fuse";
           }
         },
       },

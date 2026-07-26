@@ -8,7 +8,7 @@ import { IconSearch } from "./icons";
 let cachedEntries: ReturnType<typeof buildSearchEntries> | null = null;
 let cachedFuse: ReturnType<typeof createFuse> | null = null;
 
-export default function SearchBox() {
+export default function SearchBox({ data }: { data: ModuleData }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [open, setOpen] = useState(false);
@@ -54,64 +54,22 @@ export default function SearchBox() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [open, results, selectedIndex]);
 
-  // Preload loader on focus
+  // 聚焦时用 App 已加载的数据预构建索引（避免重复 fetch 全量 JSON）
   function handleFocus() {
-    if (!cachedEntries || !cachedFuse) {
-      import("../data/loaders")
-        .then(({ loadAll }) => loadAll())
-        .then((data) => {
-          cachedEntries = buildSearchEntries({
-            courses: data.courses,
-            lessons: data.lessons,
-            knowledgePoints: data.knowledgePoints,
-            questions: data.questions,
-            cases: data.cases,
-            routes: data.routes,
-            faqs: data.faqs,
-            glossary: data.glossary,
-          });
-          cachedFuse = createFuse(cachedEntries);
-        })
-        .catch(() => {});
-    }
+    ensureIndex(data);
   }
 
-  // 延迟加载搜索数据（首次聚焦或输入时）
+  // 输入时即时检索（索引复用同一份缓存）
   useEffect(() => {
     if (query.trim().length === 0) {
       setResults([]);
       setOpen(false);
       return;
     }
-    let cancelled = false;
-    if (!cachedEntries || !cachedFuse) {
-      import("../data/loaders")
-        .then(({ loadAll }) => loadAll())
-        .then((data) => {
-          if (cancelled) return;
-          cachedEntries = buildSearchEntries({
-            courses: data.courses,
-            lessons: data.lessons,
-            knowledgePoints: data.knowledgePoints,
-            questions: data.questions,
-            cases: data.cases,
-            routes: data.routes,
-            faqs: data.faqs,
-            glossary: data.glossary,
-          });
-          cachedFuse = createFuse(cachedEntries);
-          setResults(runSearch(cachedFuse, query, 8));
-          setOpen(true);
-        })
-        .catch(() => {});
-    } else {
-      setResults(runSearch(cachedFuse, query, 8));
-      setOpen(true);
-    }
-    return () => {
-      cancelled = true;
-    };
-  }, [query]);
+    const fuse = ensureIndex(data);
+    setResults(runSearch(fuse, query, 8));
+    setOpen(true);
+  }, [query, data]);
 
   function go(r: SearchResult) {
     setQuery("");

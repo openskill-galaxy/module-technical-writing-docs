@@ -3,6 +3,7 @@ import type { ModuleData } from "../data/loaders";
 import { renderMarkdown } from "../utils/markdown";
 import DifficultyBadge from "../components/DifficultyBadge";
 import { useProgressStore } from "../store/useProgressStore";
+import { useSEO } from "../hooks/useSEO";
 
 export default function KnowledgePointDetailPage({ data }: { data: ModuleData }) {
   const { slug } = useParams<{ slug: string }>();
@@ -10,6 +11,11 @@ export default function KnowledgePointDetailPage({ data }: { data: ModuleData })
   const isFavorite = useProgressStore((s) => s.isFavorite);
 
   const kp = data.knowledgePoints.find((k) => k.slug === slug);
+
+  useSEO({
+    title: kp ? `${kp.title} · ${data.module.title}` : data.module.title,
+  });
+
   if (!kp) {
     return (
       <div className="space-y-4">

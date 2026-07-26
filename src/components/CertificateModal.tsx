@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useModalA11y } from "../hooks/useModalA11y";
 
 interface Props {
   moduleTitle: string;
@@ -8,14 +9,25 @@ interface Props {
 
 export default function CertificateModal({ moduleTitle, score = 100, onClose }: Props) {
   const [name, setName] = useState("OpenSkill 星河学员");
-  const certId = `OSG-${Math.random().toString(36).substring(2, 9).toUpperCase()}`;
+  // 证书编号只在弹窗打开时生成一次，避免每次渲染变化
+  const [certId] = useState(() => `OSG-${Math.random().toString(36).substring(2, 9).toUpperCase()}`);
   const dateStr = new Date().toLocaleDateString("zh-CN", { year: "numeric", month: "long", day: "numeric" });
+  const panelRef = useModalA11y(onClose);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 animate-fade-in">
-      <div className="card max-w-2xl w-full p-8 bg-gradient-to-br from-slate-950 via-indigo-950/80 to-slate-950 border-2 border-amber-400/40 shadow-[0_0_50px_rgba(251,191,36,0.15)] relative space-y-6">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="结业认证证书"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 animate-fade-in"
+    >
+      <div
+        ref={panelRef}
+        className="card max-w-2xl w-full p-8 bg-gradient-to-br from-slate-950 via-indigo-950/80 to-slate-950 border-2 border-amber-400/40 shadow-[0_0_50px_rgba(251,191,36,0.15)] relative space-y-6"
+      >
         <button
           onClick={onClose}
+          type="button"
           className="absolute top-4 right-4 text-white/40 hover:text-white text-sm"
         >
           ✕

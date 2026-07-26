@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import type { Question } from "../types";
 import { useAudioSynth } from "../hooks/useAudioSynth";
+import { useModalA11y } from "../hooks/useModalA11y";
 
 interface Props {
   questions: Question[];
@@ -23,14 +24,7 @@ export default function QuizSpeedRunModal({ questions, onClose }: Props) {
   }, [questions]);
 
   const currentQ = shuffledQuestions[currentIndex] || shuffledQuestions[0];
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [onClose]);
+  const panelRef = useModalA11y(onClose);
 
   useEffect(() => {
     if (finished || timeLeft <= 0) return;
@@ -96,6 +90,7 @@ export default function QuizSpeedRunModal({ questions, onClose }: Props) {
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in"
     >
       <div
+        ref={panelRef}
         onClick={(e) => e.stopPropagation()}
         className="card max-w-xl w-full p-6 space-y-6 border border-cyan-500/30 bg-white dark:bg-slate-950 shadow-2xl relative"
       >

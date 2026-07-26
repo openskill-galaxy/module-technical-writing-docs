@@ -1,17 +1,11 @@
-import { useEffect } from "react";
+import { useModalA11y } from "../hooks/useModalA11y";
 
 interface Props {
   onClose: () => void;
 }
 
 export default function KeyboardShortcutsModal({ onClose }: Props) {
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [onClose]);
+  const panelRef = useModalA11y(onClose);
 
   const shortcuts = [
     { key: "A / B / C / D", label: "快速选择答题选项", scope: "刷题模式" },
@@ -31,6 +25,7 @@ export default function KeyboardShortcutsModal({ onClose }: Props) {
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in"
     >
       <div
+        ref={panelRef}
         onClick={(e) => e.stopPropagation()}
         className="card max-w-md w-full p-6 space-y-6 border border-cyan-500/30 bg-white dark:bg-slate-950 shadow-2xl relative"
       >

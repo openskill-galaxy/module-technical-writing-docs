@@ -10,7 +10,6 @@ export const STORAGE_KEYS = {
   THEME: "theme",
   SOUND_MUTED: "openskill-sound-muted",
   ACTIVE_DATES: "openskill-active-dates",
-  APPWRITE_CONFIG: "openskill-appwrite-config",
   BACKUP_PREFIX: "openskill-",
   NOTE_PREFIX: "openskill-note-",
 };

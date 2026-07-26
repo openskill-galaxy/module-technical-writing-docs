@@ -7,6 +7,7 @@ import type {
   Lesson,
 } from "../types";
 import { readJson, writeJson, nowIso, clearAll } from "../utils/storage";
+import { calculateSM2 } from "../utils/srs";
 
 interface ProgressState {
   progress: Record<string, ProgressRecord>;
@@ -92,19 +93,45 @@ export const useProgressStore = create<ProgressState>((set, get) => ({
 
   recordAnswer: (questionId, userAnswer, correct) => {
     const wrongs = { ...get().wrongs };
+    const prev = wrongs[questionId];
     if (correct) {
-      // 答对则从错题本移除
-      if (wrongs[questionId]) delete wrongs[questionId];
+      if (prev) {
+        // 答对：SM-2 推进复习间隔；连续答对达 3 次视为掌握，移出错题本
+        const sm2 = calculateSM2(
+          4,
+          prev.interval ?? 0,
+          prev.repetitions ?? 0,
+          prev.easeFactor ?? 2.5
+        );
+        if (sm2.repetitions >= 3) {
+          delete wrongs[questionId];
+        } else {
+          wrongs[questionId] = {
+            ...prev,
+            lastAnswer: userAnswer,
+            lastAt: nowIso(),
+            interval: sm2.interval,
+            repetitions: sm2.repetitions,
+            easeFactor: sm2.easeFactor,
+            nextReviewDate: sm2.nextReviewDate,
+          };
+        }
+      }
       set({ wrongs });
       writeJson("wrongs", wrongs);
       return;
     }
-    const prev = wrongs[questionId];
+    // 答错：重置重复次数，间隔回到 1 天
+    const sm2 = calculateSM2(1, prev?.interval ?? 0, 0, prev?.easeFactor ?? 2.5);
     wrongs[questionId] = {
       questionId,
       wrongCount: (prev?.wrongCount || 0) + 1,
       lastAnswer: userAnswer,
       lastAt: nowIso(),
+      interval: sm2.interval,
+      repetitions: sm2.repetitions,
+      easeFactor: sm2.easeFactor,
+      nextReviewDate: sm2.nextReviewDate,
     };
     set({ wrongs });
     writeJson("wrongs", wrongs);

@@ -1,5 +1,6 @@
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import { useProgressStore } from "../store/useProgressStore";
+import { useModalA11y } from "../hooks/useModalA11y";
 
 interface Props {
   onClose: () => void;
@@ -9,14 +10,8 @@ export default function AchievementsModal({ onClose }: Props) {
   const progress = useProgressStore((s) => s.progress);
   const favorites = useProgressStore((s) => s.favorites);
   const wrongs = useProgressStore((s) => s.wrongs);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [onClose]);
+  const exams = useProgressStore((s) => s.exams);
+  const panelRef = useModalA11y(onClose);
 
   const achievements = useMemo(() => {
     const completedCount = Object.values(progress).filter((v) => v.status === "completed").length;
@@ -70,11 +65,11 @@ export default function AchievementsModal({ onClose }: Props) {
         title: "满分神话",
         desc: "模考取得满分优秀成绩",
         icon: "🏆",
-        unlocked: completedCount >= 5,
-        progressText: "已解锁",
+        unlocked: exams.some((e) => e.score === 100),
+        progressText: exams.some((e) => e.score === 100) ? "已解锁" : "未达成 (待满分)",
       },
     ];
-  }, [progress, favorites, wrongs]);
+  }, [progress, favorites, wrongs, exams]);
 
   const unlockedCount = achievements.filter((a) => a.unlocked).length;
 
@@ -87,6 +82,7 @@ export default function AchievementsModal({ onClose }: Props) {
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in"
     >
       <div
+        ref={panelRef}
         onClick={(e) => e.stopPropagation()}
         className="card max-w-lg w-full p-6 space-y-6 border border-amber-500/30 bg-white dark:bg-slate-950 shadow-2xl relative"
       >

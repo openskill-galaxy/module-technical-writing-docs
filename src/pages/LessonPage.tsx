@@ -6,6 +6,7 @@ import { useProgressStore } from "../store/useProgressStore";
 import LessonTOC from "../components/LessonTOC";
 import PersonalNotes from "../components/PersonalNotes";
 import SpeechReader from "../components/SpeechReader";
+import { useSEO } from "../hooks/useSEO";
 
 export default function LessonPage({ data }: { data: ModuleData }) {
   const { slug } = useParams<{ slug: string }>();
@@ -16,6 +17,11 @@ export default function LessonPage({ data }: { data: ModuleData }) {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const lesson = data.lessons.find((l) => l.slug === slug);
+
+  useSEO({
+    title: lesson ? `${lesson.title} · ${data.module.title}` : data.module.title,
+    description: lesson?.summary,
+  });
 
   // Top reading scroll progress bar listener
   useEffect(() => {

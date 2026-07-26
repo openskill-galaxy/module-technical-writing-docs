@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="manifest" href="./manifest.json" />
-    <meta name="theme-color" content="#fbfbfd" />
+    <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a0b0f" media="(prefers-color-scheme: dark)" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="OpenSkill Galaxy Module — reusable static learning module." />
+    <meta property="og:title" content="OpenSkill Galaxy Module" />
+    <meta property="og:description" content="OpenSkill Galaxy Module — reusable static learning module." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
     <title>OpenSkill Galaxy Module</title>
     <script>
       // Set theme before paint to avoid flash (light default)
@@ -21,14 +26,21 @@
     </script>
     <script>
       function showUpdateToast() {
+        // 跟随当前主题（与门户同款做法）
+        var isDark = document.documentElement.classList.contains('dark');
+        var surface = isDark ? 'rgba(20, 22, 29, 0.92)' : 'rgba(255, 255, 255, 0.92)';
+        var border = isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(15, 23, 42, 0.1)';
+        var textMain = isDark ? '#f3f4f7' : '#0b0f19';
+        var textSub = isDark ? '#a4abbb' : '#4b5468';
+        var shadow = isDark ? '0 12px 32px rgba(0, 0, 0, 0.55)' : '0 12px 32px rgba(15, 23, 42, 0.18)';
         const toast = document.createElement('div');
         toast.className = 'update-toast';
         toast.innerHTML = `
-          <div style="background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(12px); border: 1px solid rgba(15, 23, 42, 0.1); border-radius: 16px; padding: 16px; box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18); display: flex; align-items: center; gap: 12px; max-width: 320px;">
+          <div style="background: ${surface}; backdrop-filter: blur(12px); border: 1px solid ${border}; border-radius: 16px; padding: 16px; box-shadow: ${shadow}; display: flex; align-items: center; gap: 12px; max-width: 320px;">
             <span style="font-size: 16px;">✦</span>
             <div style="flex: 1;">
-              <h4 style="margin: 0; color: #0b0f19; font-size: 13px; font-weight: 600; font-family: Inter, system-ui, sans-serif;">本模块内容已升级</h4>
-              <p style="margin: 4px 0 0 0; color: #4b5468; font-size: 11px; line-height: 1.4; font-family: Inter, system-ui, sans-serif;">新讲义与评测题目已更新，立即刷新体验最新版本。</p>
+              <h4 style="margin: 0; color: ${textMain}; font-size: 13px; font-weight: 600; font-family: Inter, system-ui, sans-serif;">本模块内容已升级</h4>
+              <p style="margin: 4px 0 0 0; color: ${textSub}; font-size: 11px; line-height: 1.4; font-family: Inter, system-ui, sans-serif;">新讲义与评测题目已更新，立即刷新体验最新版本。</p>
             </div>
             <button onclick="window.location.reload()" style="background: #4f46e5; color: #fff; border: 0; padding: 6px 12px; border-radius: 8px; font-size: 10px; font-weight: 600; cursor: pointer; white-space: nowrap; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2); font-family: Inter, system-ui, sans-serif;">重载</button>
           </div>

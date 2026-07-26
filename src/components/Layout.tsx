@@ -4,6 +4,7 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import type { ModuleData } from "../data/loaders";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Layout({
   data,
@@ -13,6 +14,9 @@ export default function Layout({
   children: ReactNode;
 }) {
   const { pathname } = useLocation();
+
+  // 全局兜底标题/描述（详情页会各自覆盖为「条目 · 模块名」）
+  useSEO({ title: data.module.title, description: data.module.description });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,7 +33,7 @@ export default function Layout({
             "radial-gradient(60% 40% at 50% -8%, var(--accent-soft), transparent 70%)",
         }}
       />
-      <Header module={data.module} />
+      <Header module={data.module} data={data} />
       <div className="flex flex-1">
         <Sidebar />
         <main className="flex-1 min-w-0">

@@ -83,7 +83,7 @@ export async function pushProgressToCloud() {
   
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
-    if (key && (key.startsWith("openskill-") || key === "theme")) {
+    if (key && (key.startsWith("openskill-") || key.startsWith("osg-mt:") || key === "theme")) {
       const val = localStorage.getItem(key);
       if (val) backupData[key] = val;
     }
@@ -143,7 +143,7 @@ export async function pullProgressFromCloud() {
 
   const backupData = JSON.parse(progressJsonStr);
   Object.entries(backupData).forEach(([k, v]) => {
-    if (k.startsWith("openskill-") || k === "theme") {
+    if (k.startsWith("openskill-") || k.startsWith("osg-mt:") || k === "theme") {
       localStorage.setItem(k, v as string);
     }
   });

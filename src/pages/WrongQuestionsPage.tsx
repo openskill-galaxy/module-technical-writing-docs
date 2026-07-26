@@ -22,7 +22,7 @@ export default function WrongQuestionsPage({ data }: { data: ModuleData }) {
   );
 
   const dueCount = useMemo(() => {
-    return list.filter((item) => isItemDueForReview((item.wrong as any).nextReviewDate)).length;
+    return list.filter((item) => isItemDueForReview(item.wrong.nextReviewDate)).length;
   }, [list]);
 
   return (
@@ -71,7 +71,7 @@ export default function WrongQuestionsPage({ data }: { data: ModuleData }) {
       ) : (
         <div className="space-y-3">
           {list.map(({ wrong, question }) => {
-            const isDue = isItemDueForReview((wrong as any).nextReviewDate);
+            const isDue = isItemDueForReview(wrong.nextReviewDate);
             return (
               <div key={wrong.questionId} className={`card p-4 transition ${isDue ? "border-indigo-500/40 bg-indigo-50/50 dark:bg-indigo-950/20" : ""}`}>
                 <div className="flex items-start justify-between gap-3">
@@ -102,7 +102,7 @@ export default function WrongQuestionsPage({ data }: { data: ModuleData }) {
                       if (!relatedLesson) return null;
                       return (
                         <Link
-                          to={`/lessons/${relatedLesson.id}`}
+                          to={`/lessons/${relatedLesson.slug}`}
                           className="btn-ghost text-xs text-brand-600 dark:text-brand-300 hover:underline border-slate-200 dark:border-brand-500/30"
                         >查阅源头讲义
                         </Link>

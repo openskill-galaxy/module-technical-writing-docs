@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import SearchBox from "./SearchBox";
+import { useModalA11y } from "../hooks/useModalA11y";
 import PomodoroTimer from "./PomodoroTimer";
 import {
   IconMenu,
@@ -16,17 +17,19 @@ import {
   monogram,
 } from "./icons";
 import type { ModuleMeta } from "../types";
+import type { ModuleData } from "../data/loaders";
 
 function BackupModal({ onClose }: { onClose: () => void }) {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const panelRef = useModalA11y(onClose);
 
   const handleExport = () => {
     try {
       const backup: Record<string, string> = {};
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
-        if (key && (key.startsWith("openskill-") || key === "theme")) {
+        if (key && (key.startsWith("openskill-") || key.startsWith("osg-mt:") || key.startsWith("openskill_appwrite_") || key === "theme")) {
           const val = localStorage.getItem(key);
           if (val) backup[key] = val;
         }
@@ -56,7 +59,7 @@ function BackupModal({ onClose }: { onClose: () => void }) {
           throw new Error("无效的备份文件格式");
         }
         Object.entries(data).forEach(([key, val]) => {
-          if (key.startsWith("openskill-") || key === "theme") {
+          if (key.startsWith("openskill-") || key.startsWith("osg-mt:") || key.startsWith("openskill_appwrite_") || key === "theme") {
             localStorage.setItem(key, val as string);
           }
         });
@@ -78,7 +81,7 @@ function BackupModal({ onClose }: { onClose: () => void }) {
       aria-label="本地 JSON 备份与同步"
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm animate-fade-in p-4"
     >
-      <div className="card w-full max-w-sm p-6 relative border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 shadow-2xl flex flex-col gap-5">
+      <div ref={panelRef} className="card w-full max-w-sm p-6 relative border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 shadow-2xl flex flex-col gap-5">
         <button
           onClick={onClose}
           aria-label="关闭弹窗"
@@ -152,7 +155,7 @@ const mobileNavGroups = [
   },
 ];
 
-export default function Header({ module }: { module: ModuleMeta }) {
+export default function Header({ module, data }: { module: ModuleMeta; data: ModuleData }) {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("theme") || "light";
   });
@@ -188,7 +191,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
   }, [theme]);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-line bg-page/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-30 border-b border-line bg-page backdrop-blur-xl">
       <div className="container-page flex h-16 items-center gap-3">
         {/* Mobile Hamburger Menu Toggle Button */}
         <button
@@ -222,7 +225,7 @@ export default function Header({ module }: { module: ModuleMeta }) {
         
         <div className="ml-auto flex items-center gap-2 w-full max-w-sm justify-end">
           <div className="w-full max-w-[180px] sm:max-w-xs">
-            <SearchBox />
+            <SearchBox data={data} />
           </div>
           <PomodoroTimer />
           <button

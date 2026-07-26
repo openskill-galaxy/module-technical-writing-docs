@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 export default function CodePlayground({
   initialCode,
@@ -9,7 +9,9 @@ export default function CodePlayground({
 }) {
   const [code, setCode] = useState(initialCode);
   const [showSandbox, setShowSandbox] = useState(false);
-  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  // 沙箱内容走 srcDoc（sandbox="allow-scripts" 下无法访问 contentDocument）
+  const [sandboxHtml, setSandboxHtml] = useState("");
+  const [runId, setRunId] = useState(0);
 
   const isExecutable =
     ["javascript", "typescript", "js", "ts", "html", "xml"].includes(
@@ -17,20 +19,12 @@ export default function CodePlayground({
     );
 
   const runCode = () => {
-    setShowSandbox(true);
-    // Let state update to render the iframe before writing
-    setTimeout(() => {
-      const iframe = iframeRef.current;
-      if (!iframe) return;
-      const doc = iframe.contentDocument || iframe.contentWindow?.document;
-      if (!doc) return;
+    let htmlContent = "";
+    const lang = language.toLowerCase();
 
-      let htmlContent = "";
-      const lang = language.toLowerCase();
-
-      if (lang === "html" || lang === "xml") {
-        htmlContent = code;
-      } else {
+    if (lang === "html" || lang === "xml") {
+      htmlContent = code;
+    } else {
         htmlContent = `
           <!DOCTYPE html>
           <html>
@@ -105,12 +99,11 @@ export default function CodePlayground({
             </body>
           </html>
         `;
-      }
+    }
 
-      doc.open();
-      doc.write(htmlContent);
-      doc.close();
-    }, 50);
+    setSandboxHtml(htmlContent);
+    setRunId((n) => n + 1);
+    setShowSandbox(true);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -171,10 +164,11 @@ export default function CodePlayground({
         {/* Sandbox Screen */}
         {showSandbox && (
           <iframe
-            ref={iframeRef}
+            key={runId}
             title="Code Sandbox Output"
             className="flex-1 bg-slate-950 h-full border-0"
             sandbox="allow-scripts"
+            srcDoc={sandboxHtml}
           />
         )}
       </div>

@@ -14,8 +14,10 @@ import { IconBook, IconBulb, IconPencil, IconBeaker, colorFromId, monogram } fro
 export default function HomePage({ data }: { data: ModuleData }) {
   const progress = useProgressStore((s) => s.progress);
   const overall = lessonsOverall(data.lessons, progress);
-  const wrongCount = Object.keys(useProgressStore.getState().wrongs).length;
+  const wrongs = useProgressStore((s) => s.wrongs);
+  const wrongCount = Object.keys(wrongs).length;
   const favCount = useProgressStore((s) => s.favorites).length;
+  const examCount = useProgressStore((s) => s.exams).length;
   const [showCert, setShowCert] = useState(false);
   const [showSpeedRun, setShowSpeedRun] = useState(false);
 
@@ -64,7 +66,7 @@ export default function HomePage({ data }: { data: ModuleData }) {
 
       {showSpeedRun && (
         <QuizSpeedRunModal
-          questions={data.questions}
+          questions={data.questions.filter((q) => q.type === "single" || q.type === "judge")}
           onClose={() => setShowSpeedRun(false)}
         />
       )}
@@ -131,7 +133,7 @@ export default function HomePage({ data }: { data: ModuleData }) {
             <Link to="/favorites" className="mt-1 inline-block text-xs text-brand-600 dark:text-brand-300 hover:underline">查看收藏夹</Link>
           </div>
           <div className="card p-4 text-center">
-            <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-300">{useProgressStore((s) => s.exams).length}</p>
+            <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-300">{examCount}</p>
             <p className="text-xs text-slate-600 dark:text-white/60">考试记录</p>
             <Link to="/exams" className="mt-1 inline-block text-xs text-brand-600 dark:text-brand-300 hover:underline">查看考试</Link>
           </div>

@@ -1,9 +1,9 @@
 [
   {
     "id": "mod-technical-writing-docs-exam-1",
-    "slug": "final-exam",
-    "title": "技术写作与文档工程 核心期末综合自测",
-    "summary": "全面检验您对 技术写作与文档工程 所有阶段知识体系的掌握程度。",
+    "slug": "basic-exam",
+    "title": "技术写作与文档工程 基础入门测验",
+    "summary": "覆盖 Markdown 语法、README 写作、文档类型划分等入门知识，检验基础概念掌握情况。",
     "difficulty": "easy",
     "questionIds": [
       "mod-technical-writing-docs-q-1",
@@ -11,21 +11,53 @@
       "mod-technical-writing-docs-q-3",
       "mod-technical-writing-docs-q-4",
       "mod-technical-writing-docs-q-5",
-      "mod-technical-writing-docs-q-6"
+      "mod-technical-writing-docs-q-6",
+      "mod-technical-writing-docs-q-15",
+      "mod-technical-writing-docs-q-19",
+      "mod-technical-writing-docs-q-20"
     ],
-    "timeLimitMinutes": 60,
+    "timeLimitMinutes": 15,
     "passingScore": 60
   },
   {
     "id": "mod-technical-writing-docs-exam-2",
-    "slug": "basic-exam",
-    "title": "技术写作与文档工程 基础概念快速评估",
-    "summary": "针对核心基础概念的摸底评估，题目精炼。",
-    "difficulty": "easy",
+    "slug": "advanced-exam",
+    "title": "技术写作与文档工程 进阶强化测验",
+    "summary": "聚焦 API 文档、设计文档、Docs as Code 工作流与文档站建设的进阶实践。",
+    "difficulty": "medium",
     "questionIds": [
-      "mod-technical-writing-docs-q-1",
-      "mod-technical-writing-docs-q-2",
-      "mod-technical-writing-docs-q-3"
+      "mod-technical-writing-docs-q-7",
+      "mod-technical-writing-docs-q-8",
+      "mod-technical-writing-docs-q-9",
+      "mod-technical-writing-docs-q-10",
+      "mod-technical-writing-docs-q-11",
+      "mod-technical-writing-docs-q-12",
+      "mod-technical-writing-docs-q-16",
+      "mod-technical-writing-docs-q-17",
+      "mod-technical-writing-docs-q-21",
+      "mod-technical-writing-docs-q-22"
+    ],
+    "timeLimitMinutes": 25,
+    "passingScore": 60
+  },
+  {
+    "id": "mod-technical-writing-docs-exam-3",
+    "slug": "final-exam",
+    "title": "技术写作与文档工程 综合模拟考试",
+    "summary": "跨越基础语法到文档工程化的综合试卷，包含版本化、示例代码保鲜与文档 CI 等高阶考点。",
+    "difficulty": "hard",
+    "questionIds": [
+      "mod-technical-writing-docs-q-4",
+      "mod-technical-writing-docs-q-8",
+      "mod-technical-writing-docs-q-11",
+      "mod-technical-writing-docs-q-12",
+      "mod-technical-writing-docs-q-13",
+      "mod-technical-writing-docs-q-14",
+      "mod-technical-writing-docs-q-18",
+      "mod-technical-writing-docs-q-21",
+      "mod-technical-writing-docs-q-22",
+      "mod-technical-writing-docs-q-23",
+      "mod-technical-writing-docs-q-24"
     ],
     "timeLimitMinutes": 30,
     "passingScore": 60

@@ -1,5 +1,12 @@
 import { useMemo } from "react";
 
+// 使用本地时区日期作为打卡 key，避免 toISOString (UTC) 造成跨日偏移
+function localDateKey(d: Date): string {
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${d.getFullYear()}-${m}-${day}`;
+}
+
 export default function StudyAnalytics() {
   // Generate last 60 days contribution grid data
   const { daysGrid, streak, totalActiveDays, memoryRetention } = useMemo(() => {
@@ -12,17 +19,15 @@ export default function StudyAnalytics() {
     const activeDatesStr = localStorage.getItem("openskill-active-dates");
     const activeDates: Record<string, number> = activeDatesStr ? JSON.parse(activeDatesStr) : {};
 
-    // Record today as active if not recorded
-    const todayKey = today.toISOString().slice(0, 10);
-    if (!activeDates[todayKey]) {
-      activeDates[todayKey] = 1;
-      localStorage.setItem("openskill-active-dates", JSON.stringify(activeDates));
-    }
+    // 每次访问累计一次打卡次数（可达到热力图 2-4 级）
+    const todayKey = localDateKey(today);
+    activeDates[todayKey] = (activeDates[todayKey] || 0) + 1;
+    localStorage.setItem("openskill-active-dates", JSON.stringify(activeDates));
 
     for (let i = 59; i >= 0; i--) {
       const d = new Date(today);
       d.setDate(d.getDate() - i);
-      const dateKey = d.toISOString().slice(0, 10);
+      const dateKey = localDateKey(d);
       const count = activeDates[dateKey] || 0;
       
       let level = 0;

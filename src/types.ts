@@ -191,6 +191,11 @@ export interface WrongQuestionRecord {
   wrongCount: number;
   lastAnswer: string[];
   lastAt: string;
+  // SM-2 间隔复习字段（艾宾浩斯复习引擎）
+  interval?: number; // 天
+  repetitions?: number;
+  easeFactor?: number;
+  nextReviewDate?: string; // ISO
 }
 
 export interface ExamRecord {
