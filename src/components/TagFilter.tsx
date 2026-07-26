@@ -29,7 +29,7 @@ export default function TagFilter({ tags, selected, onChange }: Props) {
     <div className="space-y-2.5 card p-4 border border-slate-200 dark:border-white/10 bg-white/60 dark:bg-slate-950/40">
       <div className="flex items-center justify-between gap-3">
         <span className="text-xs font-bold text-slate-700 dark:text-white/80 flex items-center gap-1.5">
-          <span>🏷️</span> 标签筛选 ({tags.length})
+          标签筛选 ({tags.length})
         </span>
         {tags.length > 12 && (
           <div className="flex items-center gap-2">

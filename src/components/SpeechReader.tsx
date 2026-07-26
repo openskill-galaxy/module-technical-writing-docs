@@ -54,7 +54,7 @@ export default function SpeechReader({ text }: Props) {
         }`}
         title="讲义语音朗读"
       >
-        <span>{speaking ? "⏸ 暂停朗读" : "🔊 语音朗读"}</span>
+        <span>{speaking ? "⏸ 暂停朗读" : "语音朗读"}</span>
       </button>
 
       <div className="flex items-center gap-1 pl-1 border-l border-white/10 text-[10px] text-white/50 font-mono">

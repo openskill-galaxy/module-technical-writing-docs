@@ -44,7 +44,7 @@ function CodeBlockWithCopy({ code, language }: { code: string; language?: string
           type="button"
           className="text-[10px] text-white/50 hover:text-white transition flex items-center gap-1 bg-white/5 px-2 py-0.5 rounded border border-white/10"
         >
-          {copied ? "✓ 已复制" : "📋 复制"}
+          {copied ? "✓ 已复制" : "复制"}
         </button>
       </div>
       <pre className="!my-0 !rounded-none">

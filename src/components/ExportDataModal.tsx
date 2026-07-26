@@ -106,7 +106,7 @@ export default function ExportDataModal({ onClose }: Props) {
             className="w-full card p-3.5 flex items-center justify-between hover:border-brand-500/50 bg-slate-50 dark:bg-white/[0.02] hover:bg-slate-100 dark:hover:bg-white/[0.04] transition group text-left"
           >
             <div className="space-y-0.5">
-              <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-300">📝 Markdown 学习报告 (.md)</span>
+              <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-300">Markdown 学习报告 (.md)</span>
               <p className="text-[11px] text-slate-500 dark:text-white/50">汇总学习统计、收藏清单与错题解析文本</p>
             </div>
             <span className="text-xs text-brand-600 dark:text-brand-400 font-mono">导出 →</span>
@@ -118,7 +118,7 @@ export default function ExportDataModal({ onClose }: Props) {
             className="w-full card p-3.5 flex items-center justify-between hover:border-emerald-500/50 bg-slate-50 dark:bg-white/[0.02] hover:bg-slate-100 dark:hover:bg-white/[0.04] transition group text-left"
           >
             <div className="space-y-0.5">
-              <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300">📊 CSV 数据分析表 (.csv)</span>
+              <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300">CSV 数据分析表 (.csv)</span>
               <p className="text-[11px] text-slate-500 dark:text-white/50">提供可导入 Excel / Python 分析的答题原始表格</p>
             </div>
             <span className="text-xs text-emerald-600 dark:text-emerald-400 font-mono">导出 →</span>
@@ -130,7 +130,7 @@ export default function ExportDataModal({ onClose }: Props) {
             className="w-full card p-3.5 flex items-center justify-between hover:border-amber-500/50 bg-slate-50 dark:bg-white/[0.02] hover:bg-slate-100 dark:hover:bg-white/[0.04] transition group text-left"
           >
             <div className="space-y-0.5">
-              <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-300">📦 JSON 本地备份快照 (.json)</span>
+              <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-300">JSON 本地备份快照 (.json)</span>
               <p className="text-[11px] text-slate-500 dark:text-white/50">包含完整的进度加密快照，支持无缝热复原</p>
             </div>
             <span className="text-xs text-amber-600 dark:text-amber-400 font-mono">导出 →</span>

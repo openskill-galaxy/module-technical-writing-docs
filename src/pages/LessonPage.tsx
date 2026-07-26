@@ -85,8 +85,7 @@ export default function LessonPage({ data }: { data: ModuleData }) {
               className="btn-ghost text-xs"
               onClick={() => window.print()}
               title="导出 PDF 或打印讲义"
-            >
-              🖨️ 打印 / PDF
+            >打印 / PDF
             </button>
             <button
               type="button"

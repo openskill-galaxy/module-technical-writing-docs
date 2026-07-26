@@ -107,7 +107,7 @@ export default function ExamResultPage({ data }: { data: ModuleData }) {
       <section className="card p-6 md:p-8 space-y-4 bg-gradient-to-br from-slate-900/90 to-indigo-950/40 border-brand-500/20">
         <div className="flex items-center justify-between border-b border-white/5 pb-3">
           <h2 className="text-base font-bold text-white tracking-wide flex items-center gap-2">
-            <span>📊</span> 综合能力多维诊断蛛网图
+            综合能力多维诊断蛛网图
           </h2>
           <span className="text-xs text-white/40">系统智能评估分析</span>
         </div>
@@ -116,7 +116,7 @@ export default function ExamResultPage({ data }: { data: ModuleData }) {
           <RadarChart data={radarData} size={280} />
           
           <div className="space-y-3 flex-1 max-w-sm">
-            <h3 className="text-xs font-bold text-brand-200 uppercase tracking-wider">💡 针对性攻坚建议</h3>
+            <h3 className="text-xs font-bold text-brand-200 uppercase tracking-wider">针对性攻坚建议</h3>
             {record.score >= 80 ? (
               <p className="text-xs text-emerald-300 leading-relaxed bg-emerald-500/10 border border-emerald-500/20 p-3 rounded-xl">
                 表现极为优异！您的基础概念与高阶逻辑均十分扎实，建议保持节奏，挑战更多高难度综合实战模块。
@@ -136,8 +136,7 @@ export default function ExamResultPage({ data }: { data: ModuleData }) {
                       key={les!.slug}
                       to={`/lessons/${les!.slug}`}
                       className="tag hover:border-brand-400/50 hover:text-white transition py-1 text-xs"
-                    >
-                      📖 {les!.title}
+                    >{les!.title}
                     </Link>
                   ))}
                 </div>
@@ -149,7 +148,7 @@ export default function ExamResultPage({ data }: { data: ModuleData }) {
 
       {/* Answer Details Section */}
       <section className="space-y-3">
-        <h2 className="text-base font-semibold text-white">📝 逐题评分与答题回顾</h2>
+        <h2 className="text-base font-semibold text-white">逐题评分与答题回顾</h2>
         <div className="card divide-y divide-white/10 overflow-hidden">
           {record.details.map((d, idx) => {
             const q = data.questions.find((qq) => qq.id === d.questionId);

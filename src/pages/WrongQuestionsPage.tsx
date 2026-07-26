@@ -104,8 +104,7 @@ export default function WrongQuestionsPage({ data }: { data: ModuleData }) {
                         <Link
                           to={`/lessons/${relatedLesson.id}`}
                           className="btn-ghost text-xs text-brand-600 dark:text-brand-300 hover:underline border-slate-200 dark:border-brand-500/30"
-                        >
-                          📖 查阅源头讲义
+                        >查阅源头讲义
                         </Link>
                       );
                     })()}

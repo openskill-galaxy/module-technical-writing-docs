@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
-import CosmicBackground from "./CosmicBackground";
 import type { ModuleData } from "../data/loaders";
 
 export default function Layout({
@@ -20,10 +19,16 @@ export default function Layout({
   }, [pathname]);
 
   return (
-    <div className="min-h-full flex flex-col">
-      <div className="starfield fixed inset-0 -z-10 opacity-50" />
-      <div className="cosmic-glow" />
-      <CosmicBackground />
+    <div className="min-h-full flex flex-col bg-page">
+      {/* Subtle ambient backdrop */}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(60% 40% at 50% -8%, var(--accent-soft), transparent 70%)",
+        }}
+      />
       <Header module={data.module} />
       <div className="flex flex-1">
         <Sidebar />

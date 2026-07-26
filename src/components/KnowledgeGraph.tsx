@@ -65,7 +65,7 @@ export default function KnowledgeGraph({ data }: Props) {
     <div className="card p-5 relative overflow-hidden shadow-2xl">
       <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/5 pb-3 mb-2">
         <h3 className="text-sm font-bold text-slate-900 dark:text-white tracking-wide flex items-center gap-2">
-          <span>🌌</span> 课程结构知识星图拓扑
+          课程结构知识星图拓扑
         </h3>
         <span className="text-xs text-slate-500 dark:text-white/40">点击星轨节点直达讲义</span>
       </div>
@@ -145,7 +145,7 @@ export default function KnowledgeGraph({ data }: Props) {
         {hoveredNode && (
           <div className="absolute top-4 right-4 bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-white/10 p-3 rounded-xl max-w-xs backdrop-blur-md shadow-2xl animate-fade-in pointer-events-none">
             <span className="text-[10px] font-bold text-brand-600 dark:text-brand-300 uppercase tracking-widest block mb-1">
-              {hoveredNode.type === "course" ? "📘 课程模块" : "📄 讲义节点"}
+              {hoveredNode.type === "course" ? "课程模块" : "讲义节点"}
             </span>
             <h4 className="text-xs font-bold text-slate-900 dark:text-white">{hoveredNode.label}</h4>
             {hoveredNode.summary && (

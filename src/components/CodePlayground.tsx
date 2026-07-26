@@ -73,7 +73,7 @@ export default function CodePlayground({
               </style>
             </head>
             <body>
-              <h4>💻 控制台输出 (Console Output)</h4>
+              <h4>控制台输出 (Console Output)</h4>
               <div id="output"></div>
               <script>
                 const outputDiv = document.getElementById('output');
@@ -136,8 +136,7 @@ export default function CodePlayground({
   return (
     <div className="mt-4 rounded-2xl border border-slate-200 dark:border-white/[0.06] bg-white dark:bg-slate-950/20 overflow-hidden shadow-xl">
       <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/[0.06] bg-slate-50 dark:bg-slate-950/40 px-4 py-2.5">
-        <span className="text-xs font-bold text-slate-700 dark:text-white/60 tracking-wider">
-          🛠️ 交互式代码演练沙箱 ({language.toUpperCase()})
+        <span className="text-xs font-bold text-slate-700 dark:text-white/60 tracking-wider">交互式代码演练沙箱 ({language.toUpperCase()})
         </span>
         <div className="flex gap-2">
           {showSandbox && (

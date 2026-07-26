@@ -1,4 +1,4 @@
-const CACHE_NAME = "openskill-galaxy-module-v2";
+const CACHE_NAME = "openskill-galaxy-module-v3";
 
 self.addEventListener("install", () => {
   self.skipWaiting();

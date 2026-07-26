@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { Lesson } from "../types";
+import { IconSearch } from "./icons";
 
 interface Props {
   lessons: Lesson[];
@@ -29,7 +30,7 @@ export default function LessonContentSearch({ lessons, onFilter }: Props) {
   return (
     <div className="relative w-full max-w-md">
       <div className="relative flex items-center">
-        <span className="absolute left-3 text-white/40 text-xs">🔍</span>
+        <span className="absolute left-3 text-subtle pointer-events-none"><IconSearch size={14} /></span>
         <input
           type="text"
           value={query}

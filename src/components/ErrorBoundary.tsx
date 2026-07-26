@@ -26,9 +26,7 @@ export default class ErrorBoundary extends Component<Props, State> {
   public render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center bg-[#05060b] text-white">
-          <div className="starfield fixed inset-0 -z-10 opacity-50" />
-          <div className="cosmic-glow" />
+        <div className="min-h-screen flex flex-col items-center justify-center p-6 text-center bg-page text-body">
           <div className="card max-w-md p-8 space-y-5">
             <span className="text-4xl">⚠️</span>
             <h2 className="text-xl font-bold tracking-wide text-white">模块加载失败</h2>

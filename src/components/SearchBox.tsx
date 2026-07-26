@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import type { SearchResult } from "../types";
 import { buildSearchEntries, createFuse, runSearch, typeLabel } from "../search/search";
 import type { ModuleData } from "../data/loaders";
+import { IconSearch } from "./icons";
 
 let cachedEntries: ReturnType<typeof buildSearchEntries> | null = null;
 let cachedFuse: ReturnType<typeof createFuse> | null = null;
@@ -144,7 +145,7 @@ export default function SearchBox() {
           aria-autocomplete="list"
           aria-expanded={open}
         />
-        <span className="absolute left-3.5 text-slate-400 dark:text-white/30 text-xs">🔍</span>
+        <span className="absolute left-3 text-subtle pointer-events-none"><IconSearch size={15} /></span>
         <span className="hidden sm:inline absolute right-3 text-[9px] font-bold text-slate-400 dark:text-white/20 border border-slate-200 dark:border-white/10 rounded px-1.5 py-0.5 pointer-events-none select-none bg-slate-100 dark:bg-white/[0.01]">
           Ctrl+K
         </span>

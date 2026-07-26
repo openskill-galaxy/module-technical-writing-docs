@@ -76,7 +76,7 @@ export default function StudyAnalytics() {
       <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 space-y-1.5">
         <div className="flex justify-between text-xs font-bold text-slate-900 dark:text-white">
           <span className="flex items-center gap-1.5">
-            <span>🧠</span> 艾宾浩斯遗忘曲线估计记忆保留率
+            艾宾浩斯遗忘曲线估计记忆保留率
           </span>
           <span className="text-emerald-600 dark:text-emerald-400 font-mono">{memoryRetention}%</span>
         </div>

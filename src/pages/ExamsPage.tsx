@@ -24,9 +24,9 @@ export default function ExamsPage({ data }: { data: ModuleData }) {
               </div>
               <p className="mt-2 text-sm text-slate-600 dark:text-white/70 line-clamp-2 leading-relaxed">{exam.summary}</p>
               <div className="mt-3 flex flex-wrap gap-3 text-xs text-slate-500 dark:text-white/50 font-medium">
-                <span>📝 {exam.questionIds.length} 题</span>
+                <span>{exam.questionIds.length} 题</span>
                 <span>⏱️ 限时 {exam.timeLimitMinutes} 分钟</span>
-                <span>🎯 及格 {exam.passingScore} 分</span>
+                <span>及格 {exam.passingScore} 分</span>
               </div>
               {latest && (
                 <div className="mt-3 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5 px-3 py-2 text-xs">

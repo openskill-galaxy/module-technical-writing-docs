@@ -62,7 +62,7 @@ export default function CodeJudge({ initialCode, testCases }: Props) {
     <div className="card p-5 border border-slate-200 dark:border-indigo-500/20 bg-white/90 dark:bg-slate-950/60 shadow-2xl space-y-4">
       <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-3">
         <h3 className="text-xs font-bold text-slate-900 dark:text-white tracking-wide flex items-center gap-2">
-          <span>🧪</span> 编程算法实战 OJ 判题测试引擎
+          编程算法实战 OJ 判题测试引擎
         </h3>
         <button
           onClick={runJudge}

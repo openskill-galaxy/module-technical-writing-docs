@@ -6,6 +6,7 @@ import { renderMarkdown } from "../utils/markdown";
 import DifficultyBadge from "./DifficultyBadge";
 import PersonalNotes from "./PersonalNotes";
 import { useProgressStore } from "../store/useProgressStore";
+import { IconVolume, IconVolumeX } from "./icons";
 
 function triggerConfetti() {
   const container = document.createElement("div");
@@ -246,7 +247,7 @@ export default function QuestionPlayer({
             title={muted ? "开启答题音效" : "关闭答题音效"}
             type="button"
           >
-            {muted ? "🔇" : "🔊"}
+            {muted ? <IconVolumeX size={13} /> : <IconVolume size={13} />}
           </button>
           <span className="text-xs text-white/50">已答 {answeredCount}/{total}</span>
         </div>
@@ -350,7 +351,7 @@ export default function QuestionPlayer({
 
       {/* Question Navigation Grid */}
       <div className="card p-4">
-        <h4 className="text-[10px] font-bold text-white/30 mb-3 tracking-widest uppercase">🧩 答题卡导航 (Ctrl+左/右 快捷翻页)</h4>
+        <h4 className="text-[10px] font-bold text-white/30 mb-3 tracking-widest uppercase">答题卡导航 (Ctrl+左/右 快捷翻页)</h4>
         <div className="flex flex-wrap gap-2">
           {questions.map((item, idx) => {
             const isCurrent = idx === current;

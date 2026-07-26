@@ -32,7 +32,7 @@ export default function PersonalNotes({ targetType, targetId }: Props) {
           type="button"
           className="text-xs font-bold text-white/80 hover:text-white flex items-center gap-2"
         >
-          <span>📝</span> 个人学习笔记与备忘心得 {note.trim() ? "• (已记笔记)" : ""}
+          个人学习笔记与备忘心得 {note.trim() ? "• (已记笔记)" : ""}
         </button>
         {saved && <span className="text-[10px] text-emerald-300 font-semibold animate-fade-in">✓ 已保存</span>}
       </div>

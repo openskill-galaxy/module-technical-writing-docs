@@ -5,16 +5,13 @@ export type Theme = "dark" | "light";
 
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(() => {
-    return (localStorage.getItem(STORAGE_KEYS.THEME) as Theme) || "dark";
+    return (localStorage.getItem(STORAGE_KEYS.THEME) as Theme) || "light";
   });
 
   useEffect(() => {
     const root = document.documentElement;
-    if (theme === "light") {
-      root.classList.add("light");
-    } else {
-      root.classList.remove("light");
-    }
+    root.classList.toggle("dark", theme === "dark");
+    root.classList.toggle("light", theme !== "dark");
     localStorage.setItem(STORAGE_KEYS.THEME, theme);
   }, [theme]);
 

@@ -31,24 +31,21 @@ export default function RoutesPage({ data }: { data: ModuleData }) {
                           <Link
                             to={`/courses/${data.courses.find((c) => c.id === step.courseId)?.slug || ""}`}
                             className="text-xs font-medium text-brand-600 dark:text-brand-300 hover:underline"
-                          >
-                            📖 关联课程 →
+                          >关联课程 →
                           </Link>
                         )}
                         {step.lessonId && (
                           <Link
                             to={`/lessons/${data.lessons.find((l) => l.id === step.lessonId)?.slug || ""}`}
                             className="text-xs font-medium text-brand-600 dark:text-brand-300 hover:underline"
-                          >
-                            📝 关联讲义 →
+                          >关联讲义 →
                           </Link>
                         )}
                         {step.knowledgePointId && (
                           <Link
                             to={`/knowledge/${data.knowledgePoints.find((k) => k.id === step.knowledgePointId)?.slug || ""}`}
                             className="text-xs font-medium text-brand-600 dark:text-brand-300 hover:underline"
-                          >
-                            💡 关联知识点 →
+                          >关联知识点 →
                           </Link>
                         )}
                       </div>

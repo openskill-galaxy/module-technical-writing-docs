@@ -2,6 +2,19 @@ import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import SearchBox from "./SearchBox";
 import PomodoroTimer from "./PomodoroTimer";
+import {
+  IconMenu,
+  IconX,
+  IconSun,
+  IconMoon,
+  IconCloud,
+  IconArchive,
+  IconTrophy,
+  IconKeyboard,
+  IconDownload,
+  colorFromId,
+  monogram,
+} from "./icons";
 import type { ModuleMeta } from "../types";
 
 function BackupModal({ onClose }: { onClose: () => void }) {
@@ -63,7 +76,7 @@ function BackupModal({ onClose }: { onClose: () => void }) {
       role="dialog"
       aria-modal="true"
       aria-label="本地 JSON 备份与同步"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm animate-fade-in p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm animate-fade-in p-4"
     >
       <div className="card w-full max-w-sm p-6 relative border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 shadow-2xl flex flex-col gap-5">
         <button
@@ -75,7 +88,7 @@ function BackupModal({ onClose }: { onClose: () => void }) {
           ✕
         </button>
         <div>
-          <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-wide">📦 备份与同步</h3>
+          <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-wide">备份与同步</h3>
           <p className="text-xs text-slate-500 dark:text-white/40 mt-1">导出或恢复您在全站 60 个模块的完整学习进度与收藏夹数据</p>
         </div>
 
@@ -87,12 +100,10 @@ function BackupModal({ onClose }: { onClose: () => void }) {
             onClick={handleExport}
             className="btn-primary w-full text-xs font-semibold"
             type="button"
-          >
-            📥 导出进度备份 (.json)
+          >导出进度备份 (.json)
           </button>
           
-          <label className="btn-ghost w-full text-xs font-semibold text-center cursor-pointer block py-2.5">
-            📤 导入进度备份 (.json)
+          <label className="btn-ghost w-full text-xs font-semibold text-center cursor-pointer block py-2.5">导入进度备份 (.json)
             <input
               type="file"
               accept=".json"
@@ -143,7 +154,7 @@ const mobileNavGroups = [
 
 export default function Header({ module }: { module: ModuleMeta }) {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "dark";
+    return localStorage.getItem("theme") || "light";
   });
   const [showBackup, setShowBackup] = useState(false);
   const [showAppwrite, setShowAppwrite] = useState(false);
@@ -177,31 +188,34 @@ export default function Header({ module }: { module: ModuleMeta }) {
   }, [theme]);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-slate-200 dark:border-white/[0.06] bg-white/90 dark:bg-slate-950/40 backdrop-blur-md">
+    <header className="sticky top-0 z-30 border-b border-line bg-page/80 backdrop-blur-xl">
       <div className="container-page flex h-16 items-center gap-3">
         {/* Mobile Hamburger Menu Toggle Button */}
         <button
           onClick={() => setShowMobileMenu(!showMobileMenu)}
           aria-label="打开移动导航菜单"
           type="button"
-          className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] text-slate-700 dark:text-white"
+          className="md:hidden icon-btn"
         >
-          {showMobileMenu ? "✕" : "☰"}
+          {showMobileMenu ? <IconX size={17} /> : <IconMenu size={17} />}
         </button>
 
         <Link to="/" className="flex items-center gap-2.5 font-bold transition hover:opacity-90 min-w-0">
-          <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 text-white shadow-md shadow-brand-600/20 text-base">
-            {module.coverEmoji || "📘"}
+          <span
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-sm font-bold"
+            style={{ background: colorFromId(module.slug).soft, color: colorFromId(module.slug).fg }}
+          >
+            {monogram(module.title)}
           </span>
-          <span className="text-slate-900 dark:text-white tracking-wide text-sm font-bold truncate max-w-[130px] sm:max-w-none">{module.title}</span>
-          <span className="hidden sm:inline rounded-lg border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 px-2 py-0.5 text-[10px] font-semibold text-slate-500 dark:text-white/50">
+          <span className="text-body tracking-tight text-sm font-bold truncate max-w-[130px] sm:max-w-none">{module.title}</span>
+          <span className="hidden sm:inline rounded-md border border-line bg-surface-2 px-2 py-0.5 text-[10px] font-semibold text-subtle">
             v{module.version}
           </span>
         </Link>
         
         <a
           href={module.portalUrl || "https://openskill-galaxy.github.io/"}
-          className="hidden lg:inline-flex items-center gap-1 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] px-3 py-1.5 text-xs font-semibold text-slate-600 dark:text-white/60 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
+          className="hidden lg:inline-flex items-center gap-1 rounded-lg border border-line bg-surface px-3 py-1.5 text-xs font-medium text-muted hover:bg-surface-2 hover:text-body transition duration-200"
         >
           ← 返回总站
         </a>
@@ -213,57 +227,57 @@ export default function Header({ module }: { module: ModuleMeta }) {
           <PomodoroTimer />
           <button
             onClick={() => setShowAppwrite(true)}
-            className="flex h-9 px-2 shrink-0 items-center gap-1 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] text-xs text-slate-700 dark:text-white/70 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
+            className="icon-btn"
             title="Appwrite 云端数据同步与认证"
             aria-label="Appwrite 云端同步"
             type="button"
           >
-            ⚡ <span className="hidden sm:inline text-[10px] font-semibold">云同步</span>
+            <IconCloud size={17} />
           </button>
           <button
             onClick={() => setShowExport(true)}
-            className="hidden sm:flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] text-sm text-slate-700 dark:text-white/70 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
+            className="icon-btn hidden sm:inline-flex"
             title="多格式学习档案与数据导出"
             aria-label="多格式数据导出"
             type="button"
           >
-            📥
+            <IconDownload size={17} />
           </button>
           <button
             onClick={() => setShowBackup(true)}
-            className="hidden sm:flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] text-sm text-slate-700 dark:text-white/70 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
+            className="icon-btn hidden sm:inline-flex"
             title="本地 JSON 进度备份"
             aria-label="本地 JSON 备份"
             type="button"
           >
-            📦
+            <IconArchive size={17} />
           </button>
           <button
             onClick={() => setShowAchievements(true)}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] text-sm text-slate-700 dark:text-white/70 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
+            className="icon-btn"
             title="游戏化成就勋章墙"
             aria-label="成就勋章墙"
             type="button"
           >
-            🏆
+            <IconTrophy size={17} />
           </button>
           <button
             onClick={() => setShowShortcuts(true)}
-            className="hidden sm:flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] text-xs font-mono text-cyan-600 dark:text-cyan-300 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
+            className="icon-btn hidden sm:inline-flex"
             title="全站键盘快捷键指南 (Shift+?)"
             aria-label="键盘快捷键指南"
             type="button"
           >
-            ⌨️
+            <IconKeyboard size={17} />
           </button>
           <button
             onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 dark:border-white/10 bg-slate-100/60 dark:bg-white/[0.02] text-sm text-slate-700 dark:text-white/70 hover:bg-slate-200 dark:hover:bg-white/5 transition duration-200"
+            className="icon-btn"
             title={theme === 'dark' ? '切换至亮色模式' : '切换至暗色模式'}
             aria-label="切换主题模式"
             type="button"
           >
-            {theme === 'dark' ? '☀️' : '🌙'}
+            {theme === 'dark' ? <IconSun size={17} /> : <IconMoon size={17} />}
           </button>
         </div>
       </div>

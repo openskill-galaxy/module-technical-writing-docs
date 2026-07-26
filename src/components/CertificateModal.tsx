@@ -67,8 +67,7 @@ export default function CertificateModal({ moduleTitle, score = 100, onClose }: 
             onClick={() => window.print()}
             type="button"
             className="btn-primary px-6 text-xs font-bold"
-          >
-            🖨️ 打印 / 保存 PDF 证书
+          >打印 / 保存 PDF 证书
           </button>
           <button
             onClick={onClose}

@@ -74,7 +74,7 @@ export default function FavoritesPage({ data }: { data: ModuleData }) {
             placeholder="搜索收藏夹标题/摘要..."
             className="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.04] text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/40 focus:outline-none focus:border-brand-500"
           />
-          <span className="absolute left-2.5 top-2 text-slate-400 dark:text-white/40 text-xs">🔍</span>
+          <span className="absolute left-2.5 top-2 text-slate-400 dark:text-white/40 text-xs"></span>
         </div>
       </header>
 
@@ -82,9 +82,9 @@ export default function FavoritesPage({ data }: { data: ModuleData }) {
       <div className="flex gap-2 border-b border-slate-200 dark:border-white/10 pb-2 overflow-x-auto text-xs font-semibold">
         {[
           { id: "all", label: `全部 (${items.length})` },
-          { id: "lesson", label: `📖 讲义 (${items.filter((i) => i.fav.type === "lesson").length})` },
+          { id: "lesson", label: `讲义 (${items.filter((i) => i.fav.type === "lesson").length})` },
           { id: "question", label: `❓ 题目 (${items.filter((i) => i.fav.type === "question").length})` },
-          { id: "knowledge", label: `💡 知识点 (${items.filter((i) => i.fav.type === "knowledge").length})` },
+          { id: "knowledge", label: `知识点 (${items.filter((i) => i.fav.type === "knowledge").length})` },
         ].map((tab) => (
           <button
             key={tab.id}

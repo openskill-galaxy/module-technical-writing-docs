@@ -71,7 +71,7 @@ export default function LessonTOC({ content }: Props) {
     <aside className="sticky top-24 hidden lg:block w-64 shrink-0 self-start space-y-3">
       <div className="card p-4 border border-white/10 bg-slate-900/60 backdrop-blur-md shadow-xl">
         <h4 className="text-xs font-bold text-white tracking-wider mb-3 flex items-center gap-2 border-b border-white/5 pb-2">
-          <span>📜</span> 讲义目录导航
+          讲义目录导航
         </h4>
         <nav className="space-y-1.5 max-h-[70vh] overflow-y-auto pr-1">
           {headings.map((h) => {

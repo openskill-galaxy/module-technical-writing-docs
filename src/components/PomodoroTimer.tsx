@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { IconTimer } from "./icons";
 
 export default function PomodoroTimer() {
   const [secondsLeft, setSecondsLeft] = useState(25 * 60);
@@ -51,7 +52,7 @@ export default function PomodoroTimer() {
         }`}
         title="番茄专注计时器"
       >
-        <span>⏱️</span>
+        <IconTimer size={16} />
         <span className="font-mono font-bold">{formattedTime}</span>
       </button>
 
@@ -59,7 +60,7 @@ export default function PomodoroTimer() {
         <div className="absolute right-0 top-10 z-50 w-64 card p-4 bg-white/95 dark:bg-slate-950/95 border-slate-200 dark:border-white/10 backdrop-blur-xl shadow-2xl space-y-3 animate-fade-in">
           <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-2">
             <h4 className="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
-              <span>⏱️</span> 专注番茄钟
+              <span className="inline-flex"><IconTimer size={15} /></span> 专注番茄钟
             </h4>
             <button
               onClick={() => setIsOpen(false)}
@@ -74,7 +75,7 @@ export default function PomodoroTimer() {
               {formattedTime}
             </span>
             <span className="text-[10px] text-slate-500 dark:text-white/50 mt-1 block">
-              {isRunning ? "🔥 保持专注学习中..." : "准备开始 25 分钟高效专注"}
+              {isRunning ? "保持专注学习中..." : "准备开始 25 分钟高效专注"}
             </span>
           </div>
 

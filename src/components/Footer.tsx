@@ -17,13 +17,11 @@ export default function Footer({ module }: { module: ModuleMeta }) {
           </div>
           <div className="flex flex-wrap gap-4 text-xs font-semibold">
             {module?.repoUrl && (
-              <a className="text-brand-600 dark:text-brand-300 hover:underline" href={module.repoUrl} target="_blank" rel="noreferrer">
-                📂 模块 GitHub 仓库
+              <a className="text-brand-600 dark:text-brand-300 hover:underline" href={module.repoUrl} target="_blank" rel="noreferrer">模块 GitHub 仓库
               </a>
             )}
             {module?.portalUrl && (
-              <a className="text-brand-600 dark:text-brand-300 hover:underline" href={module.portalUrl} target="_blank" rel="noreferrer">
-                🌐 返回 OpenSkill 总站
+              <a className="text-brand-600 dark:text-brand-300 hover:underline" href={module.portalUrl} target="_blank" rel="noreferrer">返回 OpenSkill 总站
               </a>
             )}
           </div>

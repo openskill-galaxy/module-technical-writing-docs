@@ -132,10 +132,10 @@ export default function QuizSpeedRunModal({ questions, onClose }: Props) {
                 得分: <strong className="text-emerald-600 dark:text-emerald-400 text-sm">{score}</strong> pts
               </div>
               <div>
-                当前连胜: <strong className="text-amber-600 dark:text-amber-300 text-sm">🔥 {streak}</strong>
+                当前连胜: <strong className="text-amber-600 dark:text-amber-300 text-sm">{streak}</strong>
               </div>
               <div>
-                最大连击: <strong className="text-cyan-600 dark:text-cyan-300 text-sm">⚡ {maxStreak}</strong>
+                最大连击: <strong className="text-cyan-600 dark:text-cyan-300 text-sm">{maxStreak}</strong>
               </div>
             </div>
 
@@ -205,13 +205,12 @@ export default function QuizSpeedRunModal({ questions, onClose }: Props) {
               </div>
               <div className="space-y-1">
                 <p className="text-[10px] text-slate-500 dark:text-white/40">最高连击</p>
-                <p className="text-lg font-bold text-amber-600 dark:text-amber-300">🔥 {maxStreak}</p>
+                <p className="text-lg font-bold text-amber-600 dark:text-amber-300">{maxStreak}</p>
               </div>
             </div>
 
             <div className="flex justify-center gap-3 pt-2">
-              <button onClick={handleRestart} className="btn-primary text-xs" type="button">
-                🔄 重新挑战
+              <button onClick={handleRestart} className="btn-primary text-xs" type="button">重新挑战
               </button>
               <button onClick={onClose} className="btn-ghost text-xs" type="button">
                 退出挑战

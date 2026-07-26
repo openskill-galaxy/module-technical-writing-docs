@@ -1,5 +1,6 @@
 import type { ModuleData } from "../data/loaders";
 import { useProgressStore } from "../store/useProgressStore";
+import { colorFromId, monogram } from "../components/icons";
 
 export default function AboutPage({ data }: { data: ModuleData }) {
   const resetAll = useProgressStore((s) => s.resetAll);
@@ -13,7 +14,10 @@ export default function AboutPage({ data }: { data: ModuleData }) {
 
       <section className="space-y-3">
         <div className="flex items-center gap-3">
-          <span className="text-4xl">{m.coverEmoji || "📘"}</span>
+          <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-xl font-bold"
+            style={{ background: colorFromId(m.slug).soft, color: colorFromId(m.slug).fg }}>
+            {monogram(m.title)}
+          </span>
           <div>
             <h2 className="text-xl font-bold text-slate-900 dark:text-white">{m.title || "OpenSkill 模块"}</h2>
             <p className="text-sm text-slate-600 dark:text-white/60">{m.subtitle || ""}</p>
@@ -65,15 +69,14 @@ export default function AboutPage({ data }: { data: ModuleData }) {
               alert("已成功清空本地数据。");
             }
           }}
-        >
-          🗑️ 清空本地数据记录
+        >清空本地数据记录
         </button>
       </section>
 
       <section className="space-y-2 text-sm text-slate-600 dark:text-white/60">
         <h2 className="text-base font-bold text-slate-900 dark:text-white">导航链接</h2>
-        {m.repoUrl && <p><a className="text-brand-600 dark:text-brand-300 hover:underline" href={m.repoUrl} target="_blank" rel="noreferrer">📂 模块 GitHub 源码仓库 →</a></p>}
-        {m.portalUrl && <p><a className="text-brand-600 dark:text-brand-300 hover:underline" href={m.portalUrl} target="_blank" rel="noreferrer">🌐 返回 OpenSkill Galaxy 总入口站 →</a></p>}
+        {m.repoUrl && <p><a className="text-brand-600 dark:text-brand-300 hover:underline" href={m.repoUrl} target="_blank" rel="noreferrer">模块 GitHub 源码仓库 →</a></p>}
+        {m.portalUrl && <p><a className="text-brand-600 dark:text-brand-300 hover:underline" href={m.portalUrl} target="_blank" rel="noreferrer">返回 OpenSkill Galaxy 总入口站 →</a></p>}
       </section>
     </article>
   );

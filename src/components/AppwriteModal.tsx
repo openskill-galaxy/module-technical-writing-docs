@@ -175,24 +175,21 @@ export default function AppwriteModal({ onClose }: Props) {
             className={`flex-1 py-1.5 rounded-md transition font-medium ${
               activeTab === "sync" ? "bg-brand-600 text-white shadow" : "text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white"
             }`}
-          >
-            ☁️ 云端同步
+          >云端同步
           </button>
           <button
             onClick={() => setActiveTab("auth")}
             className={`flex-1 py-1.5 rounded-md transition font-medium ${
               activeTab === "auth" ? "bg-brand-600 text-white shadow" : "text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white"
             }`}
-          >
-            👤 账户验证
+          >账户验证
           </button>
           <button
             onClick={() => setActiveTab("config")}
             className={`flex-1 py-1.5 rounded-md transition font-medium ${
               activeTab === "config" ? "bg-brand-600 text-white shadow" : "text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white"
             }`}
-          >
-            ⚙️ 配置端点
+          >配置端点
           </button>
         </div>
 
@@ -213,7 +210,7 @@ export default function AppwriteModal({ onClose }: Props) {
                 className="btn-primary w-full text-xs font-semibold py-2.5"
                 type="button"
               >
-                {loading ? "同步中..." : "📤 推送本地数据至 Appwrite 云端"}
+                {loading ? "同步中..." : "推送本地数据至 Appwrite 云端"}
               </button>
               <button
                 onClick={handlePull}
@@ -221,7 +218,7 @@ export default function AppwriteModal({ onClose }: Props) {
                 className="btn-ghost w-full text-xs font-semibold py-2.5"
                 type="button"
               >
-                {loading ? "拉取中..." : "📥 从 Appwrite 云端恢复全站数据"}
+                {loading ? "拉取中..." : "从 Appwrite 云端恢复全站数据"}
               </button>
             </div>
           </div>
@@ -284,8 +281,7 @@ export default function AppwriteModal({ onClose }: Props) {
                     onClick={handleAnonymous}
                     disabled={loading}
                     className="btn-ghost w-full text-xs text-slate-600 dark:text-white/60 py-1.5"
-                  >
-                    👤 一键开启 Appwrite 匿名会话
+                  >一键开启 Appwrite 匿名会话
                   </button>
                 </div>
               </form>
