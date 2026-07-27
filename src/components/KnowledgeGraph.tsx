@@ -62,7 +62,7 @@ export default function KnowledgeGraph({ data }: Props) {
   });
 
   return (
-    <div className="card p-5 relative overflow-hidden shadow-2xl">
+    <div className="card p-5 relative overflow-hidden">
       <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/5 pb-3 mb-2">
         <h3 className="text-sm font-bold text-slate-900 dark:text-white tracking-wide flex items-center gap-2">
           课程结构知识星图拓扑
@@ -71,7 +71,8 @@ export default function KnowledgeGraph({ data }: Props) {
       </div>
 
       <div className="relative flex justify-center overflow-x-auto">
-        <svg viewBox={`0 0 ${width} ${height}`} className="w-full max-w-[800px] h-[340px]">
+        {/* 小屏改为横向滚动而非等比缩小，保证节点文字可读 */}
+        <svg viewBox={`0 0 ${width} ${height}`} className="w-full min-w-[640px] max-w-[800px] h-auto">
           <defs>
             <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stopColor="#818cf8" stopOpacity="0.6" />
@@ -90,7 +91,6 @@ export default function KnowledgeGraph({ data }: Props) {
               stroke="url(#lineGrad)"
               strokeWidth="1.5"
               strokeDasharray="4 2"
-              className="animate-pulse"
             />
           ))}
 
@@ -123,9 +123,9 @@ export default function KnowledgeGraph({ data }: Props) {
                       cx={node.x}
                       cy={node.y}
                       r="10"
-                      className="fill-cyan-400/20 stroke-cyan-300 stroke-2 hover:fill-cyan-400 transition-all duration-300"
+                      className="fill-cyan-500/15 stroke-cyan-600 dark:stroke-cyan-300 stroke-2 hover:fill-cyan-500/40 transition-all duration-300"
                     />
-                    <circle cx={node.x} cy={node.y} r="4" className="fill-cyan-200" />
+                    <circle cx={node.x} cy={node.y} r="4" className="fill-cyan-600 dark:fill-cyan-200" />
                     <text
                       x={node.x}
                       y={node.y + 20}

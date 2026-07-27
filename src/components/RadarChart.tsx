@@ -93,7 +93,7 @@ export default function RadarChart({ data, size = 300 }: Props) {
           return (
             <g key={i}>
               <circle cx={x} cy={y} r="5" className="fill-indigo-400 stroke-white stroke-2" />
-              <circle cx={x} cy={y} r="10" className="fill-indigo-500/20 animate-ping" />
+              <circle cx={x} cy={y} r="10" className="fill-indigo-500/20" />
             </g>
           );
         })}

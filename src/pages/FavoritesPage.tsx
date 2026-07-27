@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import type { ModuleData } from "../data/loaders";
 import { useProgressStore } from "../store/useProgressStore";
 import EmptyState from "../components/EmptyState";
+import { IconSearch } from "../components/icons";
 import type { FavoriteRecord } from "../types";
 
 const typeLabel: Record<FavoriteRecord["type"], string> = {
@@ -74,7 +75,9 @@ export default function FavoritesPage({ data }: { data: ModuleData }) {
             placeholder="搜索收藏夹标题/摘要..."
             className="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.04] text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-white/40 focus:outline-none focus:border-brand-500"
           />
-          <span className="absolute left-2.5 top-2 text-slate-400 dark:text-white/40 text-xs"></span>
+          <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-white/40 pointer-events-none">
+            <IconSearch size={13} />
+          </span>
         </div>
       </header>
 
@@ -83,8 +86,9 @@ export default function FavoritesPage({ data }: { data: ModuleData }) {
         {[
           { id: "all", label: `全部 (${items.length})` },
           { id: "lesson", label: `讲义 (${items.filter((i) => i.fav.type === "lesson").length})` },
-          { id: "question", label: `❓ 题目 (${items.filter((i) => i.fav.type === "question").length})` },
+          { id: "question", label: `题目 (${items.filter((i) => i.fav.type === "question").length})` },
           { id: "knowledge", label: `知识点 (${items.filter((i) => i.fav.type === "knowledge").length})` },
+          { id: "case", label: `案例 (${items.filter((i) => i.fav.type === "case").length})` },
         ].map((tab) => (
           <button
             key={tab.id}
@@ -114,7 +118,7 @@ export default function FavoritesPage({ data }: { data: ModuleData }) {
             <div key={`${item.fav.type}-${item.fav.id}`} className="card p-4 flex items-start justify-between gap-4">
               <div className="space-y-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <span className="badge-ghost text-[10px]">{typeLabel[item.fav.type]}</span>
+                  <span className="tag text-[10px] shrink-0">{typeLabel[item.fav.type]}</span>
                   <Link to={item.url} className="font-bold text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-300 truncate">
                     {item.title}
                   </Link>

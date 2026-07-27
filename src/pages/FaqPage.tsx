@@ -41,9 +41,12 @@ export default function FaqPage({ data }: { data: ModuleData }) {
       <div className="space-y-3">
         {filtered.map((f) => (
           <details key={f.id} id={f.id} className="card p-4 group">
-            <summary className="cursor-pointer text-sm font-bold text-slate-900 dark:text-white flex items-center justify-between">
-              <span>{f.question}</span>
-              <span className="text-xs font-mono text-brand-600 dark:text-brand-300 bg-brand-500/10 px-2 py-0.5 rounded border border-brand-500/20">
+            <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden text-sm font-bold text-slate-900 dark:text-white flex items-center justify-between gap-3">
+              <span className="flex items-center gap-2 min-w-0">
+                <span aria-hidden className="shrink-0 text-[10px] text-brand-600 dark:text-brand-300 transition-transform duration-200 group-open:rotate-90">▶</span>
+                <span>{f.question}</span>
+              </span>
+              <span className="shrink-0 text-xs font-mono text-brand-600 dark:text-brand-300 bg-brand-500/10 px-2 py-0.5 rounded border border-brand-500/20">
                 {f.category}
               </span>
             </summary>

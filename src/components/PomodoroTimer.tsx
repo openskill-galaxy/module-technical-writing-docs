@@ -47,24 +47,28 @@ export default function PomodoroTimer() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         type="button"
-        className={`btn-ghost text-xs flex items-center gap-1.5 py-1 px-2.5 rounded-full transition ${
-          isRunning ? "border-brand-500/50 text-brand-300 bg-brand-500/10 animate-pulse" : ""
+        className={`btn-ghost text-xs flex items-center gap-1.5 py-1.5 px-2.5 rounded-full transition ${
+          isRunning ? "border-brand-500/50 text-brand-700 dark:text-brand-300 bg-brand-500/10 animate-pulse" : ""
         }`}
         title="番茄专注计时器"
+        aria-label="番茄专注计时器"
+        aria-expanded={isOpen}
       >
         <IconTimer size={16} />
         <span className="font-mono font-bold">{formattedTime}</span>
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-10 z-50 w-64 card p-4 bg-white/95 dark:bg-slate-950/95 border-slate-200 dark:border-white/10 backdrop-blur-xl shadow-2xl space-y-3 animate-fade-in">
+        <div className="absolute right-0 top-11 z-50 w-64 max-w-[calc(100vw-2rem)] card p-4 bg-white/95 dark:bg-slate-950/95 border-slate-200 dark:border-white/10 backdrop-blur-xl shadow-soft-lg space-y-3 animate-fade-in">
           <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-2">
             <h4 className="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
               <span className="inline-flex"><IconTimer size={15} /></span> 专注番茄钟
             </h4>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-slate-400 hover:text-slate-900 dark:text-white/40 dark:hover:text-white text-xs"
+              type="button"
+              aria-label="关闭番茄钟面板"
+              className="icon-btn !h-8 !w-8 text-xs"
             >
               ✕
             </button>
@@ -94,12 +98,17 @@ export default function PomodoroTimer() {
             </button>
           </div>
 
-          <div className="flex justify-center gap-1.5 pt-1 border-t border-slate-200 dark:border-white/5">
-            <button onClick={() => resetTimer(15)} className="text-[10px] text-slate-500 dark:text-white/40 hover:text-brand-600 dark:hover:text-brand-300">15m</button>
-            <span className="text-[10px] text-slate-300 dark:text-white/20">•</span>
-            <button onClick={() => resetTimer(25)} className="text-[10px] text-slate-500 dark:text-white/40 hover:text-brand-600 dark:hover:text-brand-300">25m</button>
-            <span className="text-[10px] text-slate-300 dark:text-white/20">•</span>
-            <button onClick={() => resetTimer(45)} className="text-[10px] text-slate-500 dark:text-white/40 hover:text-brand-600 dark:hover:text-brand-300">45m</button>
+          <div className="flex justify-center gap-1.5 pt-1.5 border-t border-slate-200 dark:border-white/5">
+            {[15, 25, 45].map((m) => (
+              <button
+                key={m}
+                type="button"
+                onClick={() => resetTimer(m)}
+                className="px-3 py-1.5 rounded-lg text-[11px] font-semibold text-slate-500 dark:text-white/40 hover:text-brand-600 dark:hover:text-brand-300 hover:bg-slate-100 dark:hover:bg-white/5 transition"
+              >
+                {m}m
+              </button>
+            ))}
           </div>
         </div>
       )}

@@ -112,7 +112,7 @@ export default function SearchBox({ data }: { data: ModuleData }) {
         <ul
           role="listbox"
           aria-label="搜索匹配结果"
-          className="absolute right-0 z-40 mt-2 w-[320px] sm:w-[400px] rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl shadow-2xl overflow-hidden p-1.5 space-y-0.5"
+          className="fixed inset-x-4 top-[4.5rem] z-40 sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:mt-2 sm:w-[400px] rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl shadow-soft-lg overflow-hidden p-1.5 space-y-0.5"
         >
           {results.map((r, idx) => (
             <li key={`${r.type}-${r.id}`} role="option" aria-selected={selectedIndex === idx}>
@@ -138,7 +138,7 @@ export default function SearchBox({ data }: { data: ModuleData }) {
         </ul>
       )}
       {open && results.length === 0 && (
-        <div className="absolute right-0 z-40 mt-2 w-[320px] rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white/95 dark:bg-slate-950/95 p-4 text-xs text-slate-500 dark:text-white/40 shadow-2xl">
+        <div className="fixed inset-x-4 top-[4.5rem] z-40 sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:mt-2 sm:w-[320px] rounded-2xl border border-slate-200 dark:border-white/[0.08] bg-white/95 dark:bg-slate-950/95 p-4 text-xs text-slate-500 dark:text-white/40 shadow-soft-lg">
           未找到匹配结果
         </div>
       )}

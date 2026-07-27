@@ -72,7 +72,7 @@ export default function WeakPointDiagnostics({ data }: Props) {
 
               {relatedLesson && (
                 <Link
-                  to={`/lessons/${relatedLesson.id}`}
+                  to={`/lessons/${relatedLesson.slug}`}
                   className="btn-ghost text-xs text-brand-600 dark:text-brand-300 hover:text-brand-700 dark:hover:text-white border-brand-500/30 whitespace-nowrap"
                 >定向攻坚
                 </Link>

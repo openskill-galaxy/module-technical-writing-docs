@@ -36,13 +36,14 @@ export default function LessonContentSearch({ lessons, onFilter }: Props) {
           value={query}
           onChange={(e) => handleSearch(e.target.value)}
           placeholder="即时检索本模块讲义标题、导言或正文关键字..."
-          className="w-full pl-8 pr-8 py-2 text-xs rounded-xl border border-white/10 bg-white/[0.04] text-white placeholder:text-white/40 focus:outline-none focus:border-brand-500/50 transition"
+          className="input pl-8 pr-8 !py-2 text-xs"
         />
         {query && (
           <button
             onClick={() => handleSearch("")}
             type="button"
-            className="absolute right-3 text-xs text-white/40 hover:text-white"
+            aria-label="清空检索关键字"
+            className="absolute right-3 text-xs text-subtle hover:text-body transition"
           >
             ✕
           </button>

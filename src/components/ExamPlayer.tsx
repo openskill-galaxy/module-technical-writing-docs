@@ -121,14 +121,15 @@ export default function ExamPlayer({ exam, questions }: Props) {
 
   const isTimeUp = remaining <= 0;
 
-  if (total === 0) {
-    return <p className="text-white/60">该考试暂无题目。</p>;
-  }
-
+  // 注意：Hook 必须位于任何提前 return 之前（Rules of Hooks）
   const grid = useMemo(
     () => questions.map((qq, idx) => ({ idx, answered: (answers[qq.id] || []).length > 0 })),
     [questions, answers]
   );
+
+  if (total === 0) {
+    return <p className="text-white/60">该考试暂无题目。</p>;
+  }
 
   return (
     <div className="space-y-5">
@@ -140,7 +141,7 @@ export default function ExamPlayer({ exam, questions }: Props) {
           </p>
         </div>
         <div className={`rounded-lg px-4 py-2 text-lg font-mono ${
-          remaining < 60 ? "bg-rose-500/20 text-rose-200" : "bg-white/10 text-white"
+          remaining < 60 ? "bg-rose-500/20 text-rose-700 dark:text-rose-300" : "bg-white/10 text-white"
         }`}>
           ⏱ {formatDuration(remaining)}
         </div>
@@ -212,7 +213,7 @@ export default function ExamPlayer({ exam, questions }: Props) {
               key={g.idx}
               type="button"
               onClick={() => setCurrent(g.idx)}
-              className={`h-8 rounded text-xs font-medium transition ${
+              className={`h-9 rounded text-xs font-medium transition ${
                 g.idx === current
                   ? "bg-brand-600 text-white"
                   : g.answered
@@ -257,7 +258,7 @@ export default function ExamPlayer({ exam, questions }: Props) {
       </div>
 
       {isTimeUp && (
-        <p className="text-center text-rose-300 text-sm">时间已到，自动交卷中…</p>
+        <p className="text-center text-rose-700 dark:text-rose-300 text-sm">时间已到，自动交卷中…</p>
       )}
     </div>
   );

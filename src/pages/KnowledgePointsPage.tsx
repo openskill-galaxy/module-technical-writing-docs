@@ -34,8 +34,10 @@ export default function KnowledgePointsPage({ data }: { data: ModuleData }) {
             key={d}
             type="button"
             onClick={() => setDiff(d)}
-            className={`rounded-full px-3 py-1.5 text-sm transition ${
-              diff === d ? "bg-brand-600 text-white" : "border border-white/10 text-white/70 hover:bg-white/5"
+            className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+              diff === d
+                ? "bg-brand-600 text-white shadow-sm"
+                : "border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-white/70 hover:bg-slate-200 dark:hover:bg-white/10"
             }`}
           >
             {d === "all" ? "全部难度" : d === "easy" ? "简单" : d === "medium" ? "中等" : "困难"}

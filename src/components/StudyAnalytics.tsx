@@ -52,18 +52,19 @@ export default function StudyAnalytics() {
     return { daysGrid: grid, streak: streakCount, totalActiveDays: activeDays, memoryRetention: retentionRate };
   }, []);
 
+  // 浅色主题走浅→深绿色阶，深色主题保留原半透明色阶
   const getLevelColor = (level: number) => {
     switch (level) {
-      case 4: return "bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.5)]";
-      case 3: return "bg-emerald-500/80";
-      case 2: return "bg-emerald-600/50";
-      case 1: return "bg-emerald-900/40 border border-emerald-500/20";
+      case 4: return "bg-emerald-600 dark:bg-emerald-400 dark:shadow-[0_0_8px_rgba(52,211,153,0.5)]";
+      case 3: return "bg-emerald-500 dark:bg-emerald-500/80";
+      case 2: return "bg-emerald-300 dark:bg-emerald-600/50";
+      case 1: return "bg-emerald-200 dark:bg-emerald-900/40 border border-emerald-300 dark:border-emerald-500/20";
       default: return "bg-slate-200/80 dark:bg-white/[0.04] border border-slate-300 dark:border-white/[0.08]";
     }
   };
 
   return (
-    <div className="card p-5 space-y-4 border border-slate-200 dark:border-white/10 shadow-2xl">
+    <div className="card p-5 space-y-4 border border-slate-200 dark:border-white/10">
       <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/5 pb-3">
         <div className="flex items-center gap-2">
           <span className="text-xl">🔥</span>
@@ -113,10 +114,10 @@ export default function StudyAnalytics() {
         <div className="flex items-center justify-end gap-1.5 text-[10px] text-slate-500 dark:text-white/40 pt-1">
           <span>少</span>
           <div className="h-2.5 w-2.5 rounded-sm bg-slate-200 dark:bg-white/[0.04]" />
-          <div className="h-2.5 w-2.5 rounded-sm bg-emerald-900/40" />
-          <div className="h-2.5 w-2.5 rounded-sm bg-emerald-600/50" />
-          <div className="h-2.5 w-2.5 rounded-sm bg-emerald-500/80" />
-          <div className="h-2.5 w-2.5 rounded-sm bg-emerald-400" />
+          <div className="h-2.5 w-2.5 rounded-sm bg-emerald-200 dark:bg-emerald-900/40" />
+          <div className="h-2.5 w-2.5 rounded-sm bg-emerald-300 dark:bg-emerald-600/50" />
+          <div className="h-2.5 w-2.5 rounded-sm bg-emerald-500 dark:bg-emerald-500/80" />
+          <div className="h-2.5 w-2.5 rounded-sm bg-emerald-600 dark:bg-emerald-400" />
           <span>多</span>
         </div>
       </div>

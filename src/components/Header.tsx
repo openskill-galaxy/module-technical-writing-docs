@@ -85,7 +85,7 @@ function BackupModal({ onClose }: { onClose: () => void }) {
         <button
           onClick={onClose}
           aria-label="关闭弹窗"
-          className="absolute right-4 top-4 text-slate-400 hover:text-slate-900 dark:text-white/40 dark:hover:text-white transition text-sm"
+          className="absolute right-3 top-3 icon-btn"
           type="button"
         >
           ✕

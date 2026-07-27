@@ -118,11 +118,11 @@ export default function ExamResultPage({ data }: { data: ModuleData }) {
           <div className="space-y-3 flex-1 max-w-sm">
             <h3 className="text-xs font-bold text-brand-200 uppercase tracking-wider">针对性攻坚建议</h3>
             {record.score >= 80 ? (
-              <p className="text-xs text-emerald-300 leading-relaxed bg-emerald-500/10 border border-emerald-500/20 p-3 rounded-xl">
+              <p className="text-xs text-emerald-700 dark:text-emerald-300 leading-relaxed bg-emerald-500/10 border border-emerald-500/20 p-3 rounded-xl">
                 表现极为优异！您的基础概念与高阶逻辑均十分扎实，建议保持节奏，挑战更多高难度综合实战模块。
               </p>
             ) : (
-              <p className="text-xs text-amber-300 leading-relaxed bg-amber-500/10 border border-amber-500/20 p-3 rounded-xl">
+              <p className="text-xs text-amber-700 dark:text-amber-300 leading-relaxed bg-amber-500/10 border border-amber-500/20 p-3 rounded-xl">
                 测验中发现部分知识盲区。建议重点复习薄弱讲义，并通过错题本反复巩固。
               </p>
             )}
@@ -155,17 +155,17 @@ export default function ExamResultPage({ data }: { data: ModuleData }) {
             return (
               <div key={idx} className="px-4 py-3 flex items-start gap-3 hover:bg-white/[0.01] transition">
                 <span className={`mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
-                  d.correct ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" : "bg-rose-500/20 text-rose-300 border border-rose-500/30"
+                  d.correct ? "bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/30" : "bg-rose-500/20 text-rose-700 dark:text-rose-300 border border-rose-500/30"
                 }`}>
                   {idx + 1}
                 </span>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm text-white line-clamp-2 leading-relaxed">{q?.stem || d.questionId}</p>
                   <p className="mt-1 text-xs text-white/50">
-                    你的答案：<span className={d.correct ? "text-emerald-300 font-semibold" : "text-rose-300 font-semibold"}>{d.userAnswer.join(", ") || "未作答"}</span> · 正确答案：<span className="text-white/80 font-semibold">{q?.answer.join(", ") || "?"}</span>
+                    你的答案：<span className={d.correct ? "text-emerald-700 dark:text-emerald-300 font-semibold" : "text-rose-700 dark:text-rose-300 font-semibold"}>{d.userAnswer.join(", ") || "未作答"}</span> · 正确答案：<span className="text-white/80 font-semibold">{q?.answer.join(", ") || "?"}</span>
                   </p>
                 </div>
-                <span className={`text-sm font-bold ${d.correct ? "text-emerald-400" : "text-rose-400"}`}>
+                <span className={`text-sm font-bold ${d.correct ? "text-emerald-600 dark:text-emerald-400" : "text-rose-600 dark:text-rose-400"}`}>
                   {d.correct ? "✓ 得分" : "✗ 未得分"}
                 </span>
               </div>

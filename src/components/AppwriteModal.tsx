@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useModalA11y } from "../hooks/useModalA11y";
 import {
   getCurrentUser,
   loginAnonymous,
@@ -31,6 +32,9 @@ export default function AppwriteModal({ onClose }: Props) {
   // Config Inputs
   const [endpoint, setEndpoint] = useState("");
   const [projectId, setProjectId] = useState("");
+
+  // Esc 关闭 / 焦点圈定 / 背景滚动锁定（与其余弹窗保持一致）
+  const panelRef = useModalA11y(onClose);
 
   useEffect(() => {
     fetchUser();
@@ -133,15 +137,21 @@ export default function AppwriteModal({ onClose }: Props) {
 
   return (
     <div
+      onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-label="Appwrite BaaS 云端集成"
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md animate-fade-in p-4"
     >
-      <div className="card w-full max-w-md p-6 relative border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 shadow-2xl flex flex-col gap-4">
+      <div
+        ref={panelRef}
+        onClick={(e) => e.stopPropagation()}
+        className="card w-full max-w-md p-6 relative border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 shadow-soft-lg flex flex-col gap-4"
+      >
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 text-slate-400 hover:text-slate-900 dark:text-white/40 dark:hover:text-white transition text-sm"
+          aria-label="关闭弹窗"
+          className="absolute right-3 top-3 icon-btn"
           type="button"
         >
           ✕

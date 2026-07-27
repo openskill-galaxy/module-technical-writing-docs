@@ -27,12 +27,13 @@ export default function KeyboardShortcutsModal({ onClose }: Props) {
       <div
         ref={panelRef}
         onClick={(e) => e.stopPropagation()}
-        className="card max-w-md w-full p-6 space-y-6 border border-cyan-500/30 bg-white dark:bg-slate-950 shadow-2xl relative"
+        className="card max-w-md w-full p-6 space-y-6 border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 shadow-soft-lg relative"
       >
         <button
           onClick={onClose}
           type="button"
-          className="absolute top-4 right-4 text-slate-400 hover:text-slate-900 dark:text-white/50 dark:hover:text-white text-lg font-mono"
+          aria-label="关闭弹窗"
+          className="absolute top-3 right-3 icon-btn"
         >
           ✕
         </button>

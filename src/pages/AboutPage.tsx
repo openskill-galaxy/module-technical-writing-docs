@@ -9,7 +9,7 @@ export default function AboutPage({ data }: { data: ModuleData }) {
   return (
     <article className="space-y-8 max-w-3xl">
       <header>
-        <h1 className="text-3xl font-bold text-slate-900 dark:text-white">关于本模块</h1>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-white">关于本模块</h1>
       </header>
 
       <section className="space-y-3">

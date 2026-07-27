@@ -208,11 +208,12 @@ export default function QuestionPlayer({
         <div className="flex items-center gap-3">
           <button
             onClick={toggleMute}
-            className="flex h-6 w-6 items-center justify-center rounded-lg border border-white/10 bg-white/[0.02] text-xs text-white/60 hover:bg-white/5 hover:text-white transition duration-200"
+            className="icon-btn"
             title={muted ? "开启答题音效" : "关闭答题音效"}
+            aria-label={muted ? "开启答题音效" : "关闭答题音效"}
             type="button"
           >
-            {muted ? <IconVolumeX size={13} /> : <IconVolume size={13} />}
+            {muted ? <IconVolumeX size={15} /> : <IconVolume size={15} />}
           </button>
           <span className="text-xs text-white/50">已答 {answeredCount}/{total}</span>
         </div>
@@ -283,7 +284,8 @@ export default function QuestionPlayer({
                   className={cls}
                 >
                   <span className={`option-key ${selected ? "option-key-selected" : ""}`}>
-                    {opt.key}
+                    {/* 判分后用 ✓/✗ 图形标记对错，避免仅靠颜色区分（色弱可辨） */}
+                    {showCorrect ? "✓" : showWrong ? "✗" : opt.key}
                   </span>
                   <span className="whitespace-pre-wrap">{opt.text}</span>
                 </button>
@@ -294,7 +296,7 @@ export default function QuestionPlayer({
 
         {isJudged && instant && (
           <div className="mt-4 rounded-lg border border-white/10 bg-black/30 p-4">
-            <p className={`text-sm font-medium ${correctNow ? "text-emerald-300" : "text-rose-300"}`}>
+            <p className={`text-sm font-medium ${correctNow ? "text-emerald-700 dark:text-emerald-300" : "text-rose-700 dark:text-rose-300"}`}>
               {correctNow ? "✓ 回答正确" : "✗ 回答错误"}
             </p>
             <p className="mt-1 text-xs text-white/50">
@@ -329,12 +331,12 @@ export default function QuestionPlayer({
             if (itemJudged && instant) {
               const correct = isAnswerCorrect(item, itemAns);
               if (correct) {
-                btnClass += "bg-emerald-500/10 text-emerald-300 border-emerald-500/20 hover:bg-emerald-500/20";
+                btnClass += "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-500/20 hover:bg-emerald-500/20";
               } else {
-                btnClass += "bg-rose-500/10 text-rose-300 border-rose-500/20 hover:bg-rose-500/20";
+                btnClass += "bg-rose-500/10 text-rose-700 dark:text-rose-300 border-rose-500/20 hover:bg-rose-500/20";
               }
             } else if (isAnswered) {
-              btnClass += "bg-brand-500/10 text-brand-200 border-brand-500/30 hover:bg-brand-500/20";
+              btnClass += "bg-brand-500/10 text-brand-700 dark:text-brand-300 border-brand-500/30 hover:bg-brand-500/20";
             } else {
               btnClass += "border-white/10 bg-white/[0.01] text-white/50 hover:bg-white/5 hover:text-white";
             }

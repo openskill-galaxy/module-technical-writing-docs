@@ -92,12 +92,13 @@ export default function QuizSpeedRunModal({ questions, onClose }: Props) {
       <div
         ref={panelRef}
         onClick={(e) => e.stopPropagation()}
-        className="card max-w-xl w-full p-6 space-y-6 border border-cyan-500/30 bg-white dark:bg-slate-950 shadow-2xl relative"
+        className="card max-w-xl w-full p-6 space-y-6 border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-950 shadow-soft-lg relative"
       >
         <button
           onClick={onClose}
           type="button"
-          className="absolute top-4 right-4 text-slate-400 hover:text-slate-900 dark:text-white/50 dark:hover:text-white text-lg font-mono"
+          aria-label="关闭弹窗"
+          className="absolute top-3 right-3 icon-btn"
         >
           ✕
         </button>
@@ -113,7 +114,7 @@ export default function QuizSpeedRunModal({ questions, onClose }: Props) {
           </div>
           <div className="flex items-center gap-2 font-mono">
             <span className="text-xs text-slate-500 dark:text-white/50">倒计时:</span>
-            <span className={`text-lg font-extrabold ${timeLeft <= 10 ? "text-rose-600 dark:text-rose-400 animate-ping" : "text-cyan-600 dark:text-cyan-300"}`}>
+            <span className={`text-lg font-extrabold ${timeLeft <= 10 ? "text-rose-600 dark:text-rose-400 animate-pulse" : "text-cyan-600 dark:text-cyan-300"}`}>
               {timeLeft}s
             </span>
           </div>

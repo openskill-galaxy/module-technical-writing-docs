@@ -28,7 +28,8 @@ export default function CertificateModal({ moduleTitle, score = 100, onClose }: 
         <button
           onClick={onClose}
           type="button"
-          className="absolute top-4 right-4 text-white/40 hover:text-white text-sm"
+          aria-label="关闭弹窗"
+          className="absolute top-3 right-3 icon-btn"
         >
           ✕
         </button>
@@ -48,7 +49,7 @@ export default function CertificateModal({ moduleTitle, score = 100, onClose }: 
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="input text-center text-xl font-bold text-amber-300 bg-transparent border-b border-amber-400/30 max-w-xs mx-auto focus:border-amber-400"
+            className="input text-center text-xl font-bold text-amber-700 dark:text-amber-300 bg-transparent border-b border-amber-400/30 max-w-xs mx-auto focus:border-amber-400"
           />
 
           <p className="text-sm text-white/80 leading-relaxed max-w-md mx-auto pt-2">
@@ -60,7 +61,7 @@ export default function CertificateModal({ moduleTitle, score = 100, onClose }: 
           <div className="pt-4 flex items-center justify-between border-t border-white/10 text-xs text-white/50 px-4">
             <div>
               <span className="block text-[10px] text-white/40">认证编号</span>
-              <span className="font-mono text-amber-300/80">{certId}</span>
+              <span className="font-mono text-amber-700 dark:text-amber-300/80">{certId}</span>
             </div>
             <div className="text-center">
               <span className="block text-2xl">🏅</span>
